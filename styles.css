@@ -1,0 +1,343 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Verdana, Tahoma, sans-serif; /*Tipografía para cambiar*/
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body{
+    min-height: 100vh;
+    background-color: white;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block; /*Para eliminar espacios extra*/
+}
+
+header{
+    background-color: white;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999; /*Fuerza a que se coloque en una capa diferente*/
+    box-shadow: 0.5rem 0.2rem rgba(0, 0, 0, .1);
+}
+
+/*BANNER DE PROMOCIÓN*/
+
+header .banner{
+    background-color: lightgray;
+    display: block; /*Hace que se ocupe todo el ancho (como un div)*/
+    padding: 0.3rem;
+    text-align: center;
+    color: #2C2C2C;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+/*BARRA DE NAVEGACIÓN*/
+
+header .logoylinks{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 1rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+header .logoylinks .logo{
+    margin-right: auto;
+}
+
+.logoylinks .logo img{
+   width: 35px;
+   height: 35px;
+}
+   
+header .logoylinks ul{
+    list-style: none;
+}
+
+header .logoylinks ul li a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+}
+
+/* --- Banner Superior --- */
+.top-banner {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+/* --- Header --- */
+header {
+    background-color: white;
+    border-bottom: 2px solid #222;
+    padding: 15px 0;
+    /* Sombra suave para separarlo del fondo */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se adapte si es muy chico */
+}
+
+.logo {
+    border: 2px solid #000;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #fff;
+}
+
+.main-nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.main-nav a:hover { color: #fff; }
+.main-nav a.active { color: white; font-weight: bold; }
+
+/* --- Contenedor Principal --- */
+.container {
+    /* ANCHO MÁXIMO AUMENTADO PARA LLENAR PANTALLA */
+    max-width: 1600px;
+    width: 95%; /* Ocupa el 95% del ancho disponible si la pantalla es chica */
+    
+    /* Margen ajustado para centrar visualmente en altura */
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+    
+    display: grid;
+    /* Ajustamos la proporción: El mapa ocupa más (2fr) */
+    grid-template-columns: 2fr 1fr; 
+    gap: 60px;
+    align-items: stretch; /* Estira ambas columnas para que midan lo mismo */
+}
+
+/* --- Mapa --- */
+.map-frame {
+    width: 100%;
+    height: 650px; /* Altura fija del mapa */
+    background-color: #ddd;
+    border-radius: 30px; /* Bordes redondos */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra para resaltar */
+    border: 1px solid #ccc;
+}
+
+.map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Información (Derecha) --- */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding: 10px;
+}
+
+.transport-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.transport-btn {
+    flex: 1;
+    background: white;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding: 15px 5px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+    color: #444;
+}
+
+.transport-btn i {
+    font-size: 20px; /* Iconos más grandes */
+}
+
+.transport-btn:hover { background-color: #f0f0f0; }
+
+.transport-btn.active {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.details h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #222;
+    line-height: 1.2;
+}
+
+.status {
+    margin-bottom: 25px;
+    font-size: 15px;
+    color: #555;
+}
+.status .open { color: #2ecc71; font-weight: bold; }
+
+.access-list {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee; /* Recuadro sutil para los accesos */
+}
+
+.access-list h3 { margin-bottom: 10px; font-size: 16px; }
+.access-list ul { list-style: none; margin-bottom: 30px; }
+.access-list li { margin-bottom: 8px; font-size: 14px; color: #444; }
+
+/* Agregamos una flechita visual antes de cada acceso */
+.access-list li::before {
+    content: "•";
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.cta-button {
+    background-color: #ff6b6b; /* Color salmón */
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+    margin-top: auto;
+}
+
+.cta-button:hover { background-color: #ff5252; }
+
+/* --- Botones Flotantes --- */
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.wpp-btn, .up-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+/* ESTILOS DE ESTADO (Abierto/Cerrado) */
+.status {
+    margin-bottom: 35px;
+    font-size: 18px;
+    color: #555;
+}
+.status .open { 
+    color: #00c853; /* Verde */
+    font-weight: 700; 
+}
+.status .closed { 
+    color: #d32f2f; /* Rojo */
+    font-weight: 700; 
+}
+
+.wpp-btn { background-color: #25D366; color: white; }
+.wpp-btn:hover, .up-btn:hover { transform: scale(1.1); }
+
+/* --- Celular --- */
+@media (max-width: 768px) 
+{
+    .container {
+        grid-template-columns: 1fr; /* Todo en una columna */
+        margin-top: 40px; /* Menos margen en celular */
+        gap: 30px;
+    }
+    
+    .header-container { flex-direction: column; gap: 15px; }
+    
+    .main-nav { width: 100%; justify-content: center; flex-wrap: wrap; }
+    
+   .map-frame { 
+        height: 400px; /* En celular lo achicamos un poco para que entre */
+        border-radius: 20px;
+    }
+}
+
+
