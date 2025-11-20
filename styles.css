@@ -26,29 +26,17 @@ img{
     display: block; /*Para eliminar espacios extra*/
 }
 
-header{
+/*header{
     background-color: white;
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 999; /*Fuerza a que se coloque en una capa diferente*/
-    box-shadow: 0.5rem 0.2rem rgba(0, 0, 0, .1);
-}
-
-/*BANNER DE PROMOCIÓN*/
-
-header .banner{
-    background-color: lightgray;
-    display: block; /*Hace que se ocupe todo el ancho (como un div)*/
-    padding: 0.3rem;
-    text-align: center;
-    color: #2C2C2C;
-    font-size: 1.3rem;
-    text-decoration: none;
-}
+    /*box-shadow: 0.5rem 0.2rem rgba(0, 0, 0, .1);
+}*/
 
 /*BARRA DE NAVEGACIÓN*/
 
-header .logoylinks{
+/*header .logoylinks{
     display: grid;
     grid-template-columns: repeat(4, 1fr) 1rem;
     justify-content: space-evenly;
@@ -70,46 +58,61 @@ header .logoylinks ul{
 
 header .logoylinks ul li a{
     text-decoration: none;
-}
+}*/
 
 
-
-
-
-
-
-
-
-/* --- Reset Básico --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #f9f9f9;
+.intro{
+    background-color: #F7F7F7;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(imagenes/Hero.png) no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-/* --- Banner Superior --- */
-.top-banner {
-    background-color: #e0e0e0;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 13px;
-    color: #333;
+.intro .container-intro{
+    background: rgba(128, 128, 128, 0.7);
+    padding: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    color: white;
 }
 
-/* --- Header --- */
+.intro .container-intro h1{
+    padding:  1rem 0;
+    font-size: 5rem;
+    line-height: 1.5;
+}
+
+.intro .container-intro p{
+    padding:  1rem 0;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+.servicios .card img{
+    width: 50px;
+    height: 50px;
+}
+
+.servicios .card .card-body{
+    font-size: 1.2rem;
+}
+
+
+
+
+
+/*UBICACIÓN - MAPA*/
+
+/* --- Header --- 
 header {
     background-color: white;
     border-bottom: 2px solid #222;
     padding: 15px 0;
-    /* Sombra suave para separarlo del fondo */
+    Sombra suave para separarlo del fondo
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
@@ -120,7 +123,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Para que se adapte si es muy chico */
+    flex-wrap: wrap; /* Para que se adapte si es muy chico 
 }
 
 .logo {
@@ -146,8 +149,13 @@ header {
     font-weight: 500;
 }
 
-.main-nav a:hover { color: #fff; }
-.main-nav a.active { color: white; font-weight: bold; }
+.main-nav a:hover{ 
+color: #fff;
+}
+
+.main-nav a.active{ 
+color: white; font-weight: bold; 
+}*/
 
 /* --- Contenedor Principal --- */
 .container {
