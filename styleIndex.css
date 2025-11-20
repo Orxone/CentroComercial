@@ -1,7 +1,112 @@
 *{
     padding: 0;
     margin: 0;
+    outline: none; 
+    border: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; /*Tipografía para cambiar*/
+    font-family: Verdana, Tahoma, sans-serif; /*Tipografía para cambiar*/
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body{
+    min-height: 100vh;
+    background-color: white;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block; /*Para eliminar espacios extra*/
+}
+
+header{
+    background-color: white;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999; /*Fuerza a que se coloque en una capa diferente*/
+    box-shadow: 0.5rem 0.2rem rgba(0, 0, 0, .1);
+}
+
+/*BANNER DE PROMOCIÓN*/
+
+header .banner{
+    background-color: lightgray;
+    display: block; /*Hace que se ocupe todo el ancho (como un div)*/
+    padding: 0.3rem;
+    text-align: center;
+    color: #2C2C2C;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+/*BARRA DE NAVEGACIÓN*/
+
+header .logoylinks{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 1rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+header .logoylinks .logo{
+    margin-right: auto;
+}
+
+.logoylinks .logo img{
+   width: 35px;
+   height: 35px;
+}
+   
+header .logoylinks ul{
+    list-style: none;
+}
+
+header .logoylinks ul li a{
+    text-decoration: none;
+}
+
+
+/*SECCIÓN DE INTRO*/
+
+/*SECCIÓN SERVICIOS*/
+
+
+/*SECCIÓN DE ICONO DE WHATSAPP*/
+.whatsapp-flotante {
+    /*Posición en la pantalla*/
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; 
+    
+    /*Para que se vea como un círculo*/
+    width: 50px; 
+    height: 50px;
+    padding: 0;
+    
+    border-radius: 50%; /*Para que sea un círculo perfecto*/
+    
+    /*Centra el ícono dentro del botón*/
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    background-color: #F7F7F7;
+}
+
+.whatsapp-bubble {
+    width: 35px; 
+    height: 35px;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.1); 
 }
