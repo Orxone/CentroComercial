@@ -8,6 +8,13 @@
     font-family: Verdana, Tahoma, sans-serif; /*Tipografía para cambiar*/
 }
 
+html{
+    /*font-size: 62.5%;*/
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -19,19 +26,29 @@ body {
     min-height: 100vh;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+    display: block; /*Para eliminar espacios extra*/
+}
+
 main {
     flex: 1; 
 }
 
-/* ================= HEADER ================= */
+/*HEADER*/
 .header {
     width: 100%;
     background: #5b3c3c;
     padding: 12px 0;
     border-bottom: 2px solid #4a2f2f;
+    /*Para que se mueva junto a la pantalla*/
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999; /*Fuerza a que se coloque en una capa diferente*/
 }
 
-.header-container {
+.header .header-container {
     width: 95%;
     max-width: 1300px;
     margin: auto;
@@ -41,11 +58,9 @@ main {
     color: #fff;
 }
 
-.logo {
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
+header .header-container .logo img{
+    width: 115px;
+    height: auto;
 }
 
 .nav {
@@ -62,6 +77,7 @@ main {
 
 .nav a:hover {
     opacity: 0.7;
+    text-decoration: underline;
 }
 
 .darkmode-btn {
@@ -72,97 +88,14 @@ main {
     cursor: pointer;
 }
 
-
-/* ================= FOOTER ================= */
-.footer {
-    background: #5b3c3c;
-    color: #e6dcdc;
-    padding: 50px 0 20px 0;
-    margin-top: 40px;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 95%;
-    max-width: 1300px;
-    margin: auto;
-    gap: 40px;
-}
-
-.footer-section h3 {
-    margin-bottom: 15px;
-    color: white;
-    font-size: 1rem;
-}
-
-.footer-section p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-}
-
-.footer-section a {
-    color: #e6dcdc;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-section a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #e6dcdc;
-}
-
-.footer-bottom a {
-    color: #e6dcdc;
-    text-decoration: none;
-}
-
-img{
-    width: 100%;
-    height: auto;
-    display: block; /*Para eliminar espacios extra*/
-}
-
-/*header{
+.darkmode-btn:hover {
     background-color: white;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 999; /*Fuerza a que se coloque en una capa diferente*/
-    /*box-shadow: 0.5rem 0.2rem rgba(0, 0, 0, .1);
-}*/
-
-/*BARRA DE NAVEGACIÓN*/
-
-/*header .logoylinks{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) 1rem;
-    justify-content: space-evenly;
-    padding: 1rem;
+    opacity: 0.8;
+    border-radius: 60%;
+    transform: scale(1.1); 
 }
 
-header .logoylinks .logo{
-    margin-right: auto;
-}
-
-.logoylinks .logo img{
-   width: 35px;
-   height: 35px;
-}
-   
-header .logoylinks ul{
-    list-style: none;
-}
-
-header .logoylinks ul li a{
-    text-decoration: none;
-}*/
-
+/*SECCIÓN INTRO*/
 
 .intro{
     background-color: white;
@@ -191,11 +124,19 @@ header .logoylinks ul li a{
     font-size: 1.8rem;
 }
 
-.intro .container-intro button{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+.intro .container-intro a{
+    background-color: white;
+    color: black;
+    padding: 1.5rem;
+    padding-top: 0.7rem; 
+    padding-bottom: 0.7rem;
     font-size: 2rem;
     margin-top: 2rem;
+    text-decoration: none;
+}
+
+.intro .container-intro a:hover{
+    opacity: 0.9;
 }
 
 /*SECCIÓN DE DESCRIPCIÓN*/
@@ -213,6 +154,7 @@ header .logoylinks ul li a{
 .description .desc h2{
     padding: 1.5rem;
     font-size: 30px;
+    font-weight: 700;
 }
 
 .description .desc p{
@@ -221,101 +163,54 @@ header .logoylinks ul li a{
 
 /*SECCIÓN DE SERVICIOS*/
 
-/*.servicios{
-    justify-content: center;
+.servicios .card{
+    margin: 1.5rem;
+    width: 50rem;
+    height: auto;
+    text-align: center;
+    justify-self: center;
 }
 
-.servicios .card{
+.servicios .card img{
+    height: 150px;
+    width: auto;
+}
+
+.servicios .card h5{
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-top: 10px;  
+}
+
+.servicios .card .card-text{
+    font-size: 1rem;
+}
+
+/*Cards con los servicios*/
+
+.servicios .col .card{
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
     margin: 1rem;
 }
 
-.servicios .card-img-overlay{
-
-}
-
-.servicios .card-img-overlay h5{
-
-}
-
-.servicios .card-img-overlay p{
-
-}*/
-
-
-.servicios .card img{
+.servicios .col .card img{
     width: 50px;
     height: 50px;
+    margin-top: 20px;
 }
 
 .servicios .card .card-body{
-    font-size: 1.2rem;
+    font-size: 0.8rem;
 }
 
 .servicios .card .card-body .card-title{
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
-/*
-.servicios .card .card-body .card-text{
-}*/
-
-
-/*UBICACIÓN - MAPA*/
-
-/* --- Header --- 
-header {
-    background-color: white;
-    border-bottom: 2px solid #222;
-    padding: 15px 0;
-    Sombra suave para separarlo del fondo
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Para que se adapte si es muy chico 
-}
-
-.logo {
-    border: 2px solid #000;
-    padding: 8px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    background: #fff;
-}
-
-.main-nav {
-    background-color: #333;
-    padding: 10px 20px;
-    display: flex;
-    gap: 20px;
-}
-
-.main-nav a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.main-nav a:hover{ 
-color: #fff;
-}
-
-.main-nav a.active{ 
-color: white; font-weight: bold; 
-}*/
-
-
-
-/* --- Botones Flotantes --- */
+/*Botones Flotantes*/
 .floating-buttons {
     position: fixed;
     bottom: 30px;
@@ -325,26 +220,64 @@ color: white; font-weight: bold;
     z-index: 100;
 }
 
-.wpp-btn, .up-btn {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s;
+/*FOOTER*/
+.footer {
+    background: #5b3c3c;
+    color: #e6dcdc;
+    padding: 50px 0 20px 0;
+    margin-top: 40px;
 }
 
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 95%;
+    max-width: 1300px;
+    margin: auto;
+    gap: 40px;
+}
 
+.footer-section img{
+    width: 170px;
+    height: auto;
+    padding-bottom: 5px;
+}
 
-.wpp-btn { background-color: #25D366; color: white; }
-.wpp-btn:hover, .up-btn:hover { transform: scale(1.1); }
+.footer-section p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
 
+.footer-section a {
+    color: #e6dcdc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #e6dcdc;
+}
+
+.footer-bottom a {
+    color: #e6dcdc;
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block; /*Para eliminar espacios extra*/
+}
+
+/*MEDIA QUERY*/
 
 @media (max-width: 600px) {
     .nav {
