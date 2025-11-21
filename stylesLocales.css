@@ -1,3 +1,9 @@
+/* Fondo general */
+main{
+    background-color: #f7f7f7;
+}
+
+/* SECCIÓN LOCALES */
 .locales-section {
     width: 100%;
     padding: 40px 20px;
@@ -10,7 +16,142 @@
     color: #5a3e3e;
 }
 
-/* CARD */
+/* HEADER LOCALES (Buscador + Filtros + Orden)*/
+.locales-header {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.right-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* (Search) */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#searchInput {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #b69d9d;
+    outline: none;
+    background-color: #f2eded;
+    color: #5b4b4b;
+    width: 200px;
+}
+
+#searchLocal {
+    padding: 8px 12px;
+    border: 2px solid #d6c8c8;
+    border-radius: 10px;
+    width: 230px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#searchLocal:focus {
+    border-color: #5b3c3c;
+}
+
+.search-btn {
+    border: none;
+    background: #d7c6c6;
+    padding: 6px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.search-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.search-btn:hover {
+    background: #c4b5b5;
+}
+
+/* (Sort) */
+.sort-btn {
+    background: #5b3c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.sort-btn:hover {
+    opacity: 0.8;
+}
+
+/* (filter dropdown) */
+.filter-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    border: 2px solid #d6c8c8;
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 180px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 999;
+}
+
+.filter-dropdown p {
+    margin: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn {
+    background: #5b3c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    opacity: 0.8;
+}
+
+.filter-dropdown p:hover {
+    background: #f2e8e8;
+}
+
+/* GRID DE LOCALES  */
+
+.locales-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+/* CARD DE LOCALES  */
 .local-card {
     width: 100%;
     max-width: 230px;
@@ -27,23 +168,6 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: .3s ease;
-}
-
-/* HOVER OVERLAY */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(60, 45, 45, 0.85);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
     transition: .3s ease;
 }
 
@@ -66,16 +190,93 @@
     margin-top: 5px;
 }
 
-/* GRID RESPONSIVE */
-.locales-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    justify-items: center;
-    max-width: 900px;
-    margin: 0 auto; 
+/* HOVER OVERLAY */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 45, 45, 0.85);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .3s ease;
 }
 
+/* SEPARADOR */
+.separador {
+    border: none;
+    border-top: 4px solid #4a3b3b; 
+    margin: 40px 0;
+    width: 100%;
+}
+
+/* SECCIÓN MAPA */
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mapa-section {
+    text-align: center;
+    padding: 20px 0 60px 0;
+}
+
+.mapa-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #5a3e3e;
+}
+
+.mapa-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    border: 2px solid #d6c8c8;
+}
+
+.map-btn {
+    background: #5b3c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.map-btn:hover {
+    opacity: 0.8;
+}
+
+.mapa-buttons {
+    margin-top: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+.mapa-btn.active {
+    background: #d6b3b3;
+    padding: 5px;
+    color: #4d2d2d;
+    font-weight: bold;
+    border: 2px solid #5b3c3c;
+    border-radius: 15px;
+}
+
+
+
+/* Responsive */
 @media (max-width: 1100px) {
     .locales-grid {
         grid-template-columns: repeat(3, 1fr);

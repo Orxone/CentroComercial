@@ -32,10 +32,39 @@
         <section class="locales-section">
             <h2>Nuestros Locales</h2>
 
+            <div class="locales-header">
+                
+            
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Ingrese el nombre">
+                    
+                    <button type="submit" id="searchBtn" class="search-btn">
+                    <img src="imagenes/Iconos/ISearch.png" alt="Buscar">
+                    </button>
+                </div>
+
+                <div class="right-controls">
+                    <button id="sortBtn" class="sort-btn">A - Z</button>
+                    <button class="filter-btn">Filtros ▾</button>
+                    <button id="mapBtn" class="sort-btn">Ver mapa</button>
+                </div>
+        
+                
+                <div class="filter-dropdown" id="filterDropdown">
+                    <p data-filter="todos">Todos</p>
+                    <p data-filter="indumentaria">Indumentaria</p>
+                    <p data-filter="gastronomia">Gastronomía</p>
+                    <p data-filter="accesorios">Accesorios</p>
+                    <p data-filter="hogar">Hogar</p>
+                    <p data-filter="tecnología">Tecnología</p>
+                </div>
+
+            </div>
+
             <div class="locales-grid" id="localesGrid">
         
-                <a href="https://ejemplo1.com" target="_blank" class="local-card" data-name="Nahue" data-phone="11-2345-6789">
-                    <img src="ruta/nahue.png" alt="Nahue">
+                <a href="https://jujureggio.github.io/TPO_ChocolateriaNahue_Reggio_1170449/" target="_blank" class="local-card" data-category="gastronomia" data-name="Nahue" data-phone="11-2345-6789">
+                    <img src="imagenes/LocalesLogos/LogoNahue.png" alt="Nahue">
                     <div class="overlay">
                         <p class="local-name">Nahue</p>
                         <p class="local-phone">11-2345-6789</p>
@@ -43,8 +72,8 @@
                 </a>
 
         
-                <a href="https://ejemplo2.com" target="_blank" class="local-card" data-name="NovaPC" data-phone="11-9876-5432">
-                    <img src="LogoNovaPC.png" alt="NovaPC">
+                <a href="https://milej03.github.io/Janiot_NovaPC/" target="_blank" class="local-card" data-category="tecnología" data-name="NovaPC" data-phone="11-9876-5432">
+                    <img src="imagenes/LocalesLogos/LogoNovaPC.png" alt="NovaPC">
                     <div class="overlay">
                         <p class="local-name">NovaPC</p>
                         <p class="local-phone">11-9876-5432</p>
@@ -52,14 +81,22 @@
                 </a>
 
         
-                <a href="https://ejemplo3.com" target="_blank" class="local-card" data-name="Morfeo" data-phone="11-1111-2222">
-                    <img src="LogoMorfeo.png" alt="Morfeo">
+                <a href="https://orxone.github.io/MiLocal-SosaBarone-2025" target="_blank" class="local-card" data-name="Morfeo" data-category="hogar" data-phone="11-1111-2222">
+                    <img src="imagenes/LocalesLogos/LogoMorfeo.png" alt="Morfeo">
                     <div class="overlay">
                         <p class="local-name">Morfeo</p>
                         <p class="local-phone">11-1111-2222</p>
                     </div>
                 </a>
 
+
+                <a href="https://micasuarez915.github.io/TPO_Desarrollo_Web_UADE/" target="_blank" class="local-card" data-name="Aether" data-category="hogar" data-phone="11-0000-0000">
+                    <img src="imagenes/LocalesLogos/LogoAether.png" alt="Aether">
+                    <div class="overlay">
+                        <p class="local-name">Aether</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
 
                 <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
                     <img src="ruta/logo4.png" alt="Local Nuevo">
@@ -68,9 +105,81 @@
                         <p class="local-phone">11-0000-0000</p>
                     </div>
                 </a>
-            </div>
-        </section>
 
+                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+                                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+                                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+                                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+                                <a href="#" target="_blank" class="local-card" data-name="Local Nuevo" data-phone="11-0000-0000">
+                    <img src="ruta/logo4.png" alt="Local Nuevo">
+                    <div class="overlay">
+                        <p class="local-name">Local Nuevo</p>
+                        <p class="local-phone">11-0000-0000</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <hr class="separador">
+
+            <section id="mapaSection" class="mapa-section">
+                <h2>Mapa del Centro Comercial</h2>
+
+                <div class="mapa-container">
+                    <img id="mapaImg" src="imagenes/MapaPB.png" alt="Mapa" class="mapa-img">
+                </div>
+
+                <div class="mapa-buttons">
+                    <button id="btnPB" class="mapa-btn active">Planta Baja</button>
+                    <button id="btnP1" class="mapa-btn">Primer Piso</button>
+                </div>
+            </section>
+
+        </section>
 
     </main>
 
@@ -79,7 +188,7 @@
         <div class="footer-container">
 
             <div class="footer-section">
-                <h3>LOGO</h3>
+                <img src="imagenes/iconos/Logo.png" alt="Local Nuevo" width="1600">
                 <p><strong>Galería Ámbar</strong></p>
                 <p>El destino para una experiencia de compra inolvidable.</p>
             </div>
@@ -108,12 +217,10 @@
         </div>
 
         <div class="footer-bottom">
-            <p>2023 Galería Ámbar. Todos los derechos reservados. | 
-            <p>Política de privacidad</a> | 
-            <p>Términos de Uso</a></p>
+            <p>2025 Galería Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
         </div>
 
     </footer>
-
+<script src="locales.js"></script>
 </body>
 </html>
