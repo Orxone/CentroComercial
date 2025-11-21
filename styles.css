@@ -62,7 +62,7 @@ header .logoylinks ul li a{
 
 
 .intro{
-    background-color: #F7F7F7;
+    background-color: white;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -73,7 +73,7 @@ header .logoylinks ul li a{
 }
 
 .intro .container-intro{
-    background: rgba(128, 128, 128, 0.7);
+    background: rgba(114, 91, 91, 0.7);
     padding: 5rem;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -81,16 +81,63 @@ header .logoylinks ul li a{
 }
 
 .intro .container-intro h1{
-    padding:  1rem 0;
     font-size: 5rem;
-    line-height: 1.5;
 }
 
 .intro .container-intro p{
-    padding:  1rem 0;
-    font-size: 2rem;
-    line-height: 1.5;
+    font-size: 1.8rem;
 }
+
+.intro .container-intro button{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+/*SECCIÓN DE DESCRIPCIÓN*/
+
+.description{
+    width: 85rem;
+    height: auto;
+}
+
+.description .desc{
+    text-align: center;
+    padding: 2rem;
+}
+
+.description .desc h2{
+    padding: 1.5rem;
+    font-size: 30px;
+}
+
+.description .desc p{
+    font-size: 15px;
+}
+
+/*SECCIÓN DE SERVICIOS*/
+
+/*.servicios{
+    justify-content: center;
+}
+
+.servicios .card{
+    margin: 1rem;
+}
+
+.servicios .card-img-overlay{
+
+}
+
+.servicios .card-img-overlay h5{
+
+}
+
+.servicios .card-img-overlay p{
+
+}*/
+
 
 .servicios .card img{
     width: 50px;
@@ -101,8 +148,14 @@ header .logoylinks ul li a{
     font-size: 1.2rem;
 }
 
+.servicios .card .card-body .card-title{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
 
-
+/*
+.servicios .card .card-body .card-text{
+}*/
 
 
 /*UBICACIÓN - MAPA*/
