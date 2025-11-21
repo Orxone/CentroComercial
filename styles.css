@@ -9,7 +9,6 @@
 }
 
 html{
-    /*font-size: 62.5%;*/
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
     overflow-x: hidden;
@@ -24,6 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 120px;
 }
 
 img{
@@ -48,14 +48,24 @@ main {
     z-index: 999; /*Fuerza a que se coloque en una capa diferente*/
 }
 
+header .banner{
+    text-align: center;
+    color: white;
+    font-size: 0.7rem;
+    border-bottom: 1px solid white;
+}
+
+/*Barra de navegación*/
+
 .header .header-container {
     width: 95%;
     max-width: 1300px;
+    padding-top: 10px;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #fff;
+    color: white;
 }
 
 header .header-container .logo img{
@@ -83,7 +93,7 @@ header .header-container .logo img{
 .darkmode-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: white;
     font-size: 1.4rem;
     cursor: pointer;
 }
@@ -144,6 +154,9 @@ header .header-container .logo img{
 .description{
     width: 85rem;
     height: auto;
+    border: transparent;
+    border-bottom: 2px solid #b87b7b;
+    border-style: dashed;
 }
 
 .description .desc{
@@ -264,11 +277,12 @@ header .header-container .logo img{
     text-align: center;
     font-size: 0.85rem;
     color: #e6dcdc;
+    border-top: 1px solid white;
+    padding-top: 20px;
 }
 
-.footer-bottom a {
-    color: #e6dcdc;
-    text-decoration: none;
+.footer-bottom p:hover {
+    cursor: pointer;
 }
 
 img{
