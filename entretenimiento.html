@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entretenimiento - Centro Comercial</title>
+    <!-- Aquí vinculamos el archivo CSS separado -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesEntretenimiento.css">
+    <!-- Importamos iconos para los botones (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">LOGO</a>
+
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="locales.html">Locales</a>
+                <a href="entretenimiento.html" aria-current="page">Entretenimiento</a>
+                <a href="#">Gastronomía</a>
+                <a href="ubicacion.html">Ubicación</a>
+                <a href="#">Ofertas</a>
+            </nav>
+
+            <button class="darkmode-btn">🌙</button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h2 id="hero-title" class="hero-title">Entretenimiento</h2>
+                <p class="hero-description">
+                    Descubre un mundo de diversión y cultura con nuestros espacios recreativos y culturales, 
+                    diseñados para todas las edades y gustos.
+                </p>
+                <a href="#proximos-eventos" class="btn">Ver eventos próximos</a>
+            </div>
+        </section>
+
+        <!-- Espacios Recreativos -->
+        <section class="section" aria-labelledby="recreativos-title">
+            <h2 id="recreativos-title" class="section-title">Espacios Recreativos</h2>
+            
+            <div class="cards-grid">
+                <!-- Cine -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Sala de cine moderna con asientos rojos cómodos y pantalla grande">
+                        <img src="imagenes/Entretenimiento/cine.png" alt="Cine">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cine</h3>
+                        <p class="card-description">
+                            Disfruta de los últimos estrenos en nuestras cómodas salas de cine con tecnología de última generación.
+                        </p>
+                        <a href="#" class="card-link">Ver Horarios</a>
+                    </div>
+                </article>
+
+                <!-- Bowling -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Pista de bolos colorida con bolas y pinos listos para jugar">
+                        <img src="imagenes/Entretenimiento/bowling.png" alt="Bowling">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bowling</h3>
+                        <p class="card-description">
+                            Reta a tus amigos a una partida emocionante en nuestras modernas pistas de bolos.
+                        </p>
+                        <a href="#" class="card-link">Reservar Spot</a>
+                    </div>
+                </article>
+
+                <!-- Zona Arcade -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Sala de arcade retro con máquinas de videojuegos clásicas iluminadas">
+                        <img src="imagenes/Entretenimiento/arcade.png" alt="Zona Arcade">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Zona Arcade</h3>
+                        <p class="card-description">
+                            Sumérgete en un mundo de videojuegos clásicos y modernos para todas las edades.
+                        </p>
+                        <a href="#" class="card-link">Ver Juegos</a>
+                    </div>
+                </article>
+
+                <!-- Parque Infantil -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Parque infantil interior brillante y seguro con toboganes y piscina de pelotas">
+                        <img src="imagenes/Entretenimiento/parque-infantil.png" alt="Parque Infantil">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Parque Infantil</h3>
+                        <p class="card-description">
+                            Un espacio seguro y divertido para que los más pequeños jueguen y se diviertan.
+                        </p>
+                        <a href="#" class="card-link">Más Información</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Espacios Culturales -->
+        <section class="section" aria-labelledby="culturales-title">
+            <h2 id="culturales-title" class="section-title">Espacios Culturales</h2>
+            
+            <div class="cards-grid">
+                <!-- Galería de Arte -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Galería de arte serena con pinturas abstractas en paredes blancas">
+                        <img src="imagenes/Entretenimiento/galeria-arte.png" alt="Galería de Arte">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Galería de Arte</h3>
+                        <p class="card-description">
+                            Explora exposiciones rotativas de artistas locales e internacionales reconocidos.
+                        </p>
+                        <a href="#" class="card-link">Ver Exposición Actual</a>
+                    </div>
+                </article>
+
+                <!-- Música en Vivo -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Músico tocando guitarra en un pequeño escenario con iluminación íntima">
+                        <img src="imagenes/Entretenimiento/musica-vivo.png" alt="Música en Vivo">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Música en Vivo</h3>
+                        <p class="card-description">
+                            Disfruta de conciertos y actuaciones en vivo cada fin de semana con diversos géneros musicales.
+                        </p>
+                        <a href="#" class="card-link">Ver Calendario</a>
+                    </div>
+                </article>
+
+                <!-- Eventos Comunitarios -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Personas reunidas para un taller comunitario en un espacio abierto y luminoso">
+                        <img src="imagenes/Entretenimiento/eventos-comunitarios.png" alt="Eventos Comunitarios">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Eventos Comunitarios</h3>
+                        <p class="card-description">
+                            Participa en talleres, mercados artesanales y celebraciones para toda la comunidad.
+                        </p>
+                        <a href="#" class="card-link">Próximos Eventos</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Próximos Eventos -->
+        <section class="section" id="proximos-eventos" aria-labelledby="eventos-title">
+            <h2 id="eventos-title" class="section-title">Próximos Eventos</h2>
+            
+            <div class="events-list">
+                <!-- Evento 1 -->
+                <article class="event-card">
+                    <div class="event-date">
+                        <time datetime="2024-07-25">
+                            <span class="event-day">25</span>
+                            <span class="event-month">NOV</span>
+                        </time>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">Concierto de Verano Acústico</h3>
+                        <p class="event-time">
+                            <time datetime="19:00">19:00</time> - <time datetime="21:00">21:00</time>
+                        </p>
+                        <p class="event-description">
+                            Una velada mágica con artistas locales en nuestra plaza central. Disfruta de buena música al aire libre con entrada gratuita.
+                        </p>
+                    </div>
+                    <a href="#" class="event-link" aria-label="Ver más detalles sobre el Concierto de Verano Acústico">
+                        Más detalles
+                    </a>
+                </article>
+
+                <!-- Evento 2 -->
+                <article class="event-card">
+                    <div class="event-date">
+                        <time datetime="2024-08-03">
+                            <span class="event-day">03</span>
+                            <span class="event-month">DIC</span>
+                        </time>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">Festival Gastronómico "Sabores del Mundo"</h3>
+                        <p class="event-time">
+                            <time datetime="12:00">12:00</time> - <time datetime="22:00">22:00</time>
+                        </p>
+                        <p class="event-description">
+                            Un viaje culinario con puestos de comida de diferentes países. Ideal para toda la familia con degustaciones y demostraciones en vivo.
+                        </p>
+                    </div>
+                    <a href="#" class="event-link" aria-label="Ver más detalles sobre el Festival Gastronómico Sabores del Mundo">
+                        Más detalles
+                    </a>
+                </article>
+
+                <!-- Evento 3 -->
+                <article class="event-card">
+                    <div class="event-date">
+                        <time datetime="2024-08-15">
+                            <span class="event-day">15</span>
+                            <span class="event-month">DIC</span>
+                        </time>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">Taller de Arte para Niños: Pintura Creativa</h3>
+                        <p class="event-time">
+                            <time datetime="15:00">15:00</time> - <time datetime="18:00">18:00</time>
+                        </p>
+                        <p class="event-description">
+                            Un taller divertido para que los más pequeños exploren su creatividad con pinceles y colores. Plazas limitadas, inscripción previa requerida.
+                        </p>
+                    </div>
+                    <a href="#" class="event-link" aria-label="Ver más detalles sobre el Taller de Arte para Niños">
+                        Más detalles
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>LOGO</h3>
+                <p><strong>Galería Ámbar</strong></p>
+                <p>El destino para una experiencia de compra inolvidable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="locales.html">Locales</a></p>
+                <p><a href="#">Gastronomía</a></p>
+                <p><a href="#">Ofertas</a></p>
+                <p><a href="ubicacion.html">Ubicación</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado: 9:00 – 22:00</p>
+                <p>Domingo: 10:00 – 21:00</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Av. Principal 123, Ciudad</p>
+                <p>info@galeamber.com</p>
+                <p>(123) 456 – 7890</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Galería Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
+        </div>
+
+    </footer>
+<script src="main.js"></script>
+
+</body>
+</html>
