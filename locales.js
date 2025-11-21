@@ -40,25 +40,48 @@ const searchBtn = document.getElementById("searchBtn");
 function filtrarPorNombre() {
     const texto = searchInput.value.toLowerCase().trim();
 
-    cards.forEach(card => {
-        const nombre = (card.dataset.name || "").toLowerCase();
+    if (texto === "") {
+        cards.forEach(card => card.style.display = "flex");
+        return;
+    }
 
-        if (nombre.includes(texto)) {
-            card.style.display = "flex"; 
-        } else {
-            card.style.display = "none";
-        }
+    const cardsArray = Array.from(cards);
+
+    const coincidencias = cardsArray.filter(card =>
+        (card.dataset.name || "").toLowerCase().includes(texto)
+    );
+
+    coincidencias.sort((a, b) => {
+        const nameA = a.dataset.name.toLowerCase();
+        const nameB = b.dataset.name.toLowerCase();
+
+        const startsA = nameA.startsWith(texto);
+        const startsB = nameB.startsWith(texto);
+
+        if (startsA && !startsB) return -1;
+        if (!startsA && startsB) return 1;
+
+        return nameA.localeCompare(nameB);
+    });
+
+    cards.forEach(card => card.style.display = "none");
+
+    const grid = document.getElementById("localesGrid");
+    coincidencias.forEach(card => {
+        card.style.display = "flex";
+        grid.appendChild(card);
     });
 }
 
 searchBtn.addEventListener("click", filtrarPorNombre);
-
 
 searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         filtrarPorNombre();
     }
 });
+
+searchInput.addEventListener("input", filtrarPorNombre);
 
 
 // ORDEN ALFABÉTICO
