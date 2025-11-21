@@ -6,30 +6,27 @@
     <title>Ubicación - Centro Comercial</title>
     <!-- Aquí vinculamos el archivo CSS separado -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesUbicacion.css">
     <!-- Importamos iconos para los botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Banner Superior -->
-    <div class="top-banner">
-        Banner de Anuncios
-    </div>
-
     <!-- Encabezado y Navegación -->
-    <header>
+    <header class="header">
         <div class="header-container">
-            <div class="logo">
-                Logo
-            </div>
-            <nav class="main-nav">
-                <a href="#">LOCALES</a>
-                <a href="#">PROMOCIONES</a>
-                <a href="#" class="active">NOVEDADES</a>
-                <a href="#">SERVICIOS</a>
-                <a href="#">HISTORIA</a>
-                <a href="#">UBICACIÓN</a>
+            <a href="#" class="logo">LOGO</a>
+
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="locales.html">Locales</a>
+                <a href="#">Novedades</a>
+                <a href="#">Gastronomía</a>
+                <a href="ubicacion.html">Ubicación</a>
+                <a href="#">Ofertas</a>
             </nav>
+
+            <button class="darkmode-btn">🌙</button>
         </div>
     </header>
 
@@ -99,11 +96,44 @@
 
     </main>
 
-    <!-- Botones flotantes (WhatsApp y Flecha arriba) -->
-    <div class="floating-buttons">
-        <button class="wpp-btn"><i class="fab fa-whatsapp"></i></button>
-        <button class="up-btn"><i class="fas fa-arrow-up"></i></button>
-    </div>
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>LOGO</h3>
+                <p><strong>Galería Ámbar</strong></p>
+                <p>El destino para una experiencia de compra inolvidable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="locales.html">Locales</a></p>
+                <p><a href="#">Gastronomía</a></p>
+                <p><a href="#">Ofertas</a></p>
+                <p><a href="ubicacion.html">Ubicación</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado: 9:00 – 22:00</p>
+                <p>Domingo: 10:00 – 21:00</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Av. Principal 123, Ciudad</p>
+                <p>info@galeamber.com</p>
+                <p>(123) 456 – 7890</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Galería Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
+        </div>
+
+    </footer>
 <script src="main.js"></script>
 
 </body>
