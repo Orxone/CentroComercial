@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="stylesEntretenimiento.css">
     <!-- Importamos iconos para los botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesChatbot.css">
 </head>
 <body>
+    
     <!-- Encabezado y Navegación -->
     <header class="header">
             
@@ -40,7 +42,7 @@
     <main class="container">
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
-                <h2 id="hero-title" class="hero-title">Entretenimiento</h2>
+                <h2 id="hero-title" class="hero-title">Entretenimiento y Novedades</h2>
                 <p class="hero-description">
                     Descubre un mundo de diversión y cultura con nuestros espacios recreativos y culturales, 
                     diseñados para todas las edades y gustos.
@@ -67,26 +69,14 @@
                         <p class="card-description">
                             Disfruta de los últimos estrenos en nuestras cómodas salas de cine con tecnología de última generación.
                         </p>
-                        <a href="#" class="card-link">Ver Horarios</a>
+                        <h3 class="card-subtitle">Horarios</h3>
+                        <p class="card-description">
+                            Lunes a Domingo: 10:00 – 23:00
+                        </p>
+                        <a href="https://www.cinemarkhoyts.com.ar/" target="_blank" class="card-link">Ver Películas</a>
                     </div>
                 </article>
 
-                <!-- Bowling -->
-                <article class="card">
-                    <div 
-                        class="card-image card-image-background" 
-                        role="img" 
-                        aria-label="Pista de bolos colorida con bolas y pinos listos para jugar">
-                        <img src="imagenes/Entretenimiento/bowling.png" alt="Bowling">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Bowling</h3>
-                        <p class="card-description">
-                            Reta a tus amigos a una partida emocionante en nuestras modernas pistas de bolos.
-                        </p>
-                        <a href="#" class="card-link">Reservar Spot</a>
-                    </div>
-                </article>
 
                 <!-- Zona Arcade -->
                 <article class="card">
@@ -99,26 +89,13 @@
                     <div class="card-content">
                         <h3 class="card-title">Zona Arcade</h3>
                         <p class="card-description">
-                            Sumérgete en un mundo de videojuegos clásicos y modernos para todas las edades.
+                            Sumergite en un mundo de videojuegos clásicos y modernos para todas las edades.
                         </p>
-                        <a href="#" class="card-link">Ver Juegos</a>
-                    </div>
-                </article>
-
-                <!-- Parque Infantil -->
-                <article class="card">
-                    <div 
-                        class="card-image card-image-background" 
-                        role="img" 
-                        aria-label="Parque infantil interior brillante y seguro con toboganes y piscina de pelotas">
-                        <img src="imagenes/Entretenimiento/parque-infantil.png" alt="Parque Infantil">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Parque Infantil</h3>
+                        <h3 class="card-subtitle">Horarios</h3>
                         <p class="card-description">
-                            Un espacio seguro y divertido para que los más pequeños jueguen y se diviertan.
+                            Lunes a Domingo: 10:00 – 22:00
                         </p>
-                        <a href="#" class="card-link">Más Información</a>
+                        <a href="https://www.neverland.com.ar/" target="_blank" class="card-link">Ver Juegos</a>
                     </div>
                 </article>
             </div>
@@ -140,26 +117,26 @@
                     <div class="card-content">
                         <h3 class="card-title">Galería de Arte</h3>
                         <p class="card-description">
-                            Explora exposiciones rotativas de artistas locales e internacionales reconocidos.
+                            Explora exposiciones rotativas de artistas locales.
                         </p>
-                        <a href="#" class="card-link">Ver Exposición Actual</a>
+                        <a href="#proximos-eventos" class="card-link">Ver Calendario</a>
                     </div>
                 </article>
 
-                <!-- Música en Vivo -->
+                <!-- Talleres infantiles -->
                 <article class="card">
                     <div 
                         class="card-image card-image-background" 
                         role="img" 
-                        aria-label="Músico tocando guitarra en un pequeño escenario con iluminación íntima">
-                        <img src="imagenes/Entretenimiento/musica-vivo.png" alt="Música en Vivo">
+                        aria-label="Niños pintando y creando arte en un taller colorido y animado">
+                        <img src="imagenes/Entretenimiento/talleres-infantiles.png" alt="Talleres Infantiles">
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Música en Vivo</h3>
+                        <h3 class="card-title">Talleres Infantiles</h3>
                         <p class="card-description">
-                            Disfruta de conciertos y actuaciones en vivo cada fin de semana con diversos géneros musicales.
+                            Disfruta de actividades creativas diseñadas para los más pequeños.
                         </p>
-                        <a href="#" class="card-link">Ver Calendario</a>
+                        <a href="#proximos-eventos" class="card-link">Ver Calendario</a>
                     </div>
                 </article>
 
@@ -174,9 +151,9 @@
                     <div class="card-content">
                         <h3 class="card-title">Eventos Comunitarios</h3>
                         <p class="card-description">
-                            Participa en talleres, mercados artesanales y celebraciones para toda la comunidad.
+                            Participa en talleres y celebraciones para toda la comunidad.
                         </p>
-                        <a href="#" class="card-link">Próximos Eventos</a>
+                        <a href="#proximos-eventos" class="card-link">Ver Calendario</a>
                     </div>
                 </article>
             </div>
@@ -196,17 +173,14 @@
                         </time>
                     </div>
                     <div class="event-info">
-                        <h3 class="event-title">Concierto de Verano Acústico</h3>
+                        <h3 class="event-title">Muestra de Arte Contemporáneo</h3>
                         <p class="event-time">
                             <time datetime="19:00">19:00</time> - <time datetime="21:00">21:00</time>
                         </p>
                         <p class="event-description">
-                            Una velada mágica con artistas locales en nuestra plaza central. Disfruta de buena música al aire libre con entrada gratuita.
+                            Una velada mágica con artistas locales que presentarán sus últimas obras en nuestra galería de arte. Ven a disfrutar de música en vivo y aperitivos. Ubicación: Galería de Arte (Planta Baja).
                         </p>
                     </div>
-                    <a href="#" class="event-link" aria-label="Ver más detalles sobre el Concierto de Verano Acústico">
-                        Más detalles
-                    </a>
                 </article>
 
                 <!-- Evento 2 -->
@@ -223,12 +197,9 @@
                             <time datetime="12:00">12:00</time> - <time datetime="22:00">22:00</time>
                         </p>
                         <p class="event-description">
-                            Un viaje culinario con puestos de comida de diferentes países. Ideal para toda la familia con degustaciones y demostraciones en vivo.
+                            Un viaje culinario con puestos de comida de diferentes países. Ideal para toda la familia con degustaciones y demostraciones en vivo. Ubicación: Patio de Comidas.
                         </p>
                     </div>
-                    <a href="#" class="event-link" aria-label="Ver más detalles sobre el Festival Gastronómico Sabores del Mundo">
-                        Más detalles
-                    </a>
                 </article>
 
                 <!-- Evento 3 -->
@@ -245,12 +216,9 @@
                             <time datetime="15:00">15:00</time> - <time datetime="18:00">18:00</time>
                         </p>
                         <p class="event-description">
-                            Un taller divertido para que los más pequeños exploren su creatividad con pinceles y colores. Plazas limitadas, inscripción previa requerida.
+                            Un taller divertido para que los más pequeños exploren su creatividad con pinceles y colores. Ubicación: Piso 1.
                         </p>
                     </div>
-                    <a href="#" class="event-link" aria-label="Ver más detalles sobre el Taller de Arte para Niños">
-                        Más detalles
-                    </a>
                 </article>
             </div>
         </section>
@@ -293,8 +261,9 @@
         </div>
 
     </footer>
-    
-<script src="main.js"></script>
 
+
+    <script src="chatbot.js"></script>
+    
 </body>
 </html>

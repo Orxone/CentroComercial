@@ -218,6 +218,13 @@
     margin-bottom: var(--spacing-xs);
 }
 
+.card-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
 .card-description {
     font-size: 0.95rem;
     color: var(--color-text-secondary);
@@ -328,14 +335,17 @@
     background-color: var(--color-accent);
     color: var(--color-white);
     text-decoration: none;
+    border: none;
     border-radius: var(--radius-sm);
     font-weight: 600;
     font-size: 0.9rem;
+    font-family: inherit;
     transition: var(--transition);
     white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .event-link:hover,
@@ -344,6 +354,7 @@
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
+
 
 
 /* ========== ANIMACIONES ========== */
@@ -458,3 +469,5 @@
         border: 3px solid currentColor;
     }
 }
+
+
