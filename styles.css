@@ -113,7 +113,7 @@ header .header-container .logo img{
 }
 
 .nav a:hover {
-    opacity: 0.7;
+    color: #b87b7b;
     text-decoration: underline;
 }
 
@@ -167,7 +167,7 @@ header .header-container .logo img{
 }
 
 .footer-section a:hover {
-    color: #9E7676;
+    color: #b87b7b;
     text-decoration: underline;
 }
 
