@@ -8,6 +8,30 @@
     font-family: Verdana, Tahoma, sans-serif; /*Tipografía para cambiar*/
 }
 
+:root{
+    --bg-body: white; /*Fondo*/
+    --header-bg: #4a2f2f; /*Fondo del header*/
+    --bg-card: rgba(89, 69, 69, 0.05); /*Fondo de cards y contenedores*/
+    --hf-text: white; /*Texto de header y footer*/
+    --main-text: #000000; /*Color de títulos*/
+    --accent: #9E7676; /*Color para acentuar*/
+    --border: #b87b7b; /*Color para los bordes*/
+}
+
+/*COLORES DEL MODO OSCURO*/
+
+.dark-mode{
+    --bg-body: #1a1212;
+    --header-bg: #3b2525;
+    --bg-card: #291e1e;
+    --hf-text: #1a1212;
+    --main-text: #e6dcdc;
+    --accent: #d69e9e;
+    --border: #5b3c3c;
+}
+
+/*Que se cambie la imagen por los iconos blancos*/
+
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
@@ -22,7 +46,6 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     padding-top: 120px;
 }
 
@@ -34,14 +57,15 @@ img{
 
 main {
     flex: 1; 
+    background-color: var(--bg-body);
 }
 
 /*HEADER*/
 .header {
     width: 100%;
-    background: #5b3c3c;
+    background: var(--header-bg);
     padding: 12px 0;
-    border-bottom: 2px solid #4a2f2f;
+    border-bottom: 1px solid #FFF8EA;
     /*Para que se mueva junto a la pantalla*/
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -50,12 +74,12 @@ main {
 
 header .banner{
     text-align: center;
-    color: white;
+    color: #FFF8EA;
     font-size: 0.7rem;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFF8EA;
 }
 
-/*Barra de navegación*/
+/*BARRA DE NAVEGACIÓN*/
 
 .header .header-container {
     width: 95%;
@@ -65,7 +89,6 @@ header .banner{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
 }
 
 header .header-container .logo img{
@@ -79,7 +102,7 @@ header .header-container .logo img{
 }
 
 .nav a {
-    color: white;
+    color: #FFF8EA;
     text-decoration: none;
     font-size: 0.95rem;
     transition: 0.3s;
@@ -92,23 +115,20 @@ header .header-container .logo img{
 
 .darkmode-btn {
     background: none;
-    border: none;
-    color: white;
-    font-size: 1.4rem;
     cursor: pointer;
+    width: 4%;
+    height: auto;
+    border-radius: 50%;
 }
 
 .darkmode-btn:hover {
-    background-color: white;
-    opacity: 0.8;
-    border-radius: 60%;
-    transform: scale(1.1); 
+    padding: 5px;
+    border: 1px solid #FFF8EA;
 }
 
 /*SECCIÓN INTRO*/
 
 .intro{
-    background-color: white;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -123,7 +143,7 @@ header .header-container .logo img{
     padding: 5rem;
     padding-left: 5rem;
     padding-right: 5rem;
-    color: white;
+    color: var(--hf-text);
 }
 
 .intro .container-intro h1{
@@ -135,8 +155,8 @@ header .header-container .logo img{
 }
 
 .intro .container-intro a{
-    background-color: white;
-    color: black;
+    background-color: var(--bg-body);
+    color: var(--main-text);
     padding: 1.5rem;
     padding-top: 0.7rem; 
     padding-bottom: 0.7rem;
@@ -157,6 +177,7 @@ header .header-container .logo img{
     border: transparent;
     border-bottom: 2px solid #b87b7b;
     border-style: dashed;
+    color: var(--main-text);
 }
 
 .description .desc{
@@ -182,6 +203,7 @@ header .header-container .logo img{
     height: auto;
     text-align: center;
     justify-self: center;
+    background-color: var(--bg-card);
 }
 
 .servicios .card img{
@@ -193,10 +215,12 @@ header .header-container .logo img{
     font-weight: 600;
     font-size: 1.5rem;
     padding-top: 10px;  
+    color: #594545;
 }
 
 .servicios .card .card-text{
     font-size: 1rem;
+    color: #594545;
 }
 
 /*Cards con los servicios*/
@@ -216,14 +240,16 @@ header .header-container .logo img{
 
 .servicios .card .card-body{
     font-size: 0.8rem;
+    color: var(--main-text);
 }
 
 .servicios .card .card-body .card-title{
     font-weight: 600;
     font-size: 1rem;
+    color: var(--main-text);
 }
 
-/*Botones Flotantes*/
+/*Botones Flotantes
 .floating-buttons {
     position: fixed;
     bottom: 30px;
@@ -231,12 +257,12 @@ header .header-container .logo img{
     display: flex;
     gap: 10px;
     z-index: 100;
-}
+}*/
 
 /*FOOTER*/
 .footer {
-    background: #5b3c3c;
-    color: #e6dcdc;
+    background: var(--header-bg);
+    color:#FFF8EA;
     padding: 50px 0 20px 0;
     margin-top: 40px;
 }
@@ -262,13 +288,13 @@ header .header-container .logo img{
 }
 
 .footer-section a {
-    color: #e6dcdc;
+    color: #FFF8EA;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .footer-section a:hover {
-    color: #ffffff;
+    color: var(--accent);
     text-decoration: underline;
 }
 
@@ -276,8 +302,8 @@ header .header-container .logo img{
     margin-top: 40px;
     text-align: center;
     font-size: 0.85rem;
-    color: #e6dcdc;
-    border-top: 1px solid white;
+    color: #FFF8EA;
+    border-top: 1px solid #FFF8EA;
     padding-top: 20px;
 }
 
