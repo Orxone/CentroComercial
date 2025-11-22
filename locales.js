@@ -1,8 +1,24 @@
+const params = new URLSearchParams(window.location.search);
+let filtroURL = params.get("filter");
+
 const filterBtn = document.querySelector(".filter-btn");
 const dropdown = document.getElementById("filterDropdown");
 const cards = document.querySelectorAll(".local-card");
 
-// Abrir / cerrar dropdown
+function aplicarFiltro(category) {
+    cards.forEach(card => {
+        if (category === "todos" || card.dataset.category === category) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+if (filtroURL) {
+    aplicarFiltro(filtroURL);
+}
+
 filterBtn.addEventListener("click", () => {
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
@@ -24,7 +40,6 @@ dropdown.querySelectorAll("p").forEach(option => {
     });
 });
 
-// Cerrar dropdown si clicás afuera
 document.addEventListener("click", (e) => {
     if (!e.target.closest(".locales-header")) {
         dropdown.style.display = "none";
@@ -100,9 +115,9 @@ sortBtn.addEventListener("click", () => {
         const nameB = b.dataset.name.toLowerCase();
 
         if (ascendente) {
-            return nameA.localeCompare(nameB);  // A → Z
+            return nameA.localeCompare(nameB);
         } else {
-            return nameB.localeCompare(nameA);  // Z → A
+            return nameB.localeCompare(nameA); 
         }
     });
 

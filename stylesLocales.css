@@ -1,41 +1,102 @@
-/* Fondo general */
-main{
-    background-color: #f7f7f7;
+:root {
+    --color-bg-light: #FFF8EA;
+    --color-accent: #9E7676;
+    --color-text-secondary: #815B5B;
+    --color-primary: #594545;
+    --color-bg-dark: #1a1818;
+    --color-white: #ffffff;
+    --color-ligth: #d7c6c6;
+    --color-shadow: rgba(0,0,0,0.15);
+    --color-shadow-strong: rgba(0,0,0,0.25);
+    /* Bordes */
+    --border-width: 2px;
+    --border-radius-sm: 10px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 20px;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Sombras */
+    --shadow-soft: 0 4px 10px rgba(0,0,0,0.15);
+    --shadow-medium: 0 6px 20px rgba(0,0,0,0.18);
+    --shadow-strong: 0 10px 25px rgba(0,0,0,0.25);
+
+    /* Transiciones */
+    --transition: all 0.3s ease;
 }
 
 /* SECCIÓN LOCALES */
-.locales-section {
-    width: 100%;
-    padding: 40px 20px;
+.locales-title {
+    width: 80%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 80px 40px;
+ 
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
     text-align: center;
+
+    background-image: url("imagenes/LocalesLogos/fondo-locales.png");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.locales-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: #5a3e3e;
-    font-weight: 800;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
-    letter-spacing: 1px;
-    padding: 40px;
+.locales-title h2 {
+    color: var(--color-white);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.locales-title p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    color: var(--color-white);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.locales-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-left: 5px;
+    margin-bottom: 35px;
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
 }
 
 /* HEADER LOCALES (Buscador + Filtros + Orden)*/
 .locales-header {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto 20px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
 }
-
 .right-controls {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 
 /* (Search) */
 .search-container {
@@ -43,65 +104,14 @@ main{
     align-items: center;
     gap: 6px;
 }
-
 #searchInput {
     padding: 8px 14px;
-    border-radius: 20px;
-    border: 1px solid #b69d9d;
+    border-radius: 15px;
+    border: 1px solid var(--color-accent);
     outline: none;
     background-color: #f2eded;
-    color: #5b4b4b;
+    color: var(--color-accent);
     width: 200px;
-}
-
-#searchLocal {
-    padding: 8px 12px;
-    border: 2px solid #d6c8c8;
-    border-radius: 10px;
-    width: 230px;
-    font-size: 0.9rem;
-    outline: none;
-}
-
-#searchLocal:focus {
-    border-color: #5b3c3c;
-}
-
-.search-btn {
-    border: none;
-    background: #d7c6c6;
-    padding: 6px 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-}
-
-.search-btn img {
-    width: 18px;
-    height: 18px;
-}
-
-.search-btn:hover {
-    background: #c4b5b5;
-}
-
-/* (Sort) */
-.sort-btn {
-    background: #5b3c3c;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: 0.2s;
-}
-
-.sort-btn:hover {
-    opacity: 0.8;
 }
 
 /* (filter dropdown) */
@@ -109,8 +119,8 @@ main{
     position: absolute;
     top: 45px;
     right: 0;
-    background: white;
-    border: 2px solid #d6c8c8;
+    background: var(--color-white);
+    border: 2px solid var(--color-accent);
     border-radius: 10px;
     padding: 10px 0;
     width: 180px;
@@ -118,30 +128,49 @@ main{
     display: none;
     z-index: 999;
 }
-
 .filter-dropdown p {
     margin: 0;
     padding: 10px 15px;
     cursor: pointer;
     transition: 0.2s;
 }
+.filter-dropdown p:hover {
+    background: var(--color-ligth);
+}
 
+/* botones */
+.search-btn {
+    border: none;
+    background: var(--color-ligth);
+    padding: 6px 10px;
+    border-radius: 25%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+.search-btn img {
+    width: 18px;
+    height: 18px;
+}
+.search-btn:hover, 
+.sort-btn:hover {
+    color: var(--color-bg-light);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.sort-btn,
 .filter-btn {
-    background: #5b3c3c;
-    color: white;
+    background: var(--color-accent);
+    color: var(--color-white);
     border: none;
     padding: 8px 15px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 0.9rem;
-}
-
-.filter-btn:hover {
-    opacity: 0.8;
-}
-
-.filter-dropdown p:hover {
-    background: #f2e8e8;
+    transition: 0.2s;
 }
 
 /* GRID DE LOCALES  */
@@ -156,7 +185,7 @@ main{
     padding: 20px;
     width: 95%;
 
-    background-color: #693d3d10;
+    background-color: rgba(89, 69, 69, 0.05);
     border-radius: 20px;
 }
 
@@ -172,11 +201,6 @@ main{
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.local-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    z-index: 5; 
 }
 
 /* logo */
@@ -196,6 +220,15 @@ main{
 }
 
 /* Hover */
+.local-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 5; 
+    border: 2px solid var(--color-accent);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(89, 69, 69, 0.15);
+}
+
 .hover-info {
     position: absolute;
     top: 50%;
@@ -203,25 +236,25 @@ main{
     transform: translate(-50%, -50%);
     text-align: center;
     opacity: 0;
-    color: #fff;
+    color: var(--color-white);
     z-index: 3;
     transition: opacity 0.3s ease;
 }
 
-.local-card:hover .logo-container::before {
+.local-card:hover 
+.logo-container::before {
     background: rgba(0,0,0,0.55);
 }
 
-.local-card:hover .hover-info {
+.local-card:hover 
+.hover-info {
     opacity: 1;
 }
-
 .hover-info h3 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 6px;
 }
-
 .hover-info p {
     margin-bottom: 8px;
 }
@@ -229,15 +262,13 @@ main{
 /* Boton visitar sitio */
 .perfil-btn {
     width: 100%;
-    background: #685050;
+    background: var(--color-accent);
     color: #fff;
     text-align: center;
     padding: 12px 0;
     font-weight: bold;
-    border-radius: 0 0 16px 16px;
     font-size: 1rem;
-    transition: 
-    background 0.25s ease,
+    transition: background 0.25s ease,
     transform 0.25s ease,
     letter-spacing 0.25s ease;
 }
@@ -249,7 +280,7 @@ main{
 /* SEPARADOR */
 .separador {
     border: none;
-    border-top: 4px solid #503030; 
+    border-top: 4px solid var(--color-accent); 
     margin: 40px 0;
     width: 100%;
 }
@@ -259,18 +290,16 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .mapa-section {
-    text-align: center;
     padding: 20px 0 60px 0;
-}
-
-.mapa-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #5a3e3e;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .mapa-img {
@@ -283,33 +312,32 @@ main{
 }
 .mapa-img:hover {
     transform: scale(1.05);
+    border: 2px solid var(--color-accent);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(89, 69, 69, 0.15);
 }
-
 .mapa-img.fade-out {
     opacity: 0;
     transform: scale(0.98);
 }
-
 .mapa-img.fade-in {
     opacity: 1;
     transform: scale(1);
 }
 
 .map-btn {
-    background: #5b3c3c;
-    color: white;
-    border: none;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: 2px solid var(--color-accent);;
     padding: 8px 15px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 0.9rem;
     transition: 0.2s;
 }
-
 .map-btn:hover {
     opacity: 0.8;
 }
-
 .mapa-buttons {
     margin-top: 20px;
     padding: 5px;
@@ -318,17 +346,17 @@ main{
     border-radius: 10px;
     gap: 15px;
 }
-
 .mapa-btn.active {
-    background: #d6b3b3;
-    padding: 5px;
-    color: #4d2d2d;
-    font-weight: bold;
-    border: 2px solid #5b3c3c;
-    border-radius: 15px;
+    color: var(--color-bg-light);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    background: var(--color-accent);
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
 }
-
-
 
 /* Responsive */
 @media (max-width: 800px) {
