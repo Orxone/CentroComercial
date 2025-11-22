@@ -5,7 +5,7 @@
     border: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: Verdana, Tahoma, sans-serif; /*Tipografía para cambiar*/
+    font-family:'Playfair Display', 'Lato';
 }
 
 :root{
@@ -63,6 +63,18 @@ main {
     flex: 1; 
     background-color: var(--bg-body);
 }
+
+/*Tipografía para los títulos*/
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/*Tipografía para el resto de textos*/
+body, p, span, li, button, a {
+    font-family: 'Lato', sans-serif;
+} 
 
 /*HEADER*/
 .header {

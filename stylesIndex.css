@@ -11,7 +11,7 @@
 }
 
 .intro .container-intro{
-    background: rgba(114, 91, 91, 0.7);
+    background: rgba(114, 91, 91, 0.9);
     padding: 5rem;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -23,6 +23,7 @@
 
 .intro .container-intro h1{
     font-size: 5rem;
+    font-weight: 700;
 }
 
 .intro .container-intro p{
@@ -36,7 +37,6 @@
     padding-top: 0.7rem; 
     padding-bottom: 0.7rem;
     font-size: 2rem;
-    font-family: sans-serif;
     margin-top: 2rem;
     text-decoration: none;
     border: 3px solid var(--separador);
@@ -65,7 +65,7 @@
 .description .desc h2{
     padding: 1.5rem;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 650;
 }
 
 .description .desc p{
@@ -91,7 +91,7 @@
 }
 
 .servicios .card h5{
-    font-weight: 600;
+    font-weight: 550;
     font-size: 1.6rem;
     padding-top: 10px;  
     color: #594545;
@@ -132,7 +132,7 @@
 
 /*El título*/
 .servicios .card .card-body .card-title{
-    font-weight: 600;
+    font-weight: 650;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: var(--card-text);
@@ -142,4 +142,75 @@
 .servicios .col .card .card-text {
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+/*MEDIA QUERY*/
+@media (max-width:991px) {
+    html{
+        font-size: 80%;
+    }
+}
+
+@media (max-width:768px) {
+    html{
+        font-size: 70%;
+    }
+
+    .main{
+        min-height: 90vh;
+    }
+
+    .intro{
+        min-height: 62vh;
+        background-position: center top;
+    }
+}
+
+@media (max-width: 600px){
+    html{
+        font-size: 65%;
+    }
+
+    .main{
+        min-height: 85vh;
+    }
+
+    /*Para ajustar la caja transparente detrás de la letra*/
+    .intro .container-intro{
+        padding: 2rem 1rem;
+        width: 90%;
+        max-width: 100%;
+    }
+
+    /*Título del hero*/
+    .intro .container-intro h1{
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    /*Subtítulo del hero*/
+    .intro .container-intro p{
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /*Botón del hero*/
+    .intro .container-intro a{
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        display: inline-block;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .main{
+        min-height: 80vh;
+    }
+
+    .intro{
+        min-height: 40vh;
+    }
 }
