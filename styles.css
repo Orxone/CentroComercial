@@ -122,13 +122,27 @@ header .header-container .logo img{
 .darkmode-btn {
     background: none;
     cursor: pointer;
-    width: 3%;
+    width: 40px;
     height: auto;
     border-radius: 50%;
 }
 
 .darkmode-btn:hover {
     padding: 5px;
+    border: 1px solid #FFF8EA;
+}
+
+/*MENÚ HAMBURGUESA*/
+
+#burger-btn {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    display: none; /*Oculto hasta que se active cuando el tamaño de la pantalla cambie*/
+    margin-right: 1.5rem;
+}
+
+#burger-btn:hover {
     border: 1px solid #FFF8EA;
 }
 
@@ -186,10 +200,52 @@ header .header-container .logo img{
 
 /*MEDIA QUERY*/
 
-@media (max-width: 600px) {
-    .nav {
-        display: none;
+@media (max-width:991px) {
+    #burger-btn {
+        display: block; /*Muestra el menú hamburguesa*/
     }
+
+    /*Se transforma en menú desplegable*/
+    header .header-container .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--header-bg);
+        flex-direction: column; /*Para que los enlances esten uno abajo del otro*/
+        align-items: center;
+        display: none;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 2px solid var(--border);
+    }
+
+    /*Enlances cuando se activa el menú hamburguesa*/
+    header .header-container .nav a {
+        display: block;
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    header .header-container .nav a:hover, a:active {
+        color: #b87b7b;
+        text-decoration: underline;
+    }
+
+    header .header-container .icons {
+        display: flex;
+        align-items: center;
+    }
+
+    header .header-container .nav.active {
+        display: flex; /*Abre el menú cuando se hace click*/
+    }
+}
+
+@media (max-width: 600px) {
 
     .footer-container {
         grid-template-columns: repeat(1, 1fr);

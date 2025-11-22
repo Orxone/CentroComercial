@@ -18,10 +18,9 @@
         </div>
         
         <div class="header-container">
-            
             <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
-            
-            <nav class="nav">
+
+            <nav class="nav" id="nav-menu">
                 <a href="index.html">Inicio</a>
                 <a href="#">Servicios</a>
                 <a href="locales.html">Locales</a>
@@ -31,17 +30,19 @@
                 <a href="#">Ofertas</a>
             </nav>
 
-            <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+            <div class="icons">
+                <div id="burger-btn"><img src="imagenes/Iconos/IMenu.png" alt="MenuBtn"></div>
+                <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="intro">
+        <section class="intro"> <!--Hero con título y botón--> 
             <div class="container-intro">
                 <h1>Galería Ambar</h1>
                 <p>Encontrá tu local favorito</p>
-                <!--Botón de buscar locales--> 
-                <a href="locales.html">Nuestros locales</a>
+                <a href="locales.html">Nuestros locales</a> <!--Botón de buscar locales--> 
             </div>
         </section>
 
@@ -119,12 +120,13 @@
     <footer class="footer">
 
         <div class="footer-container">
-
+            <!--Logo y slogan--> 
             <div class="footer-section">
                 <img src="imagenes/Iconos/Logo.png" alt="Logo">
                 <p>El destino para una experiencia de compra inolvidable.</p>
             </div>
 
+            <!--Links de navegación--> 
             <div class="footer-section">
                 <h3>Navegación</h3>
                 <p><a href="index.html">Inicio</a></p>
@@ -134,12 +136,14 @@
                 <p><a href="ubicacion.html">Ubicación</a></p>
             </div>
 
+            <!--Horarios--> 
             <div class="footer-section">
                 <h3>Horarios</h3>
-                <p>Lunes a Sábado: 9:00 – 22:00</p>
-                <p>Domingo: 10:00 – 21:00</p>
+                <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
+                <p>Domingo: 10:00 – 21:00 hrs</p>
             </div>
 
+            <!--Contacto--> 
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <p>Av. Principal 123, Ciudad</p>
@@ -147,15 +151,16 @@
                 <p>(123) 456 – 7890</p>
             </div>
         </div>
-
+        
+        <!--Copyright--> 
         <div class="footer-bottom">
             <p>2025 Galería Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
         </div>
 
     </footer>
 
-    <script src="darkmode.js"></script>
-    <script src="chatbot.js"></script>
+    <script src="global.js"></script> <!--Script para el modo oscuro--> 
+    <script src="chatbot.js"></script> <!--Script para el chatbot--> 
     
 </body>
 </html>

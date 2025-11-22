@@ -7,6 +7,7 @@
     <!-- Aquí vinculamos el archivo CSS separado -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stylesUbicacion.css">
+    <link rel="stylesheet" href="stylesChatbot.css">  <!--Link para el css del chatbot-->
     <!-- Importamos iconos para los botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,10 +20,9 @@
         </div>
         
         <div class="header-container">
-            
             <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
-            
-            <nav class="nav">
+
+            <nav class="nav" id="nav-menu">
                 <a href="index.html">Inicio</a>
                 <a href="#">Servicios</a>
                 <a href="locales.html">Locales</a>
@@ -32,9 +32,13 @@
                 <a href="#">Ofertas</a>
             </nav>
 
-            <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+            <div class="icons">
+                <div id="burger-btn"><img src="imagenes/Iconos/IMenu.png" alt="MenuBtn"></div>
+                <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+            </div>
         </div>
     </header>
+    
     <!-- Contenido Principal -->
     <main class="container">
         
@@ -121,8 +125,8 @@
 
             <div class="footer-section">
                 <h3>Horarios</h3>
-                <p>Lunes a Sábado: 9:00 – 22:00</p>
-                <p>Domingo: 10:00 – 21:00</p>
+                <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
+                <p>Domingo: 10:00 – 21:00 hrs</p>
             </div>
 
             <div class="footer-section">
@@ -139,8 +143,9 @@
 
     </footer>
     
-    <script src="darkmode.js"></script>
+    <script src="global.js"></script>
     <script src="mapa.js"></script>
+    <script src="chatbot.js"></script> <!--Script para el chatbot--> 
 
 </body>
 </html>
