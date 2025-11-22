@@ -1,0 +1,130 @@
+/*SECCIÓN INTRO*/
+
+.intro{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(imagenes/Hero.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.intro .container-intro{
+    background: rgba(114, 91, 91, 0.7);
+    padding: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    color: var(--hf-text);
+}
+
+.intro .container-intro h1{
+    font-size: 5rem;
+}
+
+.intro .container-intro p{
+    font-size: 1.8rem;
+}
+
+.intro .container-intro a{
+    background-color: var(--bg-body);
+    color: var(--main-text);
+    padding: 1.5rem;
+    padding-top: 0.7rem; 
+    padding-bottom: 0.7rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin-top: 2rem;
+    text-decoration: none;
+    border: 3px solid var(--separador);
+}
+
+.intro .container-intro a:hover{
+    background-color: var(--separador);
+}
+
+/*SECCIÓN DE DESCRIPCIÓN*/
+
+.description{
+    border: transparent;
+    border-bottom: 2px solid var(--separador);
+    border-style: dashed;
+    color: var(--main-text);
+    margin: 0 auto;
+    width: 90%; /*Para que no pegue a los bordes en celulares*/
+}
+
+.description .desc{
+    text-align: center;
+    padding: 2rem;
+}
+
+.description .desc h2{
+    padding: 1.5rem;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.description .desc p{
+    font-size: 15px;
+}
+
+/*SECCIÓN DE SERVICIOS*/
+
+.servicios{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.servicios > .card { /*(>) para que solo afecte a la card suelta*/
+    margin: 1.5rem auto; /*Centra la card horizontalmente automáticamente*/
+    width: 50rem;
+    max-width: 90%; /*Para celular*/
+}
+
+.servicios .card{
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+}
+
+.servicios .card img{
+    height: 150px;
+    width: auto;
+}
+
+.servicios .card h5{
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-top: 10px;  
+    color: #594545;
+    text-align: center;
+}
+
+.servicios .card .card-text{
+    font-size: 1rem;
+    color: var(--card-text);
+}
+
+/*Cards con los servicios*/
+
+.servicios .col .card{
+    margin: 0; /*Deja que la clase g-4 del HTML maneje el espacio*/
+    width: 100%;
+    height: 100%;
+}
+
+.servicios .col .card img{
+    width: 50px;
+    height: 50px;
+    align-self: center;
+}
+
+.servicios .card .card-body{
+    font-size: 0.8rem;
+}
+
+.servicios .card .card-body .card-title{
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--card-text);
+}
