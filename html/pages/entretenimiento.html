@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entretenimiento - Centro Comercial</title>
     <!-- Aquí vinculamos el archivo CSS separado -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="stylesEntretenimiento.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/stylesEntretenimiento.css">
     <!-- Importamos iconos para los botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="stylesChatbot.css">
@@ -24,16 +24,16 @@
         </div>
         
         <div class="header-container">
-            <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
+            <a href="/index.html" class="logo"><img src="/img/Iconos/Logo.png" alt="Logo"></a>
 
             <nav class="nav" id="nav-menu">
-                <a href="index.html">Inicio</a>
+                <a href="/index.html">Inicio</a>
                 <a href="#">Servicios</a>
-                <a href="locales.html">Locales</a>
-                <a href="entretenimiento.html">Novedades</a>
+                <a href="/html/pages/locales.html">Locales</a>
+                <a href="/html/pages/entretenimiento.html">Novedades</a>
                 <a href="#">Gastronomía</a>
-                <a href="ubicacion.html">Ubicación</a>
-                <a href="#">Ofertas</a>
+                <a href="/html/pages/ubicacion.html">Ubicación</a>
+                <a href="/html/pages/ofertas.html">Ofertas</a>
             </nav>
 
             <div class="icons">
@@ -67,7 +67,7 @@
                         class="card-image card-image-background" 
                         role="img" 
                         aria-label="Sala de cine moderna con asientos rojos cómodos y pantalla grande">
-                        <img src="imagenes/Entretenimiento/cine.png" alt="Cine">
+                        <img src="/img/Entretenimiento/cine.png" alt="Cine">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Cine</h3>
@@ -89,7 +89,7 @@
                         class="card-image card-image-background" 
                         role="img" 
                         aria-label="Sala de arcade retro con máquinas de videojuegos clásicas iluminadas">
-                        <img src="imagenes/Entretenimiento/arcade.png" alt="Zona Arcade">
+                        <img src="/img/Entretenimiento/arcade.png" alt="Zona Arcade">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Zona Arcade</h3>
@@ -117,7 +117,7 @@
                         class="card-image card-image-background" 
                         role="img" 
                         aria-label="Galería de arte serena con pinturas abstractas en paredes blancas">
-                        <img src="imagenes/Entretenimiento/galeria-arte.png" alt="Galería de Arte">
+                        <img src="/img/Entretenimiento/galeria-arte.png" alt="Galería de Arte">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Galería de Arte</h3>
@@ -134,7 +134,7 @@
                         class="card-image card-image-background" 
                         role="img" 
                         aria-label="Niños pintando y creando arte en un taller colorido y animado">
-                        <img src="imagenes/Entretenimiento/talleres-infantiles.png" alt="Talleres Infantiles">
+                        <img src="/img/Entretenimiento/talleres-infantiles.png" alt="Talleres Infantiles">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Talleres Infantiles</h3>
@@ -151,7 +151,7 @@
                         class="card-image card-image-background" 
                         role="img" 
                         aria-label="Personas reunidas para un taller comunitario en un espacio abierto y luminoso">
-                        <img src="imagenes/Entretenimiento/eventos-comunitarios.png" alt="Eventos Comunitarios">
+                        <img src="/img/Entretenimiento/eventos-comunitarios.png" alt="Eventos Comunitarios">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Eventos Comunitarios</h3>
@@ -229,46 +229,10 @@
         </section>
     </main>
 
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-section">
-                <img src="imagenes/Iconos/Logo.png" alt="Logo">
-                <p>El destino para una experiencia de compra inolvidable.</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Navegación</h3>
-                <p><a href="index.html">Inicio</a></p>
-                <p><a href="locales.html">Locales</a></p>
-                <p><a href="#">Gastronomía</a></p>
-                <p><a href="#">Ofertas</a></p>
-                <p><a href="ubicacion.html">Ubicación</a></p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Horarios</h3>
-                <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
-                <p>Domingo: 10:00 – 21:00 hrs</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p>Av. Principal 123, Ciudad</p>
-                <p>info@galeamber.com</p>
-                <p>(123) 456 – 7890</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>2025 Galería Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
-        </div>
-
-    </footer>
-
-    <script src="global.js"></script>
-    <script src="chatbot.js"></script>
+    <div id="site-footer"></div>
     
+<script src="/js/load-footer.js"></script>
+<script src="/js/main.js"></script>
+
 </body>
 </html>
