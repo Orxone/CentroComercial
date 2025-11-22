@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubicación - Centro Comercial</title>
-    <!-- Aquí vinculamos el archivo CSS separado -->
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stylesUbicacion.css">
-    <link rel="stylesheet" href="stylesChatbot.css">  <!--Link para el css del chatbot-->
-    <!-- Importamos iconos para los botones (FontAwesome) -->
+    <link rel="stylesheet" href="stylesChatbot.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Encabezado y Navegación -->
     <header class="header">
             
         <div class="banner">
@@ -27,7 +25,7 @@
                 <a href="#">Servicios</a>
                 <a href="locales.html">Locales</a>
                 <a href="entretenimiento.html">Novedades</a>
-                <a href="#">Gastronomía</a>
+                <a href="locales.html?filter=gastronomía">Gastronomía</a>
                 <a href="ubicacion.html">Ubicación</a>
                 <a href="#">Ofertas</a>
             </nav>
@@ -39,30 +37,23 @@
         </div>
     </header>
     
-    <!-- Contenido Principal -->
     <main class="container">
         
-        <!-- Sección Izquierda: Mapa -->
         <section class="map-section">
             <div class="map-frame">
-                <!-- IFRAME DE GOOGLE MAPS -->
-                <!-- Ve a Google Maps -> Compartir -> Insertar mapa y pega el código aquí -->
+                
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016887889453!2d-58.38157008477038!3d-34.60373446500603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses!2sar!4v1623184567890!5m2!1ses!2sar" 
-                    width="100%" 
+                    src="https://maps.google.com/maps?q=-34.59330900518771,-58.415461589345924&hl=es&z=15&output=embed"
                     height="100%" 
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy">
                 </iframe>
-                <!-- Fin del iframe -->
             </div>
         </section>
 
-        <!-- Sección Derecha: Información -->
         <aside class="info-section">
             
-            <!-- Botones de transporte -->
             <div class="transport-options">
                 <button class="transport-btn" onclick="irAlMapa('driving')">
                     <i class="fas fa-car"></i> Auto
@@ -145,7 +136,7 @@
     
     <script src="global.js"></script>
     <script src="mapa.js"></script>
-    <script src="chatbot.js"></script> <!--Script para el chatbot--> 
+    <script src="chatbot.js"></script> 
 
 </body>
 </html>

@@ -1,17 +1,14 @@
 // --- CONFIGURACIÓN ---
-// Pon aquí las coordenadas reales de tu shopping (Latitud, Longitud)
-const COORDENADAS_SHOPPING = "-34.603722,-58.381592"; 
+const COORDENADAS_SHOPPING = "-34.59221382917805, -58.417339135530284"; 
 
 // Horarios (Formato 24hs)
-const HORA_APERTURA = 9; // 09:00 AM
-const HORA_CIERRE = 22;   // 10:00 PM
+const HORA_APERTURA = 9; 
+const HORA_CIERRE = 22;   
 
 
 // --- FUNCIÓN 1: ABRIR MAPA ---
 function irAlMapa(modoTransporte) 
 {
-    // Google Maps URL Scheme
-    // No ponemos 'origin' para que use la ubicación actual del usuario
     const url = `https://www.google.com/maps/dir/?api=1&destination=${COORDENADAS_SHOPPING}&travelmode=${modoTransporte}`;
     window.open(url, '_blank');
 }
@@ -20,14 +17,10 @@ function irAlMapa(modoTransporte)
 // --- FUNCIÓN 2: CALCULAR ESTADO (ABIERTO/CERRADO) ---
 function actualizarHorario() {
     const ahora = new Date();
-    const horaActual = ahora.getHours(); // Obtiene la hora actual (0-23) del usuario
-    
-    // Buscamos el elemento en el HTML por su ID
+    const horaActual = ahora.getHours(); 
     const elementoTexto = document.getElementById('estado-shopping');
 
     if (!elementoTexto) return;
-
-    // Lógica de comparación
     if (horaActual >= HORA_APERTURA && horaActual < HORA_CIERRE) {
         // ESTÁ ABIERTO
         elementoTexto.innerHTML = `
@@ -41,5 +34,4 @@ function actualizarHorario() {
     }
 }
 
-// Ejecutamos la función al cargar
 actualizarHorario();
