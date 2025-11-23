@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const chatbotHTML = `
         <div class="chat-button" id="chatButton">
-            <img src="imagenes/Iconos/chat.png" alt="Chat" style="width: 30px; height: 30px;">
+            <img src="/img/Iconos/chat.png" alt="Chat" style="width: 30px; height: 30px;">
         </div>
 
         <div class="chat-container" id="chatContainer">
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="chat-input">
                 <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
                 <button class="send-btn" id="sendBtn">
-                    <img src="imagenes/Iconos/send.png" alt="Enviar" style="width: 20px; height: 20px;">
+                    <img src="/img/Iconos/send.png" alt="Enviar" style="width: 20px; height: 20px;">
                 </button>
             </div>
         </div>

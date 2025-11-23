@@ -41,7 +41,7 @@
     border-radius: 20px;
     text-align: center;
 
-    background-image: url("imagenes/LocalesLogos/fondo-locales.png");
+    background-image: url("/img/LocalesLogos/fondo-locales.png");
     background-size: cover;
     background-position: center;
     padding: 80px 0;
