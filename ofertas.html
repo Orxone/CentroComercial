@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas y Promociones – Galerías Ámbar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ofertas.css">
+    <link rel="stylesheet" href="stylesChatbot.css">
+</head>
+
+<body>
+    <header class="header">
+            
+        <div class="banner">
+            <p>Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs</p>
+        </div>
+        
+        <div class="header-container">
+            <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
+
+            <nav class="nav" id="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="entretenimiento.html">Novedades</a>
+                <a href="locales.html">Locales</a>
+                <a href="locales.html?filter=gastronomía">Gastronomía</a>
+                <a href="ubicacion.html">Ubicación</a>
+            </nav>
+
+            <div class="icons">
+                <div id="burger-btn"><img src="imagenes/Iconos/IMenu.png" alt="MenuBtn"></div>
+                <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+            </div>
+        </div>
+    </header>
+
+        <!-- Hero -->
+        <div class="hero-ofertas">
+            <img src="imagenes/hero-ofertas.png" alt="Ofertas y promociones de la Galerías Ámbar" class="hero">
+        </div>
+
+
+        <!-- lo nuevo -->
+
+    <main class="container">
+
+  <!-- FILTROS -->
+    <section class="filters" aria-labelledby="filtrosTitulo">
+        <label id="filtrosTitulo" for="filterCategory">Filtrar por categoría</label>
+        <select id="filterCategory">
+            <option value="all">Todas</option>
+            <option value="gastronomia">Gastronomía</option>
+            <option value="moda">Moda</option>
+            <option value="entretenimiento">Entretenimiento</option>
+        </select>
+    </section>
+
+  <!-- ARIA-LIVE -->
+    <div id="liveRegion" aria-live="polite" style="margin-bottom: 1rem;"></div>
+
+  <!-- LISTA DE OFERTAS -->
+    <section id="offersList"></section>
+    </main>
+
+<button id="scrollTopBtn">↑ Arriba</button>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <img src="imagenes/Iconos/Logo.png" alt="Logo">
+                <p>El destino para una experiencia de compra inolvidable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="locales.html">Locales</a></p>
+                <p><a href="locales.html?filter=gastronomia">Gastronomía</a></p>
+                <p><a href="ofertas.html">Ofertas</a></p>
+                <p><a href="ubicacion.html">Ubicación</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
+                <p>Domingo: 10:00 – 21:00 hrs</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Soler 3700, Palermo</p>
+                <p>info@galeambar.com</p>
+                <p>(123) 456 – 7890</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Galerías Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
+        </div>
+
+    </footer>
+
+    <script src="load-footer.js"></script>
+    <script src="ofertas.js"></script>
+    <script src="global.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

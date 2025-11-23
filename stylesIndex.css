@@ -24,10 +24,7 @@
 .intro .container-intro h1{
     font-size: 5rem;
     font-weight: 700;
-}
-
-.intro .container-intro p{
-    font-size: 1.8rem;
+    padding-bottom: 1.1rem;
 }
 
 .intro .container-intro a{
@@ -81,7 +78,7 @@
 
 .servicios > .card { /*(>) para que solo afecte a la card suelta*/
     margin: 1.5rem auto; /*Centra la card horizontalmente automáticamente*/
-    width: 50rem;
+    width: 48rem;
     max-width: 90%; /*Para celular*/
 }
 
@@ -133,14 +130,14 @@
 /*El título*/
 .servicios .card .card-body .card-title{
     font-weight: 650;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     color: var(--card-text);
 }
 
 /*El párrafo descriptivo*/
 .servicios .col .card .card-text {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     line-height: 1.6;
 }
 
@@ -148,6 +145,11 @@
 @media (max-width:991px) {
     html{
         font-size: 80%;
+    }
+
+    .servicios .card img{
+        height: 130px;
+        width: auto;
     }
 }
 
@@ -163,6 +165,18 @@
     .intro{
         min-height: 62vh;
         background-position: center top;
+    }
+
+    .servicios .card img{
+        height: 120px;
+        width: auto;
+    }
+
+    .servicios .col .card img{
+        width: 9%;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 5px;
     }
 }
 
@@ -187,11 +201,6 @@
         font-size: 2.5rem;
         line-height: 1.1;
     }
-    /*Subtítulo del hero*/
-    .intro .container-intro p{
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-    }
 
     /*Botón del hero*/
     .intro .container-intro a{
@@ -199,6 +208,7 @@
         padding: 0.8rem 1.5rem;
         width: 100%;
         display: inline-block;
+        margin-top: 0;
     }
 }
 
@@ -212,5 +222,10 @@
 
     .intro{
         min-height: 40vh;
+    }
+
+    .servicios .card img{
+        height: 90px;
+        width: auto;
     }
 }

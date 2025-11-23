@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="chat-container" id="chatContainer">
             <div class="chat-header">
                 <div>
-                    <h3>Galería Ámbar</h3>
+                    <h3>Galerías Ámbar</h3>
                     <p>En línea • Responde en minutos</p>
                 </div>
                 <div class="close-btn" id="closeBtn">×</div>
@@ -388,7 +388,7 @@ function inicializarChatbot() {
         if (intencion === 'saludo') {
             contexto.estado = 'inicial';
             contexto.intentosBusqueda = 0;
-            return '¡Hola! 😊 Bienvenido/a a Galería Ámbar. Puedo ayudarte con:<br><br>' +
+            return '¡Hola! 😊 Bienvenido/a a Galerías Ámbar. Puedo ayudarte con:<br><br>' +
                    '• Buscar locales específicos<br>' +
                    '• Información sobre horarios<br>' +
                    '• Estacionamiento y servicios<br>' +
@@ -623,7 +623,7 @@ function inicializarChatbot() {
             }
         } else {
             // Sin historial → mensaje de bienvenida
-            addMessage('¡Hola! 👋 Bienvenido/a a Galería Ámbar. ¿En qué puedo ayudarte hoy?', 'bot');
+            addMessage('¡Hola! 👋 Bienvenido/a a Galerías Ámbar. ¿En qué puedo ayudarte hoy?', 'bot');
         }
 
         if (isOpen === 'true') {
