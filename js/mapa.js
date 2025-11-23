@@ -34,4 +34,22 @@ function actualizarHorario() {
     }
 }
 
+<<<<<<<< HEAD:mapa.js
 actualizarHorario();
+========
+// Ejecutamos la función al cargar
+actualizarHorario();
+
+// Código para cargar components/footer.html en el placeholder #site-footer
+(async function loadFooter() {
+    try {
+        const resp = await fetch('/components/footer.html');
+        if (!resp.ok) throw new Error('No se pudo cargar el footer');
+        const html = await resp.text();
+        const container = document.getElementById('site-footer');
+        if (container) container.innerHTML = html;
+    } catch (e) {
+        console.error('load-footer.js:', e);
+    }
+})();
+>>>>>>>> 43e4a35 (reorganizacion carpetas):js/main.js

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas y Promociones – Galería Ámbar</title>
+    <link rel="stylesheet" href="/css/ofertas.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="banner">
+            <p>Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs</p>
+        </div>
+        <div class="header-container">
+            
+            <a href="/index.html" class="logo"><img src="/img/Iconos/Logo.png" alt="Logo"></a>
+            
+            <nav class="nav">
+                <a href="/index.html">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="/html/pages/locales.html">Locales</a>
+                <a href="/html/pages/entretenimiento.html">Novedades</a>
+                <a href="/html/pages/gastronomia.html">Gastronomía</a>
+                <a href="/html/pages/ubicacion.html">Ubicación</a>
+                <a href="/html/pages/ofertas.html">Ofertas</a>
+            </nav>
+
+            <button class="darkmode-btn">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="ofertas-hero">
+            <div class="container">
+                <h1>Ofertas y Promociones</h1>
+                <p class="intro">Descubrí los mejores descuentos disponibles en la Galería Ámbar. Filtrá por categoría para encontrar ofertas específicas.</p>
+            </div>
+        </div>
+
+        <!-- Filtro accesible -->
+        <section aria-labelledby="filtro-titulo" class="filtros">
+            <h2 id="filtro-titulo">Filtrar por categoría</h2>
+
+            <div class="filtro-contenedor container">
+                <button class="filtro-btn active" data-categoria="todas">Todas</button>
+                <button class="filtro-btn" data-categoria="ropa">Ropa</button>
+                <button class="filtro-btn" data-categoria="gastronomia">Gastronomía</button>
+                <button class="filtro-btn" data-categoria="tecnologia">Tecnología</button>
+                <button class="filtro-btn" data-categoria="servicios">Servicios</button>
+            </div>
+        </section>
+
+        <!-- Contenedor de ofertas -->
+        <section class="ofertas-grid container" aria-live="polite">
+            <!-- Tarjeta de oferta -->
+            <article class="oferta-card" data-categoria="ropa">
+                <img src="/img/oferta-ropa.jpg" alt="Descuento del 30% en indumentaria" />
+                <h3>30% OFF en Indumentaria</h3>
+                <p>Disponible en locales seleccionados. Válido hasta fin de mes.</p>
+                <a href="/html/pages/locales.html" class="btn">Ver Local</a>
+            </article>
+
+            <article class="oferta-card" data-categoria="gastronomia">
+                <img src="/img/oferta-gastro.jpg" alt="Combo gastronómico 2x1" />
+                <h3>2x1 en Combos Gastronómicos</h3>
+                <p>Todos los días de 18 a 20 hs en restaurantes adheridos.</p>
+                <a href="/html/pages/locales.html" class="btn">Ver Local</a>
+            </article>
+
+            <article class="oferta-card" data-categoria="tecnologia">
+                <img src="/img/oferta-tecno.jpg" alt="Descuento del 20% en tecnología" />
+                <h3>20% OFF Tecnología</h3>
+                <p>Accesorios, auriculares y más. Pagando con tarjeta asociada.</p>
+                <a href="/html/pages/locales.html" class="btn">Ver Local</a>
+            </article>
+
+            <article class="oferta-card" data-categoria="servicios">
+                <img src="/img/oferta-servicios.jpg" alt="Descuento en servicios de belleza" />
+                <h3>15% OFF Servicios</h3>
+                <p>Manicura, barbería y cuidado personal.</p>
+                <a href="/html/pages/locales.html" class="btn">Ver Local</a>
+            </article>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/load-footer.js"></script>
+    <script src="/js/ofertas.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
