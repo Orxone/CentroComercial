@@ -39,7 +39,9 @@
     bottom: 100px;
     right: 30px;
     width: 380px;
+    max-width: calc(100vw - 40px);   /* para que no se pase en pantallas chicas */
     height: 550px;
+    max-height: min(80vh, 550px);    /* que nunca ocupe más del 80% de alto */
     background: #FFF8EA;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(89, 69, 69, 0.3);
@@ -50,6 +52,7 @@
     animation: slideUp 0.3s ease;
     border: 2px solid #9E7676;
 }
+
 
 .chat-container.active {
     display: flex;
@@ -302,17 +305,79 @@
     background: #815B5B;
 }
 
-/* Responsive */
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .chat-container {
+        right: 15px;
+        bottom: 90px;
+        width: calc(100vw - 30px);
+        max-width: none;
+        height: 480px;
+        max-height: 75vh;
+    }
+
+    .chat-header h3 {
+        font-size: 16px;
+    }
+
+    .chat-header p {
+        font-size: 11px;
+    }
+
+    .message-content {
+        font-size: 13px;
+    }
+
+    .chat-input input {
+        font-size: 13px;
+    }
+}
+
+/* Celulares */
+/* Celulares */
 @media (max-width: 480px) {
     .chat-container {
-        width: calc(100vw - 20px);
+        position: fixed;
+        /* margen debajo de la nav: ajustá 80px si tu nav es más alta o más baja */
+        top: 80px;         
+        /* margen encima de la burbuja/borde inferior */
+        bottom: 80px;      
+        left: 10px;
         right: 10px;
-        bottom: 90px;
-        height: calc(100vh - 120px);
+        width: auto;
+        height: auto;
+        max-height: none;
+        border-radius: 12px;
     }
 
     .chat-button {
         right: 20px;
         bottom: 20px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .chat-messages {
+        padding: 12px;
+    }
+
+    .quick-suggestions {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+
+    .suggestion-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .chat-input {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .chat-input input {
+        padding: 10px 14px;
+        font-size: 13px;
     }
 }

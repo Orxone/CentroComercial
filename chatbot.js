@@ -15,11 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <div class="chat-messages" id="chatMessages">
-                <div class="message bot">
-                    <div class="message-content">
-                        ¡Hola! 👋 Bienvenido/a a Galería Ámbar. ¿En qué puedo ayudarte hoy?
-                    </div>
-                </div>
+                <!-- Los mensajes se cargan desde JS (historial o bienvenida) -->
             </div>
 
             <div class="quick-suggestions" id="suggestions">
@@ -53,6 +49,13 @@ function inicializarChatbot() {
     const userInput = document.getElementById('userInput');
     const sendBtn = document.getElementById('sendBtn');
     const suggestions = document.getElementById('suggestions');
+
+    // CLAVES PARA LOCALSTORAGE
+    const STORAGE_KEY_MESSAGES = 'ambar_chat_messages';
+    const STORAGE_KEY_OPEN = 'ambar_chat_open';
+
+    // Historial en memoria
+    let chatHistory = [];
 
     // BASE DE DATOS DE LOCALES
     const locales = [
@@ -170,7 +173,7 @@ function inicializarChatbot() {
         }
     ];
 
-    // SISTEMA DE CONTEXTO MEJORADO
+    // SISTEMA DE CONTEXTO
     let contexto = {
         estado: 'inicial', // inicial, buscando, preguntando, despidiendose, finalizado
         ultimaTienda: null,
@@ -235,7 +238,8 @@ function inicializarChatbot() {
         }
     };
 
-    // FUNCIONES DE BÚSQUEDA 
+    // ---------- FUNCIONES DE BÚSQUEDA ----------
+
     function normalizarTexto(texto) {
         return texto.toLowerCase()
             .normalize("NFD")
@@ -252,26 +256,19 @@ function inicializarChatbot() {
             const nombreNormalizado = normalizarTexto(local.nombre);
             const categoriaNormalizada = normalizarTexto(local.categoria);
 
-            // Coincidencia exacta del nombre (máxima prioridad)
             if (nombreNormalizado === terminoNormalizado) {
                 puntuacion += 100;
-            }
-            // Nombre contiene el término
-            else if (nombreNormalizado.includes(terminoNormalizado)) {
+            } else if (nombreNormalizado.includes(terminoNormalizado)) {
                 puntuacion += 80;
-            }
-            // Término contiene el nombre (ej: "quiero ir a nike")
-            else if (terminoNormalizado.includes(nombreNormalizado)) {
+            } else if (terminoNormalizado.includes(nombreNormalizado)) {
                 puntuacion += 70;
             }
 
-            // Coincidencia en categoría
             if (categoriaNormalizada === terminoNormalizado || 
                 terminoNormalizado.includes(categoriaNormalizada)) {
                 puntuacion += 40;
             }
 
-            // Coincidencia en keywords
             local.keywords.forEach(keyword => {
                 const keywordNormalizada = normalizarTexto(keyword);
                 if (terminoNormalizado.includes(keywordNormalizada) || 
@@ -285,7 +282,6 @@ function inicializarChatbot() {
             }
         });
 
-        // Ordenar por puntuación
         resultados.sort((a, b) => b.puntuacion - a.puntuacion);
         return resultados.map(r => r.local);
     }
@@ -293,7 +289,6 @@ function inicializarChatbot() {
     function listarPorCategoria(categoria) {
         const categoriaNormalizada = normalizarTexto(categoria);
         
-        // Mapeo de sinónimos de categorías
         const mapeoCategoria = {
             'comida': 'gastronomía',
             'gastronomia': 'gastronomía',
@@ -312,11 +307,7 @@ function inicializarChatbot() {
         };
 
         const categoriaReal = mapeoCategoria[categoriaNormalizada] || categoriaNormalizada;
-        const localesCategoria = locales.filter(l => 
-            normalizarTexto(l.categoria) === categoriaReal
-        );
-
-        return localesCategoria;
+        return locales.filter(l => normalizarTexto(l.categoria) === categoriaReal);
     }
 
     function formatearLocal(local, incluirLink = true) {
@@ -332,22 +323,22 @@ function inicializarChatbot() {
         return info;
     }
 
-    // DETECCIÓN DE INTENCIONES MEJORADA
+    // ---------- DETECCIÓN DE INTENCIONES ----------
+
     function detectarIntencion(mensaje) {
         const msg = normalizarTexto(mensaje);
 
-        // Patrones de intención
         const patrones = {
-            saludo: /^(hola|buenos|buenas|hey|hi|saludos|que tal|holi)/,
-            despedida: /(adios|chao|hasta luego|bye|nos vemos|gracias por todo|ya me voy)/,
-            agradecimiento: /^(gracias|grax|thanks|thx|te agradezco)/,
-            afirmacion: /^(si|sí|see|sep|claro|ok|vale|dale|por favor|exacto|correcto|eso|si por favor)/,
-            negacion: /^(no|nop|nope|no gracias|na|para nada|no no|nada|ninguno|ninguna)/,
+            saludo: /\b(hola|buenos dias|buenas|hey|hi|saludos|que tal|holi)\b/,
+            despedida: /\b(adios|chau|chao|hasta luego|bye|nos vemos|gracias por todo|ya me voy)\b/,
+            agradecimiento: /\b(gracias|grax|thanks|thx|te agradezco)\b/,
+            afirmacion: /\b(si|sí|see|sep|claro|ok|vale|dale|por favor|exacto|correcto|eso|si por favor)\b/,
+            negacion: /\b(no|nop|nope|no gracias|na|para nada|no no|nada|ninguno|ninguna)\b/,
             busquedaLocal: /(busco|quiero|donde esta|donde hay|necesito|me interesa|estoy buscando)/,
-            listadoCategoria: /(que|cuales|cuantos|todos los|lista|mostrar|ver) .* (tienda|local|negocio)/,
-            horarios: /(horario|hora|abre|cierra|cuando|abierto)/,
-            ubicacion: /(donde|ubicacion|como llego|direccion|mapa)/,
-            ayuda: /(ayuda|help|que puedes|que ofreces|opciones|menu)/
+            listadoCategoria: /(que|qué|cuales|cuáles|cuantos|cuántos|todos los|lista|mostrar|ver).*(tienda|local|negocio)/,
+            horarios: /(horario|hora|abre|abren|cierra|cierran|cuando abre|cuando cierra|abierto|abiertos)/,
+            ubicacion: /(donde|dónde|ubicacion|ubicación|como llego|cómo llego|direccion|dirección|mapa)/,
+            ayuda: /(ayuda|help|que puedes|qué puedes|que ofreces|qué ofreces|opciones|menu|menú)/
         };
 
         for (let [intencion, patron] of Object.entries(patrones)) {
@@ -355,71 +346,80 @@ function inicializarChatbot() {
                 return intencion;
             }
         }
-
         return 'desconocido';
     }
 
-    // FUNCIÓN PRINCIPAL DE RESPUESTA
+    // ---------- LÓGICA PRINCIPAL DE RESPUESTA ----------
+
     function getBotResponse(userMessage) {
         const mensaje = userMessage.trim();
         const intencion = detectarIntencion(mensaje);
 
-        // Si la conversación está finalizada, solo responder a saludos nuevos
+        // Si la conversación está finalizada
         if (contexto.conversacionFinalizada) {
             if (intencion === 'saludo') {
                 contexto.conversacionFinalizada = false;
                 contexto.estado = 'inicial';
-                return '¡Hola de nuevo! 😊 ¿En qué más puedo ayudarte?';
+                contexto.intentosBusqueda = 0;
+                return '¡Hola de nuevo! 😊 Volvemos a empezar. ¿En qué puedo ayudarte ahora?';
             }
-            return null; // No responder a mensajes después de despedida
+            return 'La conversación anterior ya fue cerrada 😊<br>' +
+                   'Si querés empezar otra, saludame con un "hola" o hacé una nueva pregunta.';
         }
 
-        // MANEJO DE RESPUESTAS EN CONTEXTO (Si/No)
+        // Manejo de respuestas en contexto (sí/no)
         if (contexto.esperandoRespuesta) {
             if (intencion === 'negacion') {
                 contexto.esperandoRespuesta = false;
                 contexto.tipoRespuestaEsperada = null;
                 contexto.estado = 'finalizado';
                 contexto.conversacionFinalizada = true;
-                return '¡Perfecto! 😊 Que tengas un excelente día. ¡Vuelve cuando quieras!';
+                contexto.intentosBusqueda = 0;
+                return '¡Perfecto! 😊 Que tengas un excelente día. ¡Volvé cuando quieras!';
             }
             
             if (intencion === 'afirmacion') {
+                contexto.intentosBusqueda = 0;
                 return manejarRespuestaAfirmativa();
             }
         }
 
-        // SALUDOS
+        // Saludos
         if (intencion === 'saludo') {
             contexto.estado = 'inicial';
-            return '¡Hola! 😊 Bienvenido a nuestro Centro Comercial. Puedo ayudarte con:<br><br>' +
+            contexto.intentosBusqueda = 0;
+            return '¡Hola! 😊 Bienvenido/a a Galería Ámbar. Puedo ayudarte con:<br><br>' +
                    '• Buscar locales específicos<br>' +
                    '• Información sobre horarios<br>' +
                    '• Estacionamiento y servicios<br>' +
                    '• Eventos y promociones<br><br>' +
-                   '¿Qué necesitas?';
+                   '¿Qué necesitás?';
         }
 
-        // DESPEDIDAS
+        // Despedidas
         if (intencion === 'despedida') {
             contexto.estado = 'despidiendose';
             contexto.conversacionFinalizada = true;
+            contexto.esperandoRespuesta = false;
+            contexto.tipoRespuestaEsperada = null;
+            contexto.intentosBusqueda = 0;
             return '¡Hasta pronto! 👋 Fue un placer ayudarte. Que tengas un excelente día.';
         }
 
-        // AGRADECIMIENTOS
+        // Agradecimientos
         if (intencion === 'agradecimiento') {
             contexto.estado = 'inicial';
             contexto.esperandoRespuesta = true;
             contexto.tipoRespuestaEsperada = 'ayuda_adicional';
-            return '¡De nada! 😊 Estoy aquí para ayudarte.<br><br>¿Hay algo más en lo que pueda asistirte?';
+            contexto.intentosBusqueda = 0;
+            return '¡De nada! 😊 Estoy acá para ayudarte.<br><br>¿Hay algo más en lo que pueda asistirte?';
         }
 
-        // BÚSQUEDA DE LOCALES
+        // Búsqueda de locales
         const resultados = buscarLocal(mensaje);
-        
         if (resultados.length > 0) {
             contexto.estado = 'buscando';
+            contexto.intentosBusqueda = 0;
             
             if (resultados.length === 1) {
                 const local = resultados[0];
@@ -428,24 +428,24 @@ function inicializarChatbot() {
                 contexto.tipoRespuestaEsperada = 'mas_info_local';
                 
                 return formatearLocal(local) + 
-                       '<br><br>¿Necesitas direcciones o más información sobre este local?';
-            } 
-            else if (resultados.length <= 5) {
+                       '<br><br>¿Necesitás direcciones o más información sobre este local?';
+            } else if (resultados.length <= 5) {
                 let respuesta = '¡Encontré estos locales que podrían interesarte! 🔍<br><br>';
                 resultados.forEach((local, index) => {
                     respuesta += `${index + 1}. <strong>${local.nombre}</strong> - Nivel ${local.nivel} (${local.categoria})<br>`;
                 });
-                respuesta += '<br>¿Sobre cuál te gustaría saber más? Escribe el nombre.';
+                respuesta += '<br>¿Sobre cuál te gustaría saber más? Escribí el nombre.';
                 contexto.esperandoRespuesta = false;
                 return respuesta;
             }
         }
 
-        // CATEGORÍAS ESPECÍFICAS
+        // Categorías (ropa, tecnología, etc.)
         const categorias = listarPorCategoria(mensaje);
         if (categorias.length > 0) {
             contexto.estado = 'buscando';
             contexto.ultimaCategoria = categorias[0].categoria;
+            contexto.intentosBusqueda = 0;
             
             let respuesta = `Locales de <strong>${categorias[0].categoria}</strong>:<br><br>`;
             categorias.forEach((local, index) => {
@@ -456,10 +456,12 @@ function inicializarChatbot() {
             return respuesta;
         }
 
-        // INFORMACIÓN BASE (horarios, estacionamiento, etc)
+        // Información base (horarios, estacionamiento, etc.)
+        const msgNormalizado = normalizarTexto(mensaje);
         for (let [clave, info] of Object.entries(infoBase)) {
-            if (normalizarTexto(mensaje).includes(clave)) {
+            if (msgNormalizado.includes(clave)) {
                 let respuesta = info.texto;
+                contexto.intentosBusqueda = 0;
                 if (info.preguntaSeguimiento) {
                     respuesta += '<br><br>' + info.preguntaSeguimiento;
                     contexto.esperandoRespuesta = true;
@@ -469,30 +471,31 @@ function inicializarChatbot() {
             }
         }
 
-        // LISTADO GENERAL DE TIENDAS
-        if (mensaje.match(/(tienda|local|negocio|hay|tienen|que)/i)) {
+        // Listado general de tiendas
+        if (mensaje.match(/(tienda|tiendas|local|locales|negocio|negocios|hay|tienen|que tienen|qué tienen)/i)) {
+            contexto.intentosBusqueda = 0;
             return '🏬 <strong>Categorías disponibles:</strong><br><br>' +
                    '• Gastronomía (cafeterías y dulces)<br>' +
                    '• Tecnología (computación y electrónica)<br>' +
                    '• Indumentaria (ropa y deportes)<br>' +
                    '• Hogar (muebles y decoración)<br>' +
                    '• Accesorios (joyería y lentes)<br><br>' +
-                   '¿Qué categoría te interesa o buscas algún local específico?';
+                   '¿Qué categoría te interesa o buscás algún local específico?';
         }
 
-        // RESPUESTA POR DEFECTO
+        // Respuesta por defecto
         contexto.intentosBusqueda++;
         
         if (contexto.intentosBusqueda === 1) {
-            return 'Hmm, no estoy seguro de entender. 🤔<br><br>' +
+            return 'Hmm, no estoy segura de entender. 🤔<br><br>' +
                    'Puedo ayudarte a:<br>' +
                    '• Buscar un local específico (ej: "Nike", "Starbucks")<br>' +
                    '• Ver locales por categoría (ej: "tecnología", "ropa")<br>' +
                    '• Información de horarios y servicios<br><br>' +
                    '¿Qué estás buscando?';
         } else {
-            return 'Discúlpame, pero no logro entender qué necesitas. 😅<br><br>' +
-                   'Intenta ser más específico, por ejemplo:<br>' +
+            return 'Disculpame, pero no logro entender qué necesitás. 😅<br><br>' +
+                   'Probá con algo como:<br>' +
                    '• "Busco una cafetería"<br>' +
                    '• "¿Dónde está Nike?"<br>' +
                    '• "Locales de tecnología"<br>' +
@@ -500,9 +503,11 @@ function inicializarChatbot() {
         }
     }
 
-    // MANEJO DE RESPUESTAS AFIRMATIVAS
+    // ---------- RESPUESTAS AFIRMATIVAS ----------
+
     function manejarRespuestaAfirmativa() {
         contexto.esperandoRespuesta = false;
+        contexto.intentosBusqueda = 0;
         
         if (contexto.tipoRespuestaEsperada === 'mas_info_local' && contexto.ultimaTienda) {
             const local = contexto.ultimaTienda;
@@ -512,10 +517,10 @@ function inicializarChatbot() {
             contexto.tipoRespuestaEsperada = 'ayuda_adicional';
             
             return `📍 <strong>Cómo llegar a ${local.nombre}:</strong><br><br>` +
-                   `1. Dirígete al Nivel ${local.nivel}<br>` +
-                   `2. Busca la sección de ${local.categoria}<br>` +
-                   `3. También puedes consultar los directorios interactivos en cada piso<br><br>` +
-                   `¿Necesitas ayuda con algo más?`;
+                   `1. Dirigite al Nivel ${local.nivel}<br>` +
+                   `2. Buscá la sección de ${local.categoria}<br>` +
+                   `3. También podés consultar los directorios interactivos en cada piso<br><br>` +
+                   `¿Necesitás ayuda con algo más?`;
         }
         
         if (contexto.tipoRespuestaEsperada === 'estacionamiento') {
@@ -526,7 +531,7 @@ function inicializarChatbot() {
             return '🚗 <strong>Indicaciones al Estacionamiento:</strong><br><br>' +
                    '• <strong>Entrada Principal:</strong> Av. Principal (señalización azul)<br>' +
                    '• <strong>Entrada Secundaria:</strong> Calle Cerrito (señalización verde)<br>' +
-                   '• Una vez dentro, sigue las señales amarillas<br>' +
+                   '• Una vez dentro, seguí las señales amarillas<br>' +
                    '• Espacios preferenciales cerca de los ascensores<br><br>' +
                    '¿Hay algo más en lo que pueda ayudarte?';
         }
@@ -537,9 +542,9 @@ function inicializarChatbot() {
             contexto.tipoRespuestaEsperada = 'ayuda_adicional';
             
             return '🎉 <strong>Más información sobre eventos:</strong><br><br>' +
-                   '• Consulta nuestra sección entretenimientos<br>' +
-                   '• Ingresa a nuestra web>Menú>Entretenimientos<br>' +
-                   '• Síguenos en redes sociales para actualizaciones<br><br>' +
+                   '• Consultá nuestra sección entretenimientos<br>' +
+                   '• Ingresá a nuestra web > Menú > Entretenimientos<br>' +
+                   '• Seguinos en redes sociales para actualizaciones<br><br>' +
                    '¿Te puedo ayudar con algo más?';
         }
         
@@ -548,40 +553,37 @@ function inicializarChatbot() {
             contexto.esperandoRespuesta = true;
             contexto.tipoRespuestaEsperada = 'ayuda_adicional';
             
-            return 'Todos nuestros servicios están señalizados con íconos verdes. También puedes:<br><br>' +
+            return 'Todos nuestros servicios están señalizados con íconos verdes. También podés:<br><br>' +
                    '• Consultar los mapas interactivos en cada piso<br>' +
                    '• Preguntar en el punto de información (Nivel 1)<br>' +
                    '• Descargar nuestro mapa digital<br><br>' +
-                   '¿Necesitas algo más?';
+                   '¿Necesitás algo más?';
         }
 
         if (contexto.tipoRespuestaEsperada === 'ayuda_adicional') {
             contexto.tipoRespuestaEsperada = null;
-            return '¡Claro! 😊 ¿En qué más puedo ayudarte? Puedes preguntarme sobre locales, horarios, servicios o lo que necesites.';
+            return '¡Claro! 😊 Contame, ¿sobre qué te gustaría saber? Puedo ayudarte con locales, horarios, servicios y más.';
         }
         
-        // Default
         contexto.tipoRespuestaEsperada = null;
         return '¡Perfecto! ¿En qué más puedo ayudarte?';
     }
 
-    // Event Listeners
-    chatButton.addEventListener('click', () => {
-        chatContainer.classList.add('active');
-    });
+    // ---------- UI: MENSAJES Y TYPING ----------
 
-    closeBtn.addEventListener('click', () => {
-        chatContainer.classList.remove('active');
-    });
-
-    function addMessage(content, type) {
-        if (!content) return; // No agregar mensajes vacíos
+    function addMessage(content, type, save = true) {
+        if (!content) return;
         
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${type}`;
         messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        if (save) {
+            chatHistory.push({ content, type });
+            localStorage.setItem(STORAGE_KEY_MESSAGES, JSON.stringify(chatHistory));
+        }
     }
 
     function showTypingIndicator() {
@@ -604,6 +606,33 @@ function inicializarChatbot() {
         if (indicator) indicator.remove();
     }
 
+    // ---------- CARGAR HISTORIAL ----------
+
+    function cargarHistorial() {
+        const stored = localStorage.getItem(STORAGE_KEY_MESSAGES);
+        const isOpen = localStorage.getItem(STORAGE_KEY_OPEN);
+
+        if (stored) {
+            try {
+                chatHistory = JSON.parse(stored);
+                chatHistory.forEach(msg => {
+                    addMessage(msg.content, msg.type, false); // no volver a guardar
+                });
+            } catch (e) {
+                chatHistory = [];
+            }
+        } else {
+            // Sin historial → mensaje de bienvenida
+            addMessage('¡Hola! 👋 Bienvenido/a a Galería Ámbar. ¿En qué puedo ayudarte hoy?', 'bot');
+        }
+
+        if (isOpen === 'true') {
+            chatContainer.classList.add('active');
+        }
+    }
+
+    // ---------- ENVÍO DE MENSAJES ----------
+
     function sendMessage() {
         const message = userInput.value.trim();
         if (message === '') return;
@@ -622,7 +651,22 @@ function inicializarChatbot() {
         }, 600 + Math.random() * 600);
     }
 
+    // ---------- EVENT LISTENERS ----------
+
+    // Abrir/cerrar con la burbuja
+    chatButton.addEventListener('click', () => {
+        const isActive = chatContainer.classList.toggle('active');
+        localStorage.setItem(STORAGE_KEY_OPEN, isActive ? 'true' : 'false');
+    });
+
+    // Cerrar con la X
+    closeBtn.addEventListener('click', () => {
+        chatContainer.classList.remove('active');
+        localStorage.setItem(STORAGE_KEY_OPEN, 'false');
+    });
+
     sendBtn.addEventListener('click', sendMessage);
+
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
@@ -633,4 +677,7 @@ function inicializarChatbot() {
             sendMessage();
         }
     });
+
+    // Cargar historial al iniciar
+    cargarHistorial();
 }
