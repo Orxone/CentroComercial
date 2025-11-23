@@ -199,7 +199,7 @@ function inicializarChatbot() {
                    '• Primeras 2 horas: <strong>GRATIS</strong><br>' +
                    '• Tarifa adicional: $2500 por hora<br>' +
                    '• Estacionamiento preferencial disponible<br>' +
-                   '• Acceso por Av. Principal y Calle Cerrito',
+                   '• Acceso por Calle Soler y Calle Guise',
             preguntaSeguimiento: '¿Necesitas indicaciones para llegar al estacionamiento?'
         },
         eventos: {
@@ -212,9 +212,9 @@ function inicializarChatbot() {
         },
         ubicacion: {
             texto: '📍 <strong>Ubicación:</strong><br><br>' +
-                   'Av. Principal #123<br>' +
-                   'Ciudad, Estado<br><br>' +
-                   '🚇 Subte: Estación Centro (5 min a pie)<br>' +
+                   'Soler 3700<br>' +
+                   'CABA, Buenos Aires<br><br>' +
+                   '🚇 Subte: Estación Agüero (5 min a pie)<br>' +
                    '🚌 Colectivos: Líneas 10, 25, 40, 55',
             preguntaSeguimiento: '¿Quieres verlo en un mapa?'
         },
@@ -529,10 +529,22 @@ function inicializarChatbot() {
             contexto.tipoRespuestaEsperada = 'ayuda_adicional';
             
             return '🚗 <strong>Indicaciones al Estacionamiento:</strong><br><br>' +
-                   '• <strong>Entrada Principal:</strong> Av. Principal (señalización azul)<br>' +
-                   '• <strong>Entrada Secundaria:</strong> Calle Cerrito (señalización verde)<br>' +
+                   '• <strong>Entrada Principal:</strong> Soler (señalización azul)<br>' +
+                   '• <strong>Entrada Secundaria:</strong> Calle Bulnes (señalización verde)<br>' +
                    '• Una vez dentro, seguí las señales amarillas<br>' +
                    '• Espacios preferenciales cerca de los ascensores<br><br>' +
+                   '¿Hay algo más en lo que pueda ayudarte?';
+        }
+
+        if (contexto.tipoRespuestaEsperada === 'ubicacion') {
+            contexto.tipoRespuestaEsperada = null;
+            contexto.esperandoRespuesta = true;
+            contexto.tipoRespuestaEsperada = 'ayuda_adicional';
+            
+            return '🚗 <strong>Cómo llegar:</strong><br><br>' +
+                   '• Dirigete a nuestra sección: <strong>Ubicación</strong><br>' +
+                   '• Haz click en <strong>"Cómo llegar"</strong><br>' +
+                   '• Usá las indicaciones de Google Maps para llegar fácilmente<br><br>' +
                    '¿Hay algo más en lo que pueda ayudarte?';
         }
         
