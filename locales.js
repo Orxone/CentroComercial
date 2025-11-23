@@ -148,14 +148,14 @@ const btnPB = document.getElementById("btnPB");
 const btnP1 = document.getElementById("btnP1");
 
 btnPB.addEventListener("click", () => {
-    mapaImg.src = "/img/MapaPB.png";
+    mapaImg.src = "imagenes/MapaPB.png";
 
     btnPB.classList.add("active");
     btnP1.classList.remove("active");
 });
 
 btnP1.addEventListener("click", () => {
-    mapaImg.src = "/img/MapaP1.png";
+    mapaImg.src = "imagenes/MapaP1.png";
 
     btnP1.classList.add("active");
     btnPB.classList.remove("active");

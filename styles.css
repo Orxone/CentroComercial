@@ -142,54 +142,6 @@ header .header-container .logo img{
 .darkmode-btn:hover {
     padding: 5px;
     border: 1px solid #FFF8EA;
-    background-color: white;
-    opacity: 0.8;
-    border-radius: 60%;
-    transform: scale(1.1); 
-}
-
-/*SECCIÓN INTRO*/
-
-.intro{
-    background-color: white;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url(/img/Hero.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.intro .container-intro{
-    background: rgba(114, 91, 91, 0.7);
-    padding: 5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    color: white;
-}
-
-.intro .container-intro h1{
-    font-size: 5rem;
-}
-
-.intro .container-intro p{
-    font-size: 1.8rem;
-}
-
-.intro .container-intro a{
-    background-color: white;
-    color: black;
-    padding: 1.5rem;
-    padding-top: 0.7rem; 
-    padding-bottom: 0.7rem;
-    font-size: 2rem;
-    margin-top: 2rem;
-    text-decoration: none;
-}
-
-.intro .container-intro a:hover{
-    opacity: 0.9;
 }
 
 /*MENÚ HAMBURGUESA*/
