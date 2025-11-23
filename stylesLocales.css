@@ -226,7 +226,6 @@
     z-index: 5; 
     border: 2px solid var(--color-accent);
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(89, 69, 69, 0.15);
 }
 
 .hover-info {
@@ -243,7 +242,7 @@
 
 .local-card:hover 
 .logo-container::before {
-    background: rgba(0,0,0,0.55);
+    background: rgba(255, 255, 255, 0.85);
 }
 
 .local-card:hover 
@@ -251,12 +250,15 @@
     opacity: 1;
 }
 .hover-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 6px;
+    color: var(--color-bg-dark);
 }
 .hover-info p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-bg-dark);
 }
 
 /* Boton visitar sitio */
@@ -288,11 +290,35 @@
 /* SECCIÓN MAPA */
 .mapa-container {
     display: flex;
+    flex: 2; 
     justify-content: center;
     align-items: center;
     width: 90%;
     max-width: 1100px;
+    position: relative;
     margin: 0 auto;
+}
+.mapa-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px; 
+}
+
+.mapa-texto {
+    flex: 1;
+    max-width: 400px; 
+    column-count: 1;
+    column-gap: 20px;
+    text-align: justify;
+}
+
+.mapa-texto h3 {
+    font-size: 20px;
+    line-height: 1.5;
+}
+.mapa-texto p {
+    line-height: 0.5;
 }
 
 .mapa-section {
@@ -316,46 +342,30 @@
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(89, 69, 69, 0.15);
 }
-.mapa-img.fade-out {
-    opacity: 0;
-    transform: scale(0.98);
-}
-.mapa-img.fade-in {
-    opacity: 1;
-    transform: scale(1);
-}
 
-.map-btn {
-    background: var(--color-accent);
-    color: var(--color-white);
-    border: 2px solid var(--color-accent);;
-    padding: 8px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: 0.2s;
+#txt-indumentaria{
+    color: rgb(241, 66, 174);
+    font-weight: bold;
 }
-.map-btn:hover {
-    opacity: 0.8;
+#txt-tecnologia{
+    color: rgb(47, 107, 236);
+    font-weight: bold;
 }
-.mapa-buttons {
-    margin-top: 20px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    gap: 15px;
+#txt-gastronomia{
+    color: rgb(34, 192, 61);
+    font-weight: bold;
 }
-.mapa-btn.active {
-    color: var(--color-bg-light);
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-    background: var(--color-accent);
-    padding: 8px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: 0.2s;
+#txt-hogar{
+    color: rgb(245, 139, 53);
+    font-weight: bold;
+}
+#txt-accesorios{
+    color: rgb(194, 191, 18);
+    font-weight: bold;
+}
+#txt-recreativo{
+    color: rgb(173, 34, 228);
+    font-weight: bold;
 }
 
 /* Responsive */
@@ -430,5 +440,33 @@
         .logo-container img {
         max-width: 60%;
         max-height: 80px;
+    }
+}
+
+@media (max-width: 700px) {
+    .mapa-texto {
+        font-size: 0.9rem;   /* achica la letra */
+        line-height: 1.2;    /* mantiene el espaciado compacto */
+    }
+
+    .mapa-texto h3 {
+        font-size: 1rem;  
+    }
+
+    .mapa-texto p {
+        font-size: 0.85rem;  
+    }
+}
+@media (max-width: 700px) {
+    .mapa-flex {
+        flex-direction: column;  
+    }
+    .mapa-container {
+        order: 1;              
+    }
+    .mapa-texto {
+        order: 2;          
+        text-align: center;     
+        max-width: 100%;             
     }
 }
