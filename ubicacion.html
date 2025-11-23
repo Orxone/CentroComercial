@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubicación - Centro Comercial</title>
 
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/stylesUbicacion.css">
-    <link rel="stylesheet" href="../../css/stylesChatbot.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesUbicacion.css">
+    <link rel="stylesheet" href="stylesChatbot.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="icon" type="image/png" href="imagenes/Iconos/Icon.png">
@@ -20,16 +20,16 @@
         </div>
         
         <div class="header-container">
-            <a href="/index.html" class="logo"><img src="/img/Iconos/Logo.png" alt="Logo"></a>
+            <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
 
             <nav class="nav" id="nav-menu">
-                <a href="/index.html">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <a href="#">Servicios</a>
-                <a href="/html/pages/locales.html">Locales</a>
-                <a href="/html/pages/entretenimiento.html">Novedades</a>
-                <a href="/html/pages/locales.html?filter=gastronomía">Gastronomía</a>
-                <a href="/html/pages/ubicacion.html">Ubicación</a>
-                <a href="/html/pages/ofertas.html">Ofertas</a>
+                <a href="locales.html">Locales</a>
+                <a href="entretenimiento.html">Novedades</a>
+                <a href="locales.html?filter=gastronomía">Gastronomía</a>
+                <a href="ubicacion.html">Ubicación</a>
+                <a href="#">Ofertas</a>
             </nav>
 
             <div class="icons">
@@ -98,10 +98,47 @@
 
     </main>
 
-    <div id="site-footer"></div>
+    <footer class="footer">
 
-<script src="/js/load-footer.js"></script>
-<script src="/js/main.js"></script>
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <img src="imagenes/Iconos/Logo.png" alt="Logo">
+                <p>El destino para una experiencia de compra inolvidable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="locales.html">Locales</a></p>
+                <p><a href="#">Gastronomía</a></p>
+                <p><a href="#">Ofertas</a></p>
+                <p><a href="ubicacion.html">Ubicación</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
+                <p>Domingo: 10:00 – 21:00 hrs</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Av. Principal 123, Ciudad</p>
+                <p>info@galeamber.com</p>
+                <p>(123) 456 – 7890</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Galería Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
+        </div>
+
+    </footer>
+    
+    <script src="global.js"></script>
+    <script src="mapa.js"></script>
+    <script src="chatbot.js"></script> 
 
 </body>
 </html>
