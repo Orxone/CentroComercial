@@ -34,9 +34,7 @@ function actualizarHorario() {
     }
 }
 
-<<<<<<<< HEAD:mapa.js
 actualizarHorario();
-========
 // Ejecutamos la función al cargar
 actualizarHorario();
 
@@ -52,4 +50,3 @@ actualizarHorario();
         console.error('load-footer.js:', e);
     }
 })();
->>>>>>>> 43e4a35 (reorganizacion carpetas):js/main.js
