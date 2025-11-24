@@ -1,11 +1,11 @@
 /* ========== VARIABLES GLOBALES  ===============*/
 :root {
-    --color-bg-light: #FFF8EA;/* --bg-card*/    
-    --color-accent: #9E7676; /*--separardor*/
+    --color-bg-light: #FFF8EA;
+    --color-accent: #9E7676; 
     --color-text-secondary: #815B5B;
     --color-primary: #594545;
     --color-bg-dark: #1a1818;
-    --color-white: #ffffff; /*--hf-white*/
+    --color-white: #ffffff; 
     --color-ligth: #d7c6c6;
 
     /* Bordes */
@@ -14,10 +14,16 @@
     --border-radius-lg: 20px;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
 /* ========== SECCIÓN: TÍTULO PRINCIPAL =========== */
 .locales-title {
-    width: 80%;
-    max-width: 1100px;
+    width: 100%;
+   
     margin: 40px auto;
     padding: 80px 40px;
 
@@ -53,8 +59,7 @@
 
 /* ======== CONTENEDOR GENERAL ========= */
 .locales-wrapper {
-    width: 90%;
-    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -72,7 +77,7 @@
 /* ====== HEADER: BUSCADOR + FILTROS + ORDEN ======= */
 
 .locales-header {
-    max-width: 1100px;
+    width: 95%;
     margin: 0 auto 20px auto;
     display: flex;
     justify-content: space-between;
@@ -173,7 +178,6 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
     justify-items: center;
-    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
     width: 95%;
