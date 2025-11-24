@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    outline: none; 
     border: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -19,6 +18,12 @@
     --border: #b87b7b; /*Color para los bordes*/
     --separador: #b87b7b; /*Color de línea separadora*/
     --bg-local-card: rgba(89, 69, 69, 0.05); /*Fondo de cards de locales individuales*/
+}
+
+/*TECLADO*/
+:focus-visible {
+    outline: 3px solid var(--separador);
+    outline-offset: 3px;
 }
 
 /*COLORES DEL MODO OSCURO*/
