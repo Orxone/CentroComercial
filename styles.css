@@ -163,21 +163,23 @@ header .header-container .logo img{
 /*FOOTER*/
 .footer {
     background: var(--header-bg);
-    color:#FFF8EA;
+    color: #FFF8EA;
     padding: 50px 0 20px 0;
     border-top: 1px solid #FFF8EA;
 }
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 95%;
-    max-width: 1300px;
-    margin: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 40px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem; /* pequeño padding lateral para que no pegue contra el borde */
+    box-sizing: border-box;
 }
 
-.footer-section img{
+.footer-section img {
     width: 170px;
     height: auto;
     padding-bottom: 5px;
@@ -259,16 +261,25 @@ header .header-container .logo img{
     }
 }
 
-@media (max-width: 600px) {
 
+
+/* Tablets (entre 900px y 600px aprox) */
+@media (max-width: 900px) {
     .footer-container {
-        grid-template-columns: repeat(1, 1fr);
-        text-align: center;
-    }
-
-        .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        text-align: left;
     }
 }
 
+/* Celulares (menos de 600px) */
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
 
+    .footer-section img {
+        margin: 0 auto 0.75rem;
+    }
+}
