@@ -61,10 +61,10 @@ main{
 .hero .back-video{ 
     position: absolute;
     left: 0;
-    bottom: 0;
-    top: 7px; /*Para que no lo pise la barra de navegación*/
+    top: 0; /*Para que no lo pise la barra de navegación*/
     width: 100%;
-    height: 1010px;
+    height: 100%;
+    object-fit: cover;
     filter: blur(2px);
 }
 
@@ -128,9 +128,5 @@ main{
     }
     .main{
         min-height: 80vh;
-    }
-
-    .intro{
-        min-height: 40vh;
     }
 }

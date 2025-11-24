@@ -1,3 +1,10 @@
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding-top: 3rem;
+}
+
 body{
     background-color: var(--bg-body);
 }
@@ -29,8 +36,8 @@ main{
 
 .description .desc h2{
     padding: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 650;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
 .description .desc p{
@@ -40,16 +47,22 @@ main{
 /*SECCIÓN DE SERVICIOS*/
 
 .servicios{
-    margin-top: 3rem;
-    margin-bottom: 4rem;
     max-width: 1100px;
     margin: 1.5rem auto;
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
 }
 
 .servicios > .card { /*(>) para que solo afecte a la card suelta*/
     margin: 1.5rem auto; /*Centra la card horizontalmente automáticamente*/
-    width: 48rem;
-    /*max-width: 90%; Para celular*/
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+.servicios > .card .card-body{ /*(>) para que solo afecte a la card suelta*/
+    padding: 1rem;
 }
 
 .servicios .card img{
@@ -133,11 +146,6 @@ main{
         min-height: 90vh;
     }
 
-    .intro{
-        min-height: 62vh;
-        background-position: center top;
-    }
-
     .servicios .card img{
         height: 120px;
         width: auto;
@@ -158,28 +166,18 @@ main{
 
     .main{
         min-height: 85vh;
-    }
-
-    /*Para ajustar la caja transparente detrás de la letra*/
-    .intro .container-intro{
-        padding: 2rem 1rem;
-        width: 90%;
-        max-width: 100%;
-    }
-
-    /*Título del hero*/
-    .intro .container-intro h1{
-        font-size: 2.5rem;
-        line-height: 1.1;
-    }
-
-    /*Botón del hero*/
-    .intro .container-intro a{
-        font-size: 1.2rem;
-        padding: 0.8rem 1.5rem;
+        overflow-x: hidden;
         width: 100%;
-        display: inline-block;
-        margin-top: 0;
+        padding: 0;
+    }
+
+    .description{
+        width: 100%;
+    }
+
+    .description .desc{
+        width: 90%;
+        padding: 2rem 1rem;
     }
 }
 
@@ -187,12 +185,9 @@ main{
     html{
         font-size: 50%;
     }
+
     .main{
         min-height: 80vh;
-    }
-
-    .intro{
-        min-height: 40vh;
     }
 
     .servicios .card img{
