@@ -142,7 +142,7 @@ main{
     text-align: center;
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--card-text);
+    color: var(--main-text);
     margin-bottom: 2rem;
 }
 
