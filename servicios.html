@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Servicios - Galerías Ámbar</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!--Link para el css del header y footer-->
+    <link rel="stylesheet" href="stylesIndex.css" />
+    <!--Link para el css de la página de index como tal-->
+    <link rel="stylesheet" href="stylesChatbot.css" />
+    <!--Link para el css del chatbot-->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#845858",
+              "background-light": "#f7f7f7",
+              "background-dark": "#1b1717",
+              "text-light": "#594545",
+              "text-dark": "#FFF8EA",
+              "card-light": "#FFFFFF",
+              "card-dark": "#2e2121",
+              "accent-light": "#9E7676",
+              "accent-dark": "#4a3535",
+            },
+            fontFamily: { display: "Manrope" },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-size: inherit;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 py-5">
+          <div
+            class="layout-content-container flex flex-col w-full flex-1 gap-10"
+          >
+            <header class="header">
+              <div class="banner">
+                <p>
+                  Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs
+                </p>
+              </div>
+
+              <div class="header-container">
+                <a href="index.html" class="logo flex items-center gap-3">
+                  <img
+                    src="imagenes/Iconos/Logo.png"
+                    alt="Logo"
+                    class="w-8 h-8"
+                  />
+                </a>
+
+                <nav class="nav" id="nav-menu">
+                  <a href="index.html">Inicio</a>
+                  <a href="ofertas.html">Ofertas</a>
+                  <a href="entretenimiento.html">Novedades</a>
+                  <a href="locales.html">Locales</a>
+                  <a href="gastronomia.html">Gastronomía</a>
+                  <a href="servicios.html">Servicios</a>
+                  <a href="ubicacion.html">Ubicación</a>
+                </nav>
+
+                <div class="icons">
+                  <div id="burger-btn">
+                    <img src="imagenes/Iconos/IMenu.png" alt="MenuBtn" />
+                  </div>
+                  <button class="darkmode-btn" id="mode-btn">
+                    <img
+                      src="imagenes/Iconos/IModo.png"
+                      alt="ModoOscuro-Claro"
+                    />
+                  </button>
+                </div>
+              </div>
+            </header>
+            <main class="flex flex-col gap-10 md:gap-16">
+              <div class="@container">
+                <div class="@[480px]:p-4">
+                  <div
+                    class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                    data-alt="Abstract soft brown and cream gradient background"
+                    style="
+                      background-image: linear-gradient(
+                          to top,
+                          rgba(158, 118, 118, 0.4),
+                          rgba(255, 248, 234, 0.2)
+                        ),
+                        url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1A4ov8KeBDgojMEhFvA7Zr6M11sFIri4fWCMvDgqcL76h9ImMW7iwLNRm-0Ivmu5-4mMkHhUrnAZ7bMKtLenviV0_HAva_gGWt5GKy09cVeyXKbaXiAM0vRCZn2qrLz9pJY5vbPgMIlBKbg1Ht1idIt_yUVHlVc4Ksn3krrLZvOFTs8OolwBLtqeYDB7AP-a5zyRZavoLanGS4dmekdD-GPRpwlgldCvtsjmHBA4VFaC3D28Hy39vkYoj-zLRx73SzPeHPRbJQNSQ');
+                    "
+                  >
+                    <div class="flex flex-col gap-4 text-center max-w-2xl">
+                      <h1
+                        class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                      >
+                        Servicios Pensados para Ti
+                      </h1>
+                      <h2
+                        class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed @[480px]:text-lg @[480px]:font-normal @[480px]:leading-relaxed"
+                      >
+                        Estamos comprometidos a brindarte una experiencia
+                        excepcional. Descubre todas las comodidades que hemos
+                        preparado para que tu visita sea inolvidable.
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4"
+              >
+                <div
+                  class="flex flex-1 gap-4 rounded-xl border border-accent-light/30 dark:border-accent-dark bg-card-light dark:bg-card-dark p-6 flex-col hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-primary text-4xl">
+                    <span class="material-symbols-outlined !text-4xl"
+                      >directions_car</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2
+                      class="text-text-light dark:text-text-dark text-lg font-bold leading-tight"
+                    >
+                      Estacionamiento Amplio
+                    </h2>
+                    <p
+                      class="text-text-light/80 dark:text-text-dark/80 text-sm font-normal leading-normal"
+                    >
+                      Disfruta de nuestro servicio de valet, espacios accesibles
+                      y seguridad 24/7 para tu tranquilidad.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-4 rounded-xl border border-accent-light/30 dark:border-accent-dark bg-card-light dark:bg-card-dark p-6 flex-col hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-primary text-4xl">
+                    <span class="material-symbols-outlined !text-4xl"
+                      >wifi</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2
+                      class="text-text-light dark:text-text-dark text-lg font-bold leading-tight"
+                    >
+                      WiFi Gratuito de Alta Velocidad
+                    </h2>
+                    <p
+                      class="text-text-light/80 dark:text-text-dark/80 text-sm font-normal leading-normal"
+                    >
+                      Mantente conectado en todo momento con nuestra red WiFi
+                      disponible en todo el centro comercial.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-4 rounded-xl border border-accent-light/30 dark:border-accent-dark bg-card-light dark:bg-card-dark p-6 flex-col hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-primary text-4xl">
+                    <span class="material-symbols-outlined !text-4xl"
+                      >celebration</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2
+                      class="text-text-light dark:text-text-dark text-lg font-bold leading-tight"
+                    >
+                      Actividades para Todos
+                    </h2>
+                    <p
+                      class="text-text-light/80 dark:text-text-dark/80 text-sm font-normal leading-normal"
+                    >
+                      Descubre áreas de juego para niños, eventos especiales y
+                      talleres para toda la familia cada semana.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-1 gap-4 rounded-xl border border-accent-light/30 dark:border-accent-dark bg-card-light dark:bg-card-dark p-6 flex-col hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-primary text-4xl">
+                    <span class="material-symbols-outlined !text-4xl"
+                      >loyalty</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h2
+                      class="text-text-light dark:text-text-dark text-lg font-bold leading-tight"
+                    >
+                      Programa de Beneficios
+                    </h2>
+                    <p
+                      class="text-text-light/80 dark:text-text-dark/80 text-sm font-normal leading-normal"
+                    >
+                      Únete a nuestro programa de lealtad para acceder a
+                      descuentos, ofertas y servicios exclusivos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="@container bg-accent-light/50 dark:bg-accent-dark rounded-xl"
+              >
+                <div
+                  class="flex flex-col justify-end gap-6 px-4 py-12 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20"
+                >
+                  <div class="flex flex-col gap-2 text-center items-center">
+                    <h1
+                      class="text-text-light dark:text-text-dark tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                    >
+                      Mantente Informado
+                    </h1>
+                    <p
+                      class="text-text-light/80 dark:text-text-dark/80 text-base font-normal leading-normal max-w-[720px]"
+                    >
+                      Suscríbete a nuestro boletín para recibir las últimas
+                      noticias, eventos y ofertas especiales directamente en tu
+                      correo.
+                    </p>
+                  </div>
+                  <div class="flex flex-1 justify-center">
+                    <label
+                      class="flex flex-col min-w-40 h-14 max-w-[480px] flex-1 @[480px]:h-16"
+                    >
+                      <div
+                        class="flex w-full flex-1 items-stretch rounded-lg h-full"
+                      >
+                        <input
+                          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-background-light dark:bg-background-dark h-full placeholder:text-text-light/70 dark:placeholder:text-text-dark/70 px-4 rounded-r-none border-r-0 pr-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
+                          placeholder="Introduce tu correo electrónico"
+                          value=""
+                        />
+                        <div
+                          class="flex items-center justify-center rounded-r-lg border-l-0 border-none bg-background-light dark:bg-background-dark pr-2"
+                        >
+                          <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-[#FFF8EA] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity"
+                          >
+                            <span class="truncate">Suscribirse</span>
+                          </button>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+        <footer class="w-full bg-secondary/10 dark:bg-white/5">
+          <div class="mx-auto w-full max-w-7xl px-4 py-12 sm:px-8">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+              <div class="col-span-2 md:col-span-4 lg:col-span-1">
+                <div
+                  class="flex items-center gap-3 text-secondary dark:text-primary"
+                >
+                  <div class="">
+                    <img src="imagenes/Iconos/Logo.png" alt="Logo" />
+                  </div>
+                </div>
+                <p
+                  class="mt-4 text-sm text-text-color/80 dark:text-text-color-dark/80"
+                >
+                  El destino para una experiencia de compra inolvidable.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-secondary dark:text-primary">
+                  Navegación
+                </h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="index.html"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="locales.html"
+                      >Locales</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="gastronomia.html"
+                      >Gastronomía</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="servicios.html"
+                      >Servicios</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="ofertas.html"
+                      >Ofertas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="ubicacion.html"
+                      >Ubicación</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-secondary dark:text-primary">
+                  Horarios
+                </h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    Lunes a Sábado: 9:00 – 22:00 hrs
+                  </li>
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    Domingo: 10:00 – 21:00 hrs
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-secondary dark:text-primary">
+                  Contacto
+                </h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    Soler 3700, Palermo
+                  </li>
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    info@galeambar.com
+                  </li>
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    (123) 456 – 7890
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mt-8 border-t border-secondary/20 pt-8 text-center text-sm text-text-color/60 dark:border-primary/20 dark:text-text-color-dark/60"
+            >
+              <p>
+                2025 Galerías Ámbar. Todos los derechos reservados. | Política
+                de privacidad | Términos de Uso
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="servicios.js"></script>
+    <script src="global.js"></script>
+    <script src="chatbot.js"></script>
+  </body>
+</html>

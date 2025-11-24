@@ -9,52 +9,82 @@ const offers = [
 // ARIA-LIVE
 const liveRegion = document.getElementById("liveRegion");
 const offersList = document.getElementById("offersList");
-const filterSelect = document.getElementById("filterCategory");
+const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 // RENDER
 function renderOffers(filtered) {
+  if (!offersList) return;
   offersList.innerHTML = "";
 
   filtered.forEach(o => {
     const card = document.createElement("article");
-    card.className = "offer-card";
+    card.className = "group flex flex-col gap-4 overflow-hidden rounded-lg bg-card-light shadow-sm transition-shadow hover:shadow-lg dark:bg-card-dark";
     card.tabIndex = 0;
 
-    card.innerHTML = `
-      <img class="icon" src="${o.img}" alt="">
-      <div>
-        <h3>${o.title}</h3>
-        <p>${o.desc}</p>
-      </div>
+    const imgBlock = document.createElement('div');
+    imgBlock.className = 'w-full overflow-hidden bg-center bg-no-repeat aspect-[4/3] bg-cover';
+    if (o.img && o.img.startsWith('http')) {
+      imgBlock.style.backgroundImage = `url('${o.img}')`;
+    } else if (o.img) {
+      // if it's a small icon, render as an <img> inside a centered container
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flex items-center justify-center bg-secondary/5 h-48';
+      const icon = document.createElement('img');
+      icon.src = o.img;
+      icon.alt = o.title;
+      icon.className = 'h-16 w-16 object-contain';
+      wrapper.appendChild(icon);
+      imgBlock.appendChild(wrapper);
+    }
+
+    const body = document.createElement('div');
+    body.className = 'flex flex-col gap-1 p-4 pt-0';
+    body.innerHTML = `
+      <p class="text-lg font-bold leading-normal text-secondary dark:text-primary">${o.title}</p>
+      <p class="text-sm font-normal text-text-color/80 dark:text-text-color-dark/80">${o.desc}</p>
+      <a class="mt-2 text-sm font-bold text-primary transition-colors hover:text-text-color dark:hover:text-white" href="#">Ver Oferta</a>
     `;
 
+    card.appendChild(imgBlock);
+    card.appendChild(body);
     offersList.appendChild(card);
   });
 
-  liveRegion.textContent = `${filtered.length} ofertas encontradas.`;
+  if (liveRegion) liveRegion.textContent = `${filtered.length} ofertas encontradas.`;
 }
 
 // FILTRAR
-function applyFilter() {
-  const val = filterSelect.value;
-  const result = val === "all"
-    ? offers
-    : offers.filter(o => o.category === val);
+function applyFilter(category) {
+  const result = category === 'all' ? offers : offers.filter(o => o.category === category);
   renderOffers(result);
 }
 
 // SCROLL TOP BUTTON
 window.addEventListener("scroll", () => {
+  if (!scrollBtn) return;
   scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
 });
 
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (scrollBtn) {
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // EVENTOS
-filterSelect.addEventListener("change", applyFilter);
+// Wire filter buttons
+if (filterBtns.length) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-category') || 'all';
+      applyFilter(cat);
+      // update active state
+      filterBtns.forEach(b => b.classList.remove('bg-primary', 'text-background-light'));
+      btn.classList.add('bg-primary', 'text-background-light');
+    });
+  });
+}
 
 // INICIAL
 renderOffers(offers);
