@@ -68,7 +68,7 @@
     overflow: hidden;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-        url("imagenes/Entretenimiento/fondo-entretenimiento.png");
+        url("../imagenes/Entretenimiento/fondo-entretenimiento.png");
     background-size: cover;
     background-position: center;
 }
