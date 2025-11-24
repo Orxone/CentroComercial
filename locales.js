@@ -140,6 +140,38 @@ mapBtn.addEventListener("click", () => {
     });
 });
 
+// SLIDER CAMBIO ENTRE MAPA PB Y P1 
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".mapa-slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+
+        slides[index].style.animation = "none";
+        void slides[index].offsetWidth; 
+        slides[index].style.animation = "";
+        slides[index].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    });
+
+    showSlide(currentIndex);
+});
+
+
+
 /* ----------------------- */
 /* MAPA: marcadores y pestañas */
 /* ----------------------- */

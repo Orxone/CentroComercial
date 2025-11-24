@@ -286,8 +286,7 @@
 /* ========== SECCIÓN MAPA   ============== */
 .mapa-section {
     padding: 20px 0 60px 0;
-    width: 90%;
-    max-width: 1100px;
+    width: 95%;
     margin: 0 auto;
 }
 
@@ -372,13 +371,6 @@
     }
 }
 
-/* Cards en fila única */
-@media (max-width: 500px) {
-    .locales-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
 /* General Mobile */
 @media (max-width: 600px) {
     .locales-header {
@@ -416,7 +408,11 @@
 }
 
 /* Móviles muy pequeños */
-@media (max-width: 420px) {
+@media (max-width: 400px) {
+    .locales-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .local-card {
         height: 160px;
     }
