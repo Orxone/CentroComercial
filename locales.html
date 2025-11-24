@@ -51,7 +51,7 @@
     </header>
     
 
-    <main>
+    <main class="container">
         <!-- Titulo -->
         <section class="locales-section">
             
@@ -84,6 +84,7 @@
                     
                     <div class="filter-dropdown" id="filterDropdown">
                         <p data-filter="todos">Todos</p>
+                        <p data-filter="de-los-fundadores">De los Fundadores</p>
                         <p data-filter="indumentaria">Indumentaria</p>
                         <p data-filter="gastronomía">Gastronomía</p>
                         <p data-filter="accesorios">Accesorios</p>
@@ -91,7 +92,7 @@
                         <p data-filter="tecnología">Tecnología</p>
                     </div>
                 </div>
-
+                <p id="resultadoMensaje" class="resultado-mensaje"></p>
             </div>
 
             <!-- Tarjetas de Locales-->
@@ -99,11 +100,11 @@
         
                <a href="https://jujureggio.github.io/TPO_ChocolateriaNahue_Reggio_1170449/" target="_blank" 
                 class="local-card" 
-                data-category="gastronomía"
+                data-category="gastronomía de-los-fundadores"
                 data-name="Nahue">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/LogoNahue.png" class="local-logo" alt="Nahue">
+                        <img src="imagenes/LocalesLogos/LogoNahue.png" class="local-logo" alt="Logo Nahue">
                         <div class="hover-info">
                             <h3 class="local-name">Nahue</h3>
                             <p class="local-level">Local: 2</p>
@@ -117,11 +118,11 @@
 
                 <a href="https://milej03.github.io/Janiot_NovaPC/" target="_blank" 
                 class="local-card" 
-                data-category="tecnología" 
+                data-category="tecnología de-los-fundadores" 
                 data-name="NovaPC">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/LogoNovaPC.png" class="local-logo" alt="Nahue">
+                        <img src="imagenes/LocalesLogos/LogoNovaPC.png" class="local-logo" alt="Logo NovaPC">
                         <div class="hover-info">
                             <h3 class="local-name">NovaPC</h3>
                             <p class="local-level">Local: 4</p>
@@ -134,11 +135,11 @@
 
                 <a href="https://orxone.github.io/MiLocal-SosaBarone-2025" target="_blank" 
                 class="local-card" 
-                data-category="hogar" 
+                data-category="hogar de-los-fundadores" 
                 data-name="Morfeo">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/LogoMorfeo.png" class="local-logo" alt="Nahue">
+                        <img src="imagenes/LocalesLogos/LogoMorfeo.png" class="local-logo" alt="Logo Morfeo">
                         <div class="hover-info">
                             <h3 class="local-name">Morfeo</h3>
                             <p class="local-level">Local: 6</p>
@@ -151,11 +152,11 @@
 
                 <a href="https://micasuarez915.github.io/TPO_Desarrollo_Web_UADE/" target="_blank" 
                 class="local-card" 
-                data-category="hogar" 
+                data-category="hogar de-los-fundadores" 
                 data-name="Aether">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/LogoAether.png" class="local-logo" alt="Nahue">
+                        <img src="imagenes/LocalesLogos/LogoAether.png" class="local-logo" alt="Logo Aether">
                         <div class="hover-info">
                             <h3 class="local-name">Aether</h3>
                             <p class="local-level">Local: 13</p>
@@ -168,11 +169,11 @@
     
                 <a href="https://joaconz.github.io/Desarrollo-web-UADE/ChronosStore/index.html" target="_blank" 
                 class="local-card" 
-                data-category="accesorios" 
+                data-category="accesorios de-los-fundadores" 
                 data-name="Chronos">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/LogoChronos.png" class="local-logo" alt="Chronos">
+                        <img src="imagenes/LocalesLogos/LogoChronos.png" class="local-logo" alt="Logo Chronos">
                         <div class="hover-info">
                             <h3 class="local-name">Chronos</h3>
                             <p class="local-level">Local: 3</p>
@@ -189,7 +190,7 @@
                 data-name="Havanna">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Havanna.png" class="local-logo" alt="Havanna">
+                        <img src="imagenes/LocalesLogos/Logo_Havanna.png" class="local-logo" alt="Logo Havanna">
                         <div class="hover-info">
                             <h3 class="local-name">Havanna</h3>
                             <p class="local-level">Local: 15</p>
@@ -206,7 +207,7 @@
                 data-name="Landmark">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Landmark.png" class="local-logo" alt="Landmark">
+                        <img src="imagenes/LocalesLogos/Logo_Landmark.png" class="local-logo" alt="Logo Landmark">
                         <div class="hover-info">
                             <h3 class="local-name">Landmark</h3>
                             <p class="local-level">Local: 19</p>
@@ -222,7 +223,7 @@
                 data-name="Nike">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Nike.png" class="local-logo" alt="Nike">
+                        <img src="imagenes/LocalesLogos/Logo_Nike.png" class="local-logo" alt="Logo Nike">
                         <div class="hover-info">
                             <h3 class="local-name">Nike</h3>
                             <p class="local-level">Local: 1</p>
@@ -238,7 +239,7 @@
                 data-name="Starbucks">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Starbucks.png" class="local-logo" alt="Starbucks">
+                        <img src="imagenes/LocalesLogos/Logo_Starbucks.png" class="local-logo" alt="Logo Starbucks">
                         <div class="hover-info">
                             <h3 class="local-name">Starbucks</h3>
                             <p class="local-level">Local: 9</p>
@@ -254,7 +255,7 @@
                 data-name="Logitech">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Logitech.png" class="local-logo" alt="Logitech">
+                        <img src="imagenes/LocalesLogos/Logo_Logitech.png" class="local-logo" alt="Logo Logitech">
                         <div class="hover-info">
                             <h3 class="local-name">Logitech</h3>
                             <p class="local-level">Local: 10</p>
@@ -270,7 +271,7 @@
                 data-name="Adidas">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Adidas.png" class="local-logo" alt="Adidas">
+                        <img src="imagenes/LocalesLogos/Logo_Adidas.png" class="local-logo" alt="Logo Adidas">
                         <div class="hover-info">
                             <h3 class="local-name">Adidas</h3>
                             <p class="local-level">Local: 8</p>
@@ -286,7 +287,7 @@
                 data-name="Samsung">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Samsung.png" class="local-logo" alt="Samsung">
+                        <img src="imagenes/LocalesLogos/Logo_Samsung.png" class="local-logo" alt="Logo Samsung">
                         <div class="hover-info">
                             <h3 class="local-name">Samsung</h3>
                             <p class="local-level">Local: 17</p>
@@ -302,7 +303,7 @@
                 data-name="Zara">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Zara.png" class="local-logo" alt="Zara">
+                        <img src="imagenes/LocalesLogos/Logo_Zara.png" class="local-logo" alt="Logo Zara">
                         <div class="hover-info">
                             <h3 class="local-name">Zara</h3>
                             <p class="local-level">Local: 14</p>
@@ -318,7 +319,7 @@
                 data-name="RayBan">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_RayBan.png" class="local-logo" alt="RayBan">
+                        <img src="imagenes/LocalesLogos/Logo_RayBan.png" class="local-logo" alt="Logo RayBan">
                         <div class="hover-info">
                             <h3 class="local-name">Ray-Ban</h3>
                             <p class="local-level">Local: 12</p>
@@ -334,7 +335,7 @@
                 data-name="Pandora">
 
                     <div class="logo-container">
-                        <img src="imagenes/LocalesLogos/Logo_Pandora.png" class="local-logo" alt="Pandora">
+                        <img src="imagenes/LocalesLogos/Logo_Pandora.png" class="local-logo" alt="Logo Pandora">
                         <div class="hover-info">
                             <h3 class="local-name">Pandora</h3>
                             <p class="local-level">Local: 7</p>
@@ -362,12 +363,12 @@
                         
                     <!-- Slide 1 -->
                         <div class="mapa-slide active">
-                            <img src="imagenes/MapaPB.png" alt="Mapa 1" class="mapa-img">
+                            <img src="imagenes/MapaPB.png" alt="Mapa Galerías Ámbar, Planta Baja" class="mapa-img">
                         </div>
 
                         <!-- Slide 2 -->
                         <div class="mapa-slide">
-                            <img src="imagenes/MapaP1.png" alt="Mapa 2" class="mapa-img">
+                            <img src="imagenes/MapaP1.png" alt="Mapa Galerías Ámbar, Primer Piso" class="mapa-img">
                         </div>
                     </div>
 
@@ -394,8 +395,10 @@
             <div class="footer-section">
                 <h3>Navegación</h3>
                 <p><a href="index.html">Inicio</a></p>
+                <p><a href="entretenimiento.html">Novedades</a></p>
+                <p><a href="servicios.html">Servicios</a></p>
                 <p><a href="locales.html">Locales</a></p>
-                <p><a href="locales.html?filter=gastronomía">Gastronomía</a></p>
+                <p><a href="gastronomía">Gastronomía</a></p>
                 <p><a href="ofertas.html">Ofertas</a></p>
                 <p><a href="ubicacion.html">Ubicación</a></p>
             </div>

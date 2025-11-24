@@ -75,30 +75,47 @@ function renderOffers(filtered) {
   if (liveRegion) liveRegion.textContent = `${filtered.length} ofertas encontradas.`;
 }
 
-// LÓGICA DE FILTRADO
-function applyFilter(category) {
-  // Si es 'all' mostramos todo, sino filtramos por la propiedad 'category'
-  const result = category === 'all' ? offers : offers.filter(o => o.category === category);
-  renderOffers(result);
-}
 
-// EVENTOS DE LOS BOTONES
-if (filterBtns.length) {
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 1. Obtener la categoría del botón clickeado
-      const cat = btn.getAttribute('data-category') || 'all';
-      
-      // 2. Aplicar el filtro
-      applyFilter(cat);
-      
-      // 3. Cambiar el color del botón (Clase 'active')
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+//FILTRO
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".offer-card");
+
+  // Normalizar texto (quita acentos y pasa a minúsculas)
+  const normalize = str =>
+    str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Cambiar estado visual
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const category = normalize(button.dataset.category);
+
+      cards.forEach(card => {
+        const categoriasCard = (card.dataset.category || "")
+          .split(" ")
+          .map(normalize);
+
+        if (category === "all" || categoriasCard.includes(category)) {
+          card.style.display = "flex"; // o "block" según tu grid
+        } else {
+          card.style.display = "none";
+        }
+      });
     });
   });
-}
+});
 
-// INICIALIZAR (Mostrar todo al cargar la página)
-// Asegúrate de agregar el script AL FINAL del body en el HTML
-renderOffers(offers);
+// BOTÓN "Ver Ofertas"
+
+const mapBtn = document.getElementById("hero-btn");
+const mapaSection = document.getElementById("filters-header");
+
+mapBtn.addEventListener("click", () => {
+    mapaSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});

@@ -29,7 +29,14 @@ dropdown.querySelectorAll("p").forEach(option => {
         const category = option.dataset.filter;
 
         cards.forEach(card => {
-            if (category === "todos" || card.dataset.category === category) {
+            const categoriasCard = (card.dataset.category || "").split(" ");
+
+            if (category === "todos") {
+                card.style.display = "flex";
+                return;
+            }
+
+            if (categoriasCard.includes(category)) {
                 card.style.display = "flex";
             } else {
                 card.style.display = "none";
@@ -47,36 +54,31 @@ document.addEventListener("click", (e) => {
 });
 
 
+
 // BÚSQUEDA POR NOMBRE
 
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
+const resultadoMensaje = document.getElementById("resultadoMensaje");
 
 function filtrarPorNombre() {
     const texto = searchInput.value.toLowerCase().trim();
 
     if (texto === "") {
         cards.forEach(card => card.style.display = "flex");
+        resultadoMensaje.textContent = ""; 
         return;
     }
 
     const cardsArray = Array.from(cards);
 
-    const coincidencias = cardsArray.filter(card =>
-        (card.dataset.name || "").toLowerCase().includes(texto)
-    );
+    const coincidencias = cardsArray.filter(card => {
+        const nombre = (card.dataset.name || "").toLowerCase();
+        return nombre.startsWith(texto);
+    });
 
     coincidencias.sort((a, b) => {
-        const nameA = a.dataset.name.toLowerCase();
-        const nameB = b.dataset.name.toLowerCase();
-
-        const startsA = nameA.startsWith(texto);
-        const startsB = nameB.startsWith(texto);
-
-        if (startsA && !startsB) return -1;
-        if (!startsA && startsB) return 1;
-
-        return nameA.localeCompare(nameB);
+        return a.dataset.name.toLowerCase().localeCompare(b.dataset.name.toLowerCase());
     });
 
     cards.forEach(card => card.style.display = "none");
@@ -86,6 +88,11 @@ function filtrarPorNombre() {
         card.style.display = "flex";
         grid.appendChild(card);
     });
+
+    resultadoMensaje.textContent =
+        coincidencias.length > 0
+            ? `Resultados encontrados: ${coincidencias.length}`
+            : "No se encontraron locales.";
 }
 
 searchBtn.addEventListener("click", filtrarPorNombre);
@@ -140,7 +147,7 @@ mapBtn.addEventListener("click", () => {
     });
 });
 
-
+// SLIDE ENTRE PB Y P1
 const slides = document.querySelectorAll(".mapa-slide");
 let currentIndex = 0;
 

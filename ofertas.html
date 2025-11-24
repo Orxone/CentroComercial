@@ -39,19 +39,19 @@
     </header>
 
     <main class="ofertas-main">
-        <div class="ofertas-container">
+        <div class="ofertas-container" >
           
           <section class="hero-section">
             <div class="hero-content">
               <h1>Ofertas de Mitad de Temporada: Hasta 50% Off</h1>
               <h2>Descubre descuentos increíbles de tus marcas favoritas. ¡Por tiempo limitado!</h2>
-              <button class="hero-btn">
+              <button class="hero-btn" id="hero-btn">
                 <span>Explorar Todas las Ofertas</span>
               </button>
             </div>
           </section>
 
-          <section class="filters-header">
+          <section class="filters-header" id="filters-header">
             <div class="titles">
               <h2>Ofertas y Promociones Actuales</h2>
               <p>Filtra por categoría para encontrar exactamente lo que buscas.</p>
@@ -61,8 +61,8 @@
           <section class="filters-buttons">
             <button data-category="all" class="filter-btn active">Todo</button>
             <button data-category="moda" class="filter-btn">Moda</button>
-            <button data-category="gastronomia" class="filter-btn">Comida</button>
-            <button data-category="entretenimiento" class="filter-btn">Electrónica</button>
+            <button data-category="comida" class="filter-btn">Comida</button>
+            <button data-category="electronica" class="filter-btn">Electrónica</button>
           </section>
 
           <div id="liveRegion" aria-live="polite" class="sr-only">
@@ -71,10 +71,10 @@
 
           <section id="offersList" class="offers-grid" aria-label="Listado de ofertas">
     
-            <article class="offer-card">
+            <article class="offer-card" data-category="comida">
                 <div class="offer-img-container">
                     <div class="offer-icon-wrapper">
-                        <img src="imagenes/Ofertas/Cafe.jpg" alt="Café">
+                        <img src="imagenes/Ofertas/Cafe.jpg" alt="Dos tazas de Café">
                     </div>
                 </div>
                 <div class="offer-body">
@@ -84,10 +84,10 @@
                 </div>
             </article>
 
-            <article class="offer-card">
+            <article class="offer-card" data-category="moda">
                 <div class="offer-img-container">
                     <div class="offer-icon-wrapper">
-                        <img src="imagenes/Ofertas/Indumentaria.jpg" alt="Ropa">
+                        <img src="imagenes/Ofertas/Indumentaria.jpg" alt="Ropa colgada en perchas">
                     </div>
                 </div>
                 <div class="offer-body">
@@ -97,10 +97,10 @@
                 </div>
             </article>
 
-            <article class="offer-card">
+            <article class="offer-card" data-category="comida">
                 <div class="offer-img-container">
                     <div class="offer-icon-wrapper">
-                        <img src="imagenes/Ofertas/Comida.jpg" alt="Comida">
+                        <img src="imagenes/Ofertas/Comida.jpg" alt="Milanesa con papas fritas">
                     </div>
                 </div>
                 <div class="offer-body">
@@ -110,10 +110,10 @@
                 </div>
             </article>
 
-            <article class="offer-card">
+            <article class="offer-card" data-category="electronica">
                 <div class="offer-img-container">
                     <div class="offer-icon-wrapper">
-                        <img src="imagenes/Ofertas/Gaming.jpg" alt="Juegos">
+                        <img src="imagenes/Ofertas/Gaming.jpg" alt="Set-up Gamer">
                     </div>
                 </div>
                 <div class="offer-body">
@@ -136,8 +136,10 @@
             <div class="footer-section">
                 <h3>Navegación</h3>
                 <p><a href="index.html">Inicio</a></p>
+                <p><a href="entretenimiento.html">Novedades</a></p>
+                <p><a href="servicios.html">Servicios</a></p>
                 <p><a href="locales.html">Locales</a></p>
-                <p><a href="gastronomia.html">Gastronomía</a></p>
+                <p><a href="gastronomía">Gastronomía</a></p>
                 <p><a href="ofertas.html">Ofertas</a></p>
                 <p><a href="ubicacion.html">Ubicación</a></p>
             </div>
@@ -159,6 +161,7 @@
     </footer>
     
     <script src="global.js"></script>
+    <script src="ofertas.js"></script>
     <script src="chatbot.js"></script> 
 </body>
 </html>

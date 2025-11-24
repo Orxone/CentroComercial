@@ -134,11 +134,15 @@
     background-color: rgba(129, 91, 91, 0.2);
 }
 
-/* Estilo activo (seleccionado) */
+.offer-card.hidden {
+  display: none !important;
+}
+
+/* Estado activo de botón */
 .filter-btn.active {
-    background-color: var(--of-primary);
-    color: var(--of-bg-light);
-    font-weight: 700;
+  background-color: var(--of-primary);
+  color: var(--of-bg-light);
+  font-weight: 700;
 }
 
 /* --- GRID DE OFERTAS --- */
