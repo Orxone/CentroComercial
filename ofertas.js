@@ -6,55 +6,92 @@ const offers = [
   { id: 4, title: "Promo gaming", category: "entretenimiento", img: "imagenes/Iconos/icon-sale.png", desc: "Créditos extra." }
 ];
 
-// ARIA-LIVE
+// ELEMENTOS DOM
 const liveRegion = document.getElementById("liveRegion");
 const offersList = document.getElementById("offersList");
-const filterSelect = document.getElementById("filterCategory");
+const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 // RENDER
 function renderOffers(filtered) {
+  if (!offersList) return;
   offersList.innerHTML = "";
 
   filtered.forEach(o => {
     const card = document.createElement("article");
-    card.className = "offer-card";
+    // CAMBIO: Usamos clase CSS normal, no Tailwind
+    card.className = "offer-card"; 
     card.tabIndex = 0;
 
-    card.innerHTML = `
-      <img class="icon" src="${o.img}" alt="">
-      <div>
-        <h3>${o.title}</h3>
-        <p>${o.desc}</p>
-      </div>
+    const imgBlock = document.createElement('div');
+    imgBlock.className = 'offer-img-container';
+
+    if (o.img && o.img.startsWith('http')) {
+      imgBlock.style.backgroundImage = `url('${o.img}')`;
+    } else if (o.img) {
+      // Si es icono pequeño
+      const wrapper = document.createElement('div');
+      wrapper.className = 'offer-icon-wrapper';
+      
+      const icon = document.createElement('img');
+      icon.src = o.img;
+      icon.alt = o.title;
+      
+      wrapper.appendChild(icon);
+      imgBlock.appendChild(wrapper);
+    }
+
+    const body = document.createElement('div');
+    body.className = 'offer-body';
+    
+    // CAMBIO: HTML interno con clases semánticas
+    body.innerHTML = `
+      <p class="offer-title">${o.title}</p>
+      <p class="offer-desc">${o.desc}</p>
+      <a class="offer-link" href="#">Ver Oferta</a>
     `;
 
+    card.appendChild(imgBlock);
+    card.appendChild(body);
     offersList.appendChild(card);
   });
 
-  liveRegion.textContent = `${filtered.length} ofertas encontradas.`;
+  if (liveRegion) liveRegion.textContent = `${filtered.length} ofertas encontradas.`;
 }
 
 // FILTRAR
-function applyFilter() {
-  const val = filterSelect.value;
-  const result = val === "all"
-    ? offers
-    : offers.filter(o => o.category === val);
+function applyFilter(category) {
+  const result = category === 'all' ? offers : offers.filter(o => o.category === category);
   renderOffers(result);
 }
 
 // SCROLL TOP BUTTON
 window.addEventListener("scroll", () => {
+  if (!scrollBtn) return;
   scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
 });
 
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (scrollBtn) {
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // EVENTOS
-filterSelect.addEventListener("change", applyFilter);
+if (filterBtns.length) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-category') || 'all';
+      applyFilter(cat);
+      
+      // UPDATE ACTIVE STATE
+      // Removemos la clase 'active' de todos
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Agregamos 'active' al clickeado (El CSS se encarga del color)
+      btn.classList.add('active');
+    });
+  });
+}
 
 // INICIAL
 renderOffers(offers);

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ofertas y Promociones – Galerías Ámbar</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="ofertas.css">
-    <link rel="stylesheet" href="stylesChatbot.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas - Centro Comercial</title>
 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesOfertas.css"> 
+    <link rel="stylesheet" href="stylesChatbot.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="imagenes/Iconos/Icon.png">
+</head>
 <body>
     <header class="header">
-            
         <div class="banner">
             <p>Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs</p>
         </div>
@@ -24,7 +26,7 @@
                 <a href="entretenimiento.html">Novedades</a>
                 <a href="servicios.html">Servicios</a>
                 <a href="locales.html">Locales</a>
-                <a href="locales.html?filter=gastronomía">Gastronomía</a>
+                <a href="gastronomía.html">Gastronomía</a>
                 <a href="ofertas.html">Ofertas</a>
                 <a href="ubicacion.html">Ubicación</a>
             </nav>
@@ -36,60 +38,114 @@
         </div>
     </header>
 
-        <!-- Hero -->
-        <div class="hero-ofertas">
-            <img src="imagenes/hero-ofertas.png" alt="Ofertas y promociones de la Galerías Ámbar" class="hero">
+    <main class="ofertas-main">
+        <div class="ofertas-container">
+          
+          <section class="hero-section">
+            <div class="hero-content">
+              <h1>Ofertas de Mitad de Temporada: Hasta 50% Off</h1>
+              <h2>Descubre descuentos increíbles de tus marcas favoritas. ¡Por tiempo limitado!</h2>
+              <button class="hero-btn">
+                <span>Explorar Todas las Ofertas</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="filters-header">
+            <div class="titles">
+              <h2>Ofertas y Promociones Actuales</h2>
+              <p>Filtra por categoría para encontrar exactamente lo que buscas.</p>
+            </div>
+          </section>
+
+          <section class="filters-buttons">
+            <button data-category="all" class="filter-btn active">Todo</button>
+            <button data-category="moda" class="filter-btn">Moda</button>
+            <button data-category="gastronomia" class="filter-btn">Comida</button>
+            <button data-category="entretenimiento" class="filter-btn">Electrónica</button>
+            <button data-category="hogar" class="filter-btn">Hogar</button>
+          </section>
+
+          <div id="liveRegion" aria-live="polite" class="sr-only">
+            Cargando ofertas...
+          </div>
+
+          <section id="offersList" class="offers-grid" aria-label="Listado de ofertas">
+    
+            <article class="offer-card">
+                <div class="offer-img-container">
+                    <div class="offer-icon-wrapper">
+                        <img src="imagenes/Iconos/icon-food.png" alt="Café">
+                    </div>
+                </div>
+                <div class="offer-body">
+                    <p class="offer-title">2x1 en café</p>
+                    <p class="offer-desc">Válido de 9 a 13hs.</p>
+                    <a class="offer-link" href="#">Ver Oferta</a>
+                </div>
+            </article>
+
+            <article class="offer-card">
+                <div class="offer-img-container">
+                    <div class="offer-icon-wrapper">
+                        <img src="imagenes/Iconos/icon-sale.png" alt="Ropa">
+                    </div>
+                </div>
+                <div class="offer-body">
+                    <p class="offer-title">20% OFF indumentaria</p>
+                    <p class="offer-desc">Locales adheridos.</p>
+                    <a class="offer-link" href="#">Ver Oferta</a>
+                </div>
+            </article>
+
+            <article class="offer-card">
+                <div class="offer-img-container">
+                    <div class="offer-icon-wrapper">
+                        <img src="imagenes/Iconos/icon-food.png" alt="Comida">
+                    </div>
+                </div>
+                <div class="offer-body">
+                    <p class="offer-title">Combo almuerzo $3500</p>
+                    <p class="offer-desc">Incluye bebida.</p>
+                    <a class="offer-link" href="#">Ver Oferta</a>
+                </div>
+            </article>
+
+            <article class="offer-card">
+                <div class="offer-img-container">
+                    <div class="offer-icon-wrapper">
+                        <img src="imagenes/Iconos/icon-sale.png" alt="Juegos">
+                    </div>
+                </div>
+                <div class="offer-body">
+                    <p class="offer-title">Promo gaming</p>
+                    <p class="offer-desc">Créditos extra.</p>
+                    <a class="offer-link" href="#">Ver Oferta</a>
+                </div>
+            </article>
+
+          </section>
+
         </div>
-
-
-        <!-- lo nuevo -->
-
-    <main class="container">
-
-  <!-- FILTROS -->
-    <section class="filters" aria-labelledby="filtrosTitulo">
-        <label id="filtrosTitulo" for="filterCategory">Filtrar por categoría</label>
-        <select id="filterCategory">
-            <option value="all">Todas</option>
-            <option value="gastronomia">Gastronomía</option>
-            <option value="moda">Moda</option>
-            <option value="entretenimiento">Entretenimiento</option>
-        </select>
-    </section>
-
-  <!-- ARIA-LIVE -->
-    <div id="liveRegion" aria-live="polite" style="margin-bottom: 1rem;"></div>
-
-  <!-- LISTA DE OFERTAS -->
-    <section id="offersList"></section>
-    </main>
-
-<button id="scrollTopBtn">↑ Arriba</button>
-
-    <footer class="footer">
-
+    </main> <footer class="footer">
         <div class="footer-container">
-
             <div class="footer-section">
                 <img src="imagenes/Iconos/Logo.png" alt="Logo">
                 <p>El destino para una experiencia de compra inolvidable.</p>
             </div>
-
             <div class="footer-section">
                 <h3>Navegación</h3>
                 <p><a href="index.html">Inicio</a></p>
                 <p><a href="locales.html">Locales</a></p>
-                <p><a href="locales.html?filter=gastronomia">Gastronomía</a></p>
+                <p><a href="gastronomia.html">Gastronomía</a></p>
                 <p><a href="ofertas.html">Ofertas</a></p>
                 <p><a href="ubicacion.html">Ubicación</a></p>
             </div>
-
             <div class="footer-section">
                 <h3>Horarios</h3>
                 <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
                 <p>Domingo: 10:00 – 21:00 hrs</p>
             </div>
-
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <p>Soler 3700, Palermo</p>
@@ -97,16 +153,12 @@
                 <p>(123) 456 – 7890</p>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>2025 Galerías Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
+            <p>2025 Galerías Ámbar. Todos los derechos reservados.</p>
         </div>
-
     </footer>
-
-    <script src="load-footer.js"></script>
-    <script src="ofertas.js"></script>
+    
     <script src="global.js"></script>
-    <script src="chatbot.js"></script>
+    <script src="chatbot.js"></script> 
 </body>
 </html>
