@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Comercial</title>
+    <!-- Vinculamos el archivo CSS separado -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Fuente Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesChatbot.css">
+    <link rel="stylesheet" href="stylesEntretenimiento.css">
+    <!-- Importamos iconos para los botones (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+
+    <link rel="icon" type="image/png" href="imagenes/Iconos/Icon.png">
+    
+</head>
+<body>
+    
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+            
+        <div class="banner">
+            <p>Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs</p>
+        </div>
+        
+        <div class="header-container">
+            <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
+
+            <nav class="nav" id="nav-menu">
+                <a href="index.html">Inicio</a>
+                <a href="entretenimiento.html">Novedades</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="locales.html">Locales</a>
+                <a href="locales.html?filter=gastronomía">Gastronomía</a>
+                <a href="ofertas.html">Ofertas</a>
+                <a href="ubicacion.html">Ubicación</a>
+            </nav>
+
+            <div class="icons">
+                <div id="burger-btn"><img src="imagenes/Iconos/IMenu.png" alt="MenuBtn"></div>
+                <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h2 id="hero-title" class="hero-title">Gastronomía</h2>
+                <p class="hero-description">
+                    Disfrutá de la mejor experiencia culinaria.
+                </p>
+                <a href="locales.html?filter=gastronomía" class="btn">Ver Locales Gastronómicos</a>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="recreativos-title">
+            <h2 id="recreativos-title" class="section-title">Patio de Comidas</h2>
+            
+            <div class="cards-grid">
+                <!-- patio de comida -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Patio de comidas vacio">
+                        <img src="imagenes/Gastronomia/Patio-comidas.png" alt="Patio de Comidas">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Patio de Comidas Ámbar</h3>
+                        <p class="card-description"> Nuestro Patio de Comidas reúne una variedad de propuestas gastronómicas para todos los gustos. Ya sea que busques una comida rápida, algo casero, cocina internacional o un simple café, encontrarás opciones frescas, deliciosas y en un ambiente cómodo y familiar.</p>
+                        <h3 class="card-title">Ambiente</h3>
+                        <p class="card-description">Espacios amplios, cómodos, con iluminación cálida y zonas diseñadas tanto para comidas rápidas como para encuentros más relajados.</p>
+                        <h3 class="card-subtitle">Horarios</h3>
+                        <p class="card-description">
+                            Lunes a Domingo: 10:00 – 23:00
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tipos de comida -->
+        <section class="section" aria-labelledby="culturales-title">
+            <h2 id="culturales-title" class="section-title">Tipos de Comida</h2>
+            
+            <div class="cards-grid">
+                <!-- Fast Food -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Combo hamburguesa con papas fritas y gaseosa">
+                        <img src="imagenes/Gastronomia/Fast-food.jpg" alt="Comida Rápida">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Fast Food</h3>
+                        <p class="card-description">
+                            Hamburguesas, panchos, papas, pizzas al paso y otras opciones rápidas ideales para un break.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Postres -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Mouse de chocolate, cheesecake y lemon pie en vasos.">
+                        <img src="imagenes/Gastronomia/Postres.jpg" alt="Postres">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Postres y Cafetería</h3>
+                        <p class="card-description">
+                            Desde tortas artesanales y helados hasta cafés especiales, medialunas y dulces.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Comida Casera -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Plato de comida casera.">
+                        <img src="imagenes/Gastronomia/Comida-casera.jpg" alt="Comida Casera">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cocina Tradicional / Casera</h3>
+                        <p class="card-description">
+                            Platos completos, abundantes y caseros: pastas, milanesas, tartas y opciones vegetarianas.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <img src="imagenes/Iconos/Logo.png" alt="Logo">
+                <p>El destino para una experiencia de compra inolvidable.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="locales.html">Locales</a></p>
+                <p><a href="locales.html?filter=gastronomía">Gastronomía</a></p>
+                <p><a href="ofertas.html">Ofertas</a></p>
+                <p><a href="ubicacion.html">Ubicación</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado: 9:00 – 22:00 hrs</p>
+                <p>Domingo: 10:00 – 21:00 hrs</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Soler 3700, Palermo</p>
+                <p>info@galeambar.com</p>
+                <p>(123) 456 – 7890</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Galerías Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
+        </div>
+
+    </footer>
+
+    <script src="global.js"></script>
+    <script src="chatbot.js"></script>
+    
+</body>
+</html>

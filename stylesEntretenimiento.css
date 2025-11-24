@@ -490,3 +490,89 @@
     padding-top: 12px !important;
     padding-bottom: 12px !important;
 }
+
+/* ========================================= */
+/* ========== ADAPTACIÓN MODO OSCURO ========== */
+/* ========================================= */
+
+.dark-mode {
+    /* Sobrescribir las variables locales del tema claro con variables globales (o nuevos valores) */
+    
+    /* Variables de color de styles.css que se redefinen en dark-mode */
+    --color-bg-light: #2c2929; /* Nuevo fondo más oscuro */
+    --color-primary: #f0e6e6; /* Texto principal claro */
+    --color-text-secondary: #c2acac; /* Texto secundario más claro */
+    --color-accent: #d4a0a0; /* Acento suave y visible */
+    
+
+
+    /* Fondo del body (ya lo manejas en styles.css con --bg-body) */
+    background-color: var(--bg-body); 
+}
+
+/* 1. Elementos Generales del Contenido */
+.dark-mode .section-title,
+.dark-mode .card-title,
+.dark-mode .card-subtitle,
+.dark-mode .event-title,
+.dark-mode .event-day {
+    /* Usamos la variable local redefinida arriba */
+    color: var(--color-primary); 
+}
+
+.dark-mode .card-description,
+.dark-mode .event-time,
+.dark-mode .event-description,
+.dark-mode .event-month {
+    /* Usamos la variable local redefinida arriba */
+    color: var(--color-text-secondary); 
+}
+
+/* 2. El Hero (la primera sección) */
+/* Regla específica para forzar el color blanco en el texto del HERO en MODO OSCURO */
+.dark-mode .hero-title,
+.dark-mode .hero-description {
+    /* Usamos el color blanco fijo original, o una variable que no cambie */
+    color: #FFF8EA; /* Usar el color claro de tu tema */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* 3. Tarjetas (Cards) */
+.dark-mode .card {
+    /* Fondo de la tarjeta en modo oscuro */
+    background-color: rgba(212, 160, 160, 0.1); 
+    /* Borde de la tarjeta más visible */
+    border-color: rgba(212, 160, 160, 0.2);
+}
+
+.dark-mode .card:hover,
+.dark-mode .card:focus-within {
+    box-shadow: 0 12px 24px rgba(212, 160, 160, 0.1);
+    border-color: var(--color-accent);
+}
+
+/* 4. Enlaces de Tarjetas y Botones Principales (Links, Buttons) */
+.dark-mode .btn,
+.dark-mode .card-link {
+    background-color: var(--color-accent);
+    color: var(--color-bg-dark); /* Color de texto más oscuro para el botón */
+    border-color: var(--color-accent);
+}
+
+.dark-mode .btn:hover,
+.dark-mode .card-link:hover {
+    background-color: var(--color-text-secondary);
+    border-color: var(--color-text-secondary);
+    color: var(--color-bg-light);
+    box-shadow: 0 4px 12px rgba(212, 160, 160, 0.3);
+}
+
+/* 5. Listado de Eventos */
+.dark-mode .event-card {
+    background-color: rgba(212, 160, 160, 0.05);
+    border-color: rgba(212, 160, 160, 0.15);
+}
+
+.dark-mode .event-date {
+    background-color: rgba(212, 160, 160, 0.15); /* Fondo de la fecha en modo oscuro */
+}

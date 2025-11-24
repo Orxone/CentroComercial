@@ -289,3 +289,27 @@ if (mapaImg) {
     // Recreate markers on resize to keep positions accurate (percentages remain fine)
     window.addEventListener('resize', () => { /* no-op for percent positions, but safe */ });
 }
+
+
+
+const slides = document.querySelectorAll(".mapa-slide");
+let currentIndex = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) {
+      slide.classList.add("active");
+    }
+  });
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+});
