@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubicación - Centro Comercial</title>
-
+    <title>Centro Comercial</title>
+    <!-- Vinculamos el archivo CSS separado -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Fuente Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="stylesUbicacion.css">
-    <link rel="stylesheet" href="stylesChatbot.css"> 
+    <link rel="stylesheet" href="stylesChatbot.css">
+    <link rel="stylesheet" href="stylesEntretenimiento.css">
+    <!-- Importamos iconos para los botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
 
     <link rel="icon" type="image/png" href="imagenes/Iconos/Icon.png">
-      <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+          <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
       rel="stylesheet"
@@ -55,6 +64,8 @@
   <body
     class="bg-background-light dark:bg-background-dark font-display text-text-color dark:text-text-color-dark"
   >
+    
+    <!-- Encabezado y Navegación -->
     <header class="header">
             
         <div class="banner">
@@ -80,64 +91,99 @@
             </div>
         </div>
     </header>
-    
+
+    <!-- Contenido Principal -->
     <main class="container">
-        
-        <section class="map-section">
-            <div class="map-frame">
-                
-                <iframe 
-                    src="https://maps.google.com/maps?q=-34.59330900518771,-58.415461589345924&hl=es&z=15&output=embed"
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h2 id="hero-title" class="hero-title">Gastronomía</h2>
+                <p class="hero-description">
+                    Disfrutá de la mejor experiencia culinaria.
+                </p>
+                <a href="locales.html?filter=gastronomía" class="btn">Ver Locales Gastronómicos</a>
             </div>
         </section>
 
-        <aside class="info-section">
+        <section class="section" aria-labelledby="recreativos-title">
+            <h2 id="recreativos-title" class="section-title">Patio de Comidas</h2>
             
-            <div class="transport-options">
-                <button class="transport-btn" onclick="irAlMapa('driving')">
-                    <i class="fas fa-car"></i> Auto
-                </button>
-                
-                <button class="transport-btn" onclick="irAlMapa('transit')">
-                    <i class="fas fa-train"></i> Transporte publico
-                </button>
-                
-                <button class="transport-btn" onclick="irAlMapa('bicycling')">
-                    <i class="fas fa-bicycle"></i> Bici
-                </button>
-                
-                <button class="transport-btn" onclick="irAlMapa('walking')">
-                    <i class="fas fa-walking"></i> Pie
-                </button>
+            <div class="cards-grid">
+                <!-- patio de comida -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Patio de comidas vacio">
+                        <img src="imagenes/Gastronomia/Patio-comidas.png" alt="Patio de Comidas">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Patio de Comidas Ámbar</h3>
+                        <p class="card-description"> Nuestro Patio de Comidas reúne una variedad de propuestas gastronómicas para todos los gustos. Ya sea que busques una comida rápida, algo casero, cocina internacional o un simple café, encontrarás opciones frescas, deliciosas y en un ambiente cómodo y familiar.</p>
+                        <h3 class="card-title">Ambiente</h3>
+                        <p class="card-description">Espacios amplios, cómodos, con iluminación cálida y zonas diseñadas tanto para comidas rápidas como para encuentros más relajados.</p>
+                        <h3 class="card-subtitle">Horarios</h3>
+                        <p class="card-description">
+                            Lunes a Domingo: 10:00 – 23:00
+                        </p>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="details">
-                <h1>Cómo llegar a <strong>Galería Ámbar</strong></h1>
-                
-                <p class="status" id="estado-shopping">
-                    Cargando estado...
-                </p>
+        <!-- Tipos de comida -->
+        <section class="section" aria-labelledby="culturales-title">
+            <h2 id="culturales-title" class="section-title">Tipos de Comida</h2>
+            
+            <div class="cards-grid">
+                <!-- Fast Food -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Combo hamburguesa con papas fritas y gaseosa">
+                        <img src="imagenes/Gastronomia/Fast-food.jpg" alt="Comida Rápida">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Fast Food</h3>
+                        <p class="card-description">
+                            Hamburguesas, panchos, papas, pizzas al paso y otras opciones rápidas ideales para un break.
+                        </p>
+                    </div>
+                </article>
 
-                <div class="access-list">
-                    <h3>Accesos:</h3>
-                    <ul>
-                        <li>- Acceso 1 (Principal)</li>
-                        <li>- Acceso 2 (Estacionamiento)</li>
-                        <li>- Acceso 3 (Peatonal)</li>
-                    </ul>
-                </div>
+                <!-- Postres -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Mouse de chocolate, cheesecake y lemon pie en vasos.">
+                        <img src="imagenes/Gastronomia/Postres.jpg" alt="Postres">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Postres y Cafetería</h3>
+                        <p class="card-description">
+                            Desde tortas artesanales y helados hasta cafés especiales, medialunas y dulces.
+                        </p>
+                    </div>
+                </article>
 
-                <button class="cta-button" onclick="irAlMapa('driving')">
-                    Cómo llegar
-                </button>
+                <!-- Comida Casera -->
+                <article class="card">
+                    <div 
+                        class="card-image card-image-background" 
+                        role="img" 
+                        aria-label="Plato de comida casera.">
+                        <img src="imagenes/Gastronomia/Comida-casera.jpg" alt="Comida Casera">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cocina Tradicional / Casera</h3>
+                        <p class="card-description">
+                            Platos completos, abundantes y caseros: pastas, milanesas, tartas y opciones vegetarianas.
+                        </p>
+                    </div>
+                </article>
             </div>
-        </aside>
-
+        </section>
     </main>
 
 <footer class="w-full bg-secondary/10 dark:bg-white/5">
@@ -189,10 +235,9 @@
     </div>
   </div>
 </footer>
-    
-    <script src="global.js"></script>
-    <script src="mapa.js"></script>
-    <script src="chatbot.js"></script> 
 
+    <script src="global.js"></script>
+    <script src="chatbot.js"></script>
+    
 </body>
 </html>
