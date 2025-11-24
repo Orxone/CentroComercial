@@ -51,7 +51,7 @@ main{
     margin: 1.5rem auto;
     padding-top: 1rem;
     margin-top: 1.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 .servicios > .card { /*(>) para que solo afecte a la card suelta*/
@@ -70,8 +70,8 @@ main{
     width: auto;
 }
 
-.servicios .card h5{
-    font-weight: 550;
+.servicios .card h3{
+    font-weight: 700;
     font-size: 1.6rem;
     padding-top: 10px;  
     color: #594545;
@@ -123,6 +123,70 @@ main{
 .servicios .col .card .card-text {
     font-size: 1.2rem;
     line-height: 1.6;
+}
+
+/*SECCIÓN DE PREGUNTAS FRECUENTES*/
+.preguntas{
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
+
+.preguntas-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*Título de la sección de preguntas*/
+.preguntas-container h4{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--card-text);
+    margin-bottom: 2rem;
+}
+
+/*Estilo de la caja de cada pregunta*/
+details{
+    background-color: var(--bg-body);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    margin-bottom: 1rem; /*Separación entre preguntas*/
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details:hover{
+    background-color: var(--bg-local-card);
+}
+
+/*La pregunta*/
+summary{
+    padding: 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--main-text);
+    list-style: none; /*Quita el triangulo que viene por default*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Cuando la pregunta está abierta*/
+details[open]{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/*La respuesta*/
+details p{
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    line-height: 1.6;
+    color: var(--main-text);
+    margin: 0;
+    border-top: 2px solid var(--separador);
+    padding-top: 1rem;
+    font-size: 1.1rem;
 }
 
 /*MEDIA QUERY*/
