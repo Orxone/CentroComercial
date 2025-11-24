@@ -1,50 +1,33 @@
+/* ========== VARIABLES GLOBALES  ===============*/
 :root {
-    --color-bg-light: #FFF8EA;
-    --color-accent: #9E7676;
+    --color-bg-light: #FFF8EA;/* --bg-card*/    
+    --color-accent: #9E7676; /*--separardor*/
     --color-text-secondary: #815B5B;
     --color-primary: #594545;
     --color-bg-dark: #1a1818;
-    --color-white: #ffffff;
+    --color-white: #ffffff; /*--hf-white*/
     --color-ligth: #d7c6c6;
-    --color-shadow: rgba(0,0,0,0.15);
-    --color-shadow-strong: rgba(0,0,0,0.25);
+
     /* Bordes */
-    --border-width: 2px;
     --border-radius-sm: 10px;
     --border-radius-md: 16px;
     --border-radius-lg: 20px;
-
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-
-    /* Sombras */
-    --shadow-soft: 0 4px 10px rgba(0,0,0,0.15);
-    --shadow-medium: 0 6px 20px rgba(0,0,0,0.18);
-    --shadow-strong: 0 10px 25px rgba(0,0,0,0.25);
-
-    /* Transiciones */
-    --transition: all 0.3s ease;
 }
 
-/* SECCIÓN LOCALES */
+/* ========== SECCIÓN: TÍTULO PRINCIPAL =========== */
 .locales-title {
     width: 80%;
     max-width: 1100px;
     margin: 40px auto;
     padding: 80px 40px;
- 
+
     backdrop-filter: blur(10px);
-    border-radius: 20px;
+    border-radius: var(--border-radius-lg);
     text-align: center;
 
     background-image: url("imagenes/LocalesLogos/fondo-locales.png");
     background-size: cover;
     background-position: center;
-    padding: 80px 0;
 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -67,6 +50,8 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
+
+/* ======== CONTENEDOR GENERAL ========= */
 .locales-wrapper {
     width: 90%;
     max-width: 1100px;
@@ -76,14 +61,16 @@
 .section-title {
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--main-text);
     margin-left: 5px;
     margin-bottom: 35px;
     border-bottom: 3px solid var(--color-accent);
     display: inline-block;
 }
 
-/* HEADER LOCALES (Buscador + Filtros + Orden)*/
+
+/* ====== HEADER: BUSCADOR + FILTROS + ORDEN ======= */
+
 .locales-header {
     max-width: 1100px;
     margin: 0 auto 20px auto;
@@ -92,18 +79,20 @@
     align-items: center;
     position: relative;
 }
+
 .right-controls {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* (Search) */
+/* --- Buscador --- */
 .search-container {
     display: flex;
     align-items: center;
     gap: 6px;
 }
+
 #searchInput {
     padding: 8px 14px;
     border-radius: 15px;
@@ -114,7 +103,7 @@
     width: 200px;
 }
 
-/* (filter dropdown) */
+/* --- Dropdown Filtros --- */
 .filter-dropdown {
     position: absolute;
     top: 45px;
@@ -128,17 +117,19 @@
     display: none;
     z-index: 999;
 }
+
 .filter-dropdown p {
     margin: 0;
     padding: 10px 15px;
     cursor: pointer;
     transition: 0.2s;
 }
+
 .filter-dropdown p:hover {
     background: var(--color-ligth);
 }
 
-/* botones */
+/* --- Botones --- */
 .search-btn {
     border: none;
     background: var(--color-ligth);
@@ -150,11 +141,13 @@
     justify-content: center;
     transition: 0.2s;
 }
+
 .search-btn img {
     width: 18px;
     height: 18px;
 }
-.search-btn:hover, 
+
+.search-btn:hover,
 .sort-btn:hover {
     color: var(--color-bg-light);
     outline: 2px solid var(--color-accent);
@@ -173,23 +166,22 @@
     transition: 0.2s;
 }
 
-/* GRID DE LOCALES  */
 
+/* ============= GRID DE LOCALES ============= */
 .locales-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
     justify-items: center;
     max-width: 1100px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 20px;
     width: 95%;
-
-    background-color: rgba(89, 69, 69, 0.05);
+    background-color: var(--bg-local-card);
     border-radius: 20px;
 }
 
-/* CARD DE LOCALES  */
+/* --- Cards de Locales --- */
 .local-card {
     position: relative;
     width: 100%;
@@ -199,11 +191,12 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
+    background-color: var(--bg-local-card);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* logo */
+/* --- Logo --- */
 .logo-container {
     position: relative;
     padding: 25px 0;
@@ -212,6 +205,7 @@
     align-items: center;
     height: 200px;
 }
+
 .logo-container::before {
     content: "";
     position: absolute;
@@ -219,13 +213,12 @@
     z-index: 2;
 }
 
-/* Hover */
+/* --- Hover --- */
 .local-card:hover {
-    transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    z-index: 5; 
+    z-index: 5;
     border: 2px solid var(--color-accent);
-    transform: translateY(-8px);
+    transform: scale(1.05) translateY(-8px);
 }
 
 .hover-info {
@@ -240,87 +233,53 @@
     transition: opacity 0.3s ease;
 }
 
-.local-card:hover 
-.logo-container::before {
+.local-card:hover .logo-container::before {
     background: rgba(255, 255, 255, 0.85);
 }
 
-.local-card:hover 
-.hover-info {
+.local-card:hover .hover-info {
     opacity: 1;
 }
+
 .hover-info h3 {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 6px;
     color: var(--color-bg-dark);
 }
+
 .hover-info p {
     margin-bottom: 10px;
     font-weight: bold;
     color: var(--color-bg-dark);
 }
 
-/* Boton visitar sitio */
+/* --- Botón visitar sitio --- */
 .perfil-btn {
     width: 100%;
     background: var(--color-accent);
-    color: #fff;
+    color: var(--color-white);
     text-align: center;
     padding: 12px 0;
     font-weight: bold;
     font-size: 1rem;
-    transition: background 0.25s ease,
-    transform 0.25s ease,
-    letter-spacing 0.25s ease;
-}
-.perfil-btn:hover {
-    background: #4e3939;
-    letter-spacing: 1px; 
+    transition: background 0.25s ease, letter-spacing 0.25s ease;
 }
 
-/* SEPARADOR */
+.perfil-btn:hover {
+    background: #4e3939;
+    letter-spacing: 1px;
+}
+
+/* ============ SEPARADOR ============== */
 .separador {
     border: none;
-    border-top: 4px solid var(--color-accent); 
+    border-top: 4px solid var(--color-accent);
     margin: 40px 0;
     width: 100%;
 }
 
-/* SECCIÓN MAPA */
-.mapa-container {
-    display: flex;
-    flex: 2; 
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    max-width: 1100px;
-    position: relative;
-    margin: 0 auto;
-}
-.mapa-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px; 
-}
-
-.mapa-texto {
-    flex: 1;
-    max-width: 400px; 
-    column-count: 1;
-    column-gap: 20px;
-    text-align: justify;
-}
-
-.mapa-texto h3 {
-    font-size: 20px;
-    line-height: 1.5;
-}
-.mapa-texto p {
-    line-height: 0.5;
-}
-
+/* ========== SECCIÓN MAPA   ============== */
 .mapa-section {
     padding: 20px 0 60px 0;
     width: 90%;
@@ -328,100 +287,132 @@
     margin: 0 auto;
 }
 
+.mapa-flex {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.arrow-btn {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10%;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.arrow-btn:hover {
+    background: var(--color-primary);
+}
+
+.mapa-slider {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+.mapa-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.mapa-slide.active {
+    display: flex;
+}
+
+/* --- Keyframes --- */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+
+/* --- Imagen del mapa --- */
 .mapa-img {
     width: 100%;
     max-width: 900px;
     border-radius: 12px;
-    border: 2px solid var(--color-border);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    border: 2px solid var(--color-accent);
     transition: opacity .4s ease, transform .4s ease;
 }
+
 .mapa-img:hover {
-    transform: scale(1.05);
-    border: 2px solid var(--color-accent);
-    transform: translateY(-8px);
+    transform: scale(1.05) translateY(-8px);
     box-shadow: 0 12px 24px rgba(89, 69, 69, 0.15);
 }
 
-#txt-indumentaria{
-    color: rgb(241, 66, 174);
-    font-weight: bold;
-}
-#txt-tecnologia{
-    color: rgb(47, 107, 236);
-    font-weight: bold;
-}
-#txt-gastronomia{
-    color: rgb(34, 192, 61);
-    font-weight: bold;
-}
-#txt-hogar{
-    color: rgb(245, 139, 53);
-    font-weight: bold;
-}
-#txt-accesorios{
-    color: rgb(194, 191, 18);
-    font-weight: bold;
-}
-#txt-recreativo{
-    color: rgb(173, 34, 228);
-    font-weight: bold;
-}
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
 
-/* Responsive */
+/* Tablets */
 @media (max-width: 800px) {
     .locales-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Cards en fila única */
 @media (max-width: 500px) {
     .locales-grid {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-/* Celulares */
+/* General Mobile */
 @media (max-width: 600px) {
     .locales-header {
         flex-direction: column;
         gap: 12px;
     }
+
     .right-controls {
         width: 100%;
         justify-content: center;
     }
+
     #searchInput {
         width: 150px;
         padding: 6px 10px;
         font-size: 0.8rem;
     }
+
     .local-card {
         height: 180px;
     }
-    .locales-section h2 {
-        font-size: 1.6rem;
-        padding: 20px;
-    }
+
     .hover-info h3 {
         font-size: 1rem;
     }
-        .locales-grid {
+
+    .locales-grid {
         gap: 15px;
     }
-        .logo-container img {
+
+    .logo-container img {
         max-width: 65%;
         max-height: 90px;
     }
-        .search-container,
-    .right-controls {
-        justify-content: center;
-    }
 }
 
-/* Celulares chicos */
+/* Móviles muy pequeños */
 @media (max-width: 420px) {
-
     .local-card {
         height: 160px;
     }
@@ -434,39 +425,29 @@
     .hover-info h3 {
         font-size: 0.9rem;
     }
+
     .hover-info p {
         font-size: 0.75rem;
     }
-        .logo-container img {
+
+    .logo-container img {
         max-width: 60%;
         max-height: 80px;
     }
 }
 
-@media (max-width: 700px) {
-    .mapa-texto {
-        font-size: 0.9rem;   /* achica la letra */
-        line-height: 1.2;    /* mantiene el espaciado compacto */
-    }
-
-    .mapa-texto h3 {
-        font-size: 1rem;  
-    }
-
-    .mapa-texto p {
-        font-size: 0.85rem;  
-    }
-}
+/* Responsive mapa */
 @media (max-width: 700px) {
     .mapa-flex {
-        flex-direction: column;  
+        gap: 15px;
     }
-    .mapa-container {
-        order: 1;              
+
+    .arrow-btn {
+        font-size: 1.5rem;
+        padding: 8px;
     }
-    .mapa-texto {
-        order: 2;          
-        text-align: center;     
-        max-width: 100%;             
+
+    .mapa-slider {
+        width: 100%;
     }
 }

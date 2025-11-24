@@ -18,6 +18,7 @@
     --card-border: black; /*Color para acentuar*/
     --border: #b87b7b; /*Color para los bordes*/
     --separador: #b87b7b; /*Color de línea separadora*/
+    --bg-local-card: rgba(89, 69, 69, 0.05); /*Fondo de cards de locales individuales*/
 }
 
 /*COLORES DEL MODO OSCURO*/
@@ -31,6 +32,7 @@
     --card-border: #d69e9e;
     --border: #5b3c3c;
     --separador: #815B5B;
+    --bg-local-card: rgba(119, 89, 89, 0.527);
 }
 
 /*CONFIGURACIÓN GENERAL*/
