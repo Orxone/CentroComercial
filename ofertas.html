@@ -44,40 +44,47 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="styles.css"> <!--Link para el css del header y footer-->
-    <link rel="stylesheet" href="stylesIndex.css"> <!--Link para el css de la página de index como tal-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--Link para el css del header y footer-->
+    <link rel="stylesheet" href="stylesIndex.css" />
+    <!--Link para el css de la página de index como tal-->
     <link rel="stylesheet" href="stylesChatbot.css" />
   </head>
   <body
     class="bg-background-light dark:bg-background-dark font-display text-text-color dark:text-text-color-dark"
   >
     <div class="relative flex min-h-screen w-full flex-col">
-          <header class="header">
-            
+      <header class="header">
         <div class="banner">
-            <p>Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs</p>
+          <p>Lunes a Sábado: 9:00 a 22:00 hrs | Domingo: 10:00 a 21:00 hrs</p>
         </div>
-        
+
         <div class="header-container">
-            <a href="index.html" class="logo"><img src="imagenes/Iconos/Logo.png" alt="Logo"></a>
+          <a href="index.html" class="logo"
+            ><img src="imagenes/Iconos/Logo.png" alt="Logo"
+          /></a>
 
-            <nav class="nav" id="nav-menu">
-                <a href="index.html">Inicio</a>
-                <a href="entretenimiento.html">Novedades</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="locales.html">Locales</a>
-                <a href="gastronomia.html">Gastronomía</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="ofertas.html">Ofertas</a>
-                <a href="ubicacion.html">Ubicación</a>
-            </nav>
+          <nav class="nav" id="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="entretenimiento.html">Novedades</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="locales.html">Locales</a>
+            <a href="gastronomia.html">Gastronomía</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="ubicacion.html">Ubicación</a>
+          </nav>
 
-            <div class="icons">
-                <div id="burger-btn"><img src="imagenes/Iconos/IMenu.png" alt="MenuBtn"></div>
-                <button class="darkmode-btn" id="mode-btn"><img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro"></button>
+          <div class="icons">
+            <div id="burger-btn">
+              <img src="imagenes/Iconos/IMenu.png" alt="MenuBtn" />
             </div>
+            <button class="darkmode-btn" id="mode-btn">
+              <img src="imagenes/Iconos/IModo.png" alt="ModoOscuro-Claro" />
+            </button>
+          </div>
         </div>
-    </header>
+      </header>
       <main class="flex w-full flex-1 flex-col items-center">
         <div class="flex w-full max-w-7xl flex-col gap-8 px-4 py-10 sm:px-8">
           <section class="@container">
@@ -175,57 +182,117 @@
             aria-label="Listado de ofertas"
           ></section>
         </div>
-      </main>
+        <footer class="w-full bg-secondary/10 dark:bg-white/5">
+          <div class="mx-auto w-full max-w-7xl px-4 py-12 sm:px-8">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+              <div class="col-span-2 md:col-span-4 lg:col-span-1">
+                <div
+                  class="flex items-center gap-3 text-secondary dark:text-primary"
+                >
+                  <div class="">
+                    <img src="imagenes/Iconos/Logo.png" alt="Logo" />
+                  </div>
+                </div>
+                <p
+                  class="mt-4 text-sm text-text-color/80 dark:text-text-color-dark/80"
+                >
+                  El destino para una experiencia de compra inolvidable.
+                </p>
+              </div>
 
-<footer class="w-full bg-secondary/10 dark:bg-white/5">
-  <div class="mx-auto w-full max-w-7xl px-4 py-12 sm:px-8">
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-      <div class="col-span-2 md:col-span-4 lg:col-span-1">
-        <div class="flex items-center gap-3 text-secondary dark:text-primary">
-          <div class="">
-            <img src="imagenes/Iconos/Logo.png" alt="Logo" />
+              <div>
+                <h3 class="font-bold text-secondary dark:text-primary">
+                  Navegación
+                </h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="index.html"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="locales.html"
+                      >Locales</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="gastronomia.html"
+                      >Gastronomía</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="servicios.html"
+                      >Servicios</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="ofertas.html"
+                      >Ofertas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary"
+                      href="ubicacion.html"
+                      >Ubicación</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-secondary dark:text-primary">
+                  Horarios
+                </h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    Lunes a Sábado: 9:00 – 22:00 hrs
+                  </li>
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    Domingo: 10:00 – 21:00 hrs
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-secondary dark:text-primary">
+                  Contacto
+                </h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    Soler 3700, Palermo
+                  </li>
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    info@galeambar.com
+                  </li>
+                  <li class="text-text-color/80 dark:text-text-color-dark/80">
+                    (123) 456 – 7890
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mt-8 border-t border-secondary/20 pt-8 text-center text-sm text-text-color/60 dark:border-primary/20 dark:text-text-color-dark/60"
+            >
+              <p>
+                2025 Galerías Ámbar. Todos los derechos reservados. | Política
+                de privacidad | Términos de Uso
+              </p>
+            </div>
           </div>
-        </div>
-        <p class="mt-4 text-sm text-text-color/80 dark:text-text-color-dark/80">
-          El destino para una experiencia de compra inolvidable.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-secondary dark:text-primary">Navegación</h3>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li><a class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary" href="index.html">Inicio</a></li>
-          <li><a class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary" href="locales.html">Locales</a></li>
-          <li><a class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary" href="gastronomia.html">Gastronomía</a></li>
-          <li><a class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary" href="servicios.html">Servicios</a></li>
-          <li><a class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary" href="ofertas.html">Ofertas</a></li>
-          <li><a class="text-text-color/80 transition-colors hover:text-primary dark:text-text-color-dark/80 dark:hover:text-primary" href="ubicacion.html">Ubicación</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-secondary dark:text-primary">Horarios</h3>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li class="text-text-color/80 dark:text-text-color-dark/80">Lunes a Sábado: 9:00 – 22:00 hrs</li>
-          <li class="text-text-color/80 dark:text-text-color-dark/80">Domingo: 10:00 – 21:00 hrs</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-secondary dark:text-primary">Contacto</h3>
-        <ul class="mt-4 space-y-2 text-sm">
-          <li class="text-text-color/80 dark:text-text-color-dark/80">Soler 3700, Palermo</li>
-          <li class="text-text-color/80 dark:text-text-color-dark/80">info@galeambar.com</li>
-          <li class="text-text-color/80 dark:text-text-color-dark/80">(123) 456 – 7890</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-8 border-t border-secondary/20 pt-8 text-center text-sm text-text-color/60 dark:border-primary/20 dark:text-text-color-dark/60">
-      <p>2025 Galerías Ámbar. Todos los derechos reservados. | Política de privacidad | Términos de Uso</p>
-    </div>
-  </div>
-</footer>
+        </footer>
+      </main>
     </div>
     <script src="ofertas.js"></script>
     <script src="global.js"></script>
