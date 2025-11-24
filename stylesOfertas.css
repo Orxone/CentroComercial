@@ -1,27 +1,21 @@
 /* VARIABLES ESPECÍFICAS DE OFERTAS (Basadas en el diseño original) */
 :root {
-    --of-primary: #845858;
+     --of-primary: #9E7676;
     --of-secondary: #815B5B;
-    --of-bg-light: #f7f7f7;
-    --of-bg-dark: #1b1717;
-    --of-text: #594545;
-    --of-text-dark: #FFF8EA;
-    --of-card-light: #ffffff;
-    --of-card-dark: #2b2121;
-    --font-display: 'Manrope', sans-serif;
+    --of-text: var(--main-text);
+    --of-text-dark: #fff;
 }
 
-/* LAYOUT GENERAL */
-.ofertas-main {
+.ofertas-main 
+{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--of-bg-light);
     color: var(--of-text);
-    min-height: 100vh;
-
-    padding-bottom: 150px !important;
+    padding-bottom: 100px;  /* Dejamos el padding sin el !important */
+    flex: 1;                /* Permite que el footer quede siempre abajo */
 }
 
 .ofertas-container {
@@ -173,26 +167,26 @@
 
 .offer-img-container {
     width: 100%;
-    height: 180px; 
+    height: 200px; /* Le damos un poco más de altura para que se luzca la foto */
     background-color: #f9fafb; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden; /* Corta la imagen si sobra */
 }
 
 .offer-icon-wrapper {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(129, 91, 91, 0.05);
+    /* Quitamos el padding y el background que era para iconos */
+    padding: 0;
+    background: none;
 }
 
 .offer-icon-wrapper img {
-    width: 80px;  
-    height: 80px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    /* ESTO ES LO IMPORTANTE: 'cover' hace que la foto llene todo el espacio sin deformarse */
+    object-fit: cover; 
+    object-position: center;
+    display: block;
 }
 
 /* EL TEXTO DE ADENTRO */
@@ -283,9 +277,26 @@
     background-color: var(--of-card-dark);
 }
 
+.dark-mode .offer-body 
+{
+    /* Poné acá el color que quieras para el fondo del texto */
+    background-color: #9E7676; /* Ejemplo: un marrón oscuro un poco más claro */
+}
+
 .dark-mode .offer-title 
 {
-    color: var(--of-primary);
+    color: #fff;
+}
+
+.dark-mode .offer-desc 
+{
+    /* Importante: cambiar el gris oscuro (#666) por uno claro para que se lea */
+    color: #594545;  /* O usá var(--of-text-dark) */
+}
+
+.dark-mode .offer-link 
+{
+    color: #594545; /* Color del link en reposo */
 }
 
 .dark-mode .offer-link:hover 
