@@ -1,3 +1,7 @@
+// Detectar si estamos en index o en una página dentro de /HTML/
+const basePath = window.location.pathname.includes("HTML/")
+    ? "../"  // estás dentro de /HTML/
+    : "";     // estás en el index
 // CARGA AUTOMÁTICA DEL HTML DEL CHATBOT
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -12,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aria-expanded="false"
             aria-controls="chatContainer"
         >
-            <img src="../imagenes/Iconos/chat.png" alt="" aria-hidden="true" style="width: 30px; height: 30px;">
+            <img src="${basePath}imagenes/Iconos/chat.png" alt="" aria-hidden="true" style="width: 30px; height: 30px;">
         </button>
 
         <!-- Contenedor del chatbot -->
@@ -71,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     type="button"
                     aria-label="Enviar mensaje"
                 >
-                    <img src="../imagenes/Iconos/send.png" alt="" aria-hidden="true" style="width: 20px; height: 20px;">
+                    <img src="${basePath}imagenes/Iconos/send.png" alt="" aria-hidden="true" style="width: 20px; height: 20px;">
                 </button>
             </div>
         </div>
