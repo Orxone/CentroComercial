@@ -159,6 +159,7 @@ header .header-container .logo img{
     cursor: pointer;
     display: none; /*Oculto hasta que se active cuando el tamaño de la pantalla cambie*/
     margin-right: 1.5rem;
+    background: none;
 }
 
 #burger-btn:hover {

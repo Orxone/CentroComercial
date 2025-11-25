@@ -195,6 +195,10 @@ details p{
         font-size: 80%;
     }
 
+    body{
+        padding-top: 70px;
+    }
+
     .servicios .card img{
         height: 130px;
         width: auto;
