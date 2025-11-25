@@ -24,6 +24,7 @@
 /* ========== SECCIÓN: TÍTULO PRINCIPAL =========== */
 .locales-title {
     width: 85%;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 80px 40px;
 
@@ -60,6 +61,7 @@
 /* ======== CONTENEDOR GENERAL ========= */
 .locales-wrapper {
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -78,6 +80,7 @@
 
 .locales-header {
     width: 95%;
+    max-width: 1200px;
     margin: 0 auto 20px auto;
     display: flex;
     justify-content: space-between;
@@ -181,6 +184,7 @@
     margin: 0 auto;
     padding: 20px;
     width: 85%;
+    max-width: 1200px;
     background-color: var(--bg-local-card);
     border-radius: 20px;
 }
@@ -287,6 +291,7 @@
 .mapa-section {
     padding: 20px 0 60px 0;
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
