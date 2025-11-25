@@ -1,5 +1,6 @@
 // CARGA AUTOMÁTICA DEL HTML DEL CHATBOT
 document.addEventListener('DOMContentLoaded', function() {
+    
     const chatbotHTML = `
         <!-- Botón flotante del chatbot -->
         <button

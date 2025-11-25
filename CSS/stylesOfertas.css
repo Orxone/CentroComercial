@@ -1,3 +1,10 @@
+.header .banner p
+{
+    line-height: 1.5 !important;
+    padding-top: 8px !important;
+    padding-bottom: 16px !important;
+    display: block !important;
+}
 /* VARIABLES ESPECÍFICAS DE OFERTAS (Basadas en el diseño original) */
 :root {
      --of-primary: #9E7676;
