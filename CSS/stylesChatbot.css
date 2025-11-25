@@ -174,19 +174,31 @@ body.dark-mode {
     margin-top: 2px;
 }
 
+/* BOTÓN DE CERRAR (X) */
 .close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-left: 0.5rem;
+
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #FFF8EA;                /* color de la X */
+    background: transparent;       /* sin fondo raro */
+    border: none;
+    border-radius: 999px;
     cursor: pointer;
-    font-size: 24px;
-    font-weight: 300;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-    color: var(--chat-header-text);
+    flex-shrink: 0;
 }
 
-.close-btn:hover {
-    opacity: 1;
+.close-btn:hover,
+.close-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 2px;
 }
-
 /* Área de mensajes */
 .chat-messages {
     flex: 1;

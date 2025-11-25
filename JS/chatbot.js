@@ -1,24 +1,53 @@
 // CARGA AUTOMÁTICA DEL HTML DEL CHATBOT
 document.addEventListener('DOMContentLoaded', function() {
     const chatbotHTML = `
-        <div class="chat-button" id="chatButton">
-            <img src="../imagenes/Iconos/chat.png" alt="Chat" style="width: 30px; height: 30px;">
-        </div>
+        <!-- Botón flotante del chatbot -->
+        <button
+            class="chat-button"
+            id="chatButton"
+            type="button"
+            tabindex="0"
+            aria-label="Abrir chat de ayuda de Galerías Ámbar"
+            aria-expanded="false"
+            aria-controls="chatContainer"
+        >
+            <img src="../imagenes/Iconos/chat.png" alt="" aria-hidden="true" style="width: 30px; height: 30px;">
+        </button>
 
-        <div class="chat-container" id="chatContainer">
+        <!-- Contenedor del chatbot -->
+        <div
+            class="chat-container"
+            id="chatContainer"
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+        >
             <div class="chat-header">
                 <div>
-                    <h3>Galerías Ámbar</h3>
+                    <h3 id="chatTitle">Galerías Ámbar</h3>
                     <p>En línea • Responde en minutos</p>
                 </div>
-                <div class="close-btn" id="closeBtn">×</div>
+                <button
+                    class="close-btn"
+                    id="closeBtn"
+                    type="button"
+                    tabindex="0"
+                    aria-label="Cerrar chat"
+                >
+                    ×
+                </button>
             </div>
 
-            <div class="chat-messages" id="chatMessages">
+            <div
+                class="chat-messages"
+                id="chatMessages"
+                role="log"
+                aria-live="polite"
+            >
                 <!-- Los mensajes se cargan desde JS (historial o bienvenida) -->
             </div>
 
-            <div class="quick-suggestions" id="suggestions">
+            <div class="quick-suggestions" id="suggestions" role="group" aria-label="Sugerencias rápidas">
                 <button class="suggestion-btn" data-text="Horarios">Horarios</button>
                 <button class="suggestion-btn" data-text="Tiendas">Tiendas</button>
                 <button class="suggestion-btn" data-text="Estacionamiento">Parking</button>
@@ -29,9 +58,19 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <div class="chat-input">
-                <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
-                <button class="send-btn" id="sendBtn">
-                    <img src="../imagenes/Iconos/send.png" alt="Enviar" style="width: 20px; height: 20px;">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Escribe tu mensaje..."
+                    aria-label="Escribir mensaje para el chat"
+                >
+                <button
+                    class="send-btn"
+                    id="sendBtn"
+                    type="button"
+                    aria-label="Enviar mensaje"
+                >
+                    <img src="../imagenes/Iconos/send.png" alt="" aria-hidden="true" style="width: 20px; height: 20px;">
                 </button>
             </div>
         </div>
@@ -53,6 +92,8 @@ function inicializarChatbot() {
     // CLAVES PARA LOCALSTORAGE
     const STORAGE_KEY_MESSAGES = 'ambar_chat_messages';
     const STORAGE_KEY_OPEN = 'ambar_chat_open';
+
+    const storage = window.sessionStorage;
 
     // Historial en memoria
     let chatHistory = [];
@@ -555,9 +596,17 @@ function inicializarChatbot() {
             
             return '🎉 <strong>Más información sobre eventos:</strong><br><br>' +
                    '• Consultá nuestra sección entretenimientos<br>' +
-                   '• Ingresá a nuestra web > Menú > Entretenimientos<br>' +
+                   '• Ingresá a nuestra web > Menú > Novedades<br>' +
                    '• Seguinos en redes sociales para actualizaciones<br><br>' +
                    '¿Te puedo ayudar con algo más?';
+        }
+
+        if (contexto.tipoRespuestaEsperada === 'horarios') {
+            contexto.tipoRespuestaEsperada = null;
+            contexto.esperandoRespuesta = true;
+            contexto.tipoRespuestaEsperada = 'ayuda_adicional';
+            
+            return '¡Genial! Decime el nombre del local (por ej. Nahue, NovaPC, Aether, Morfeo, etc.) para poder darte la información.';
         }
         
         if (contexto.tipoRespuestaEsperada === 'servicios') {
@@ -594,7 +643,7 @@ function inicializarChatbot() {
 
         if (save) {
             chatHistory.push({ content, type });
-            localStorage.setItem(STORAGE_KEY_MESSAGES, JSON.stringify(chatHistory));
+            storage.setItem(STORAGE_KEY_MESSAGES, JSON.stringify(chatHistory));
         }
     }
 
@@ -618,11 +667,35 @@ function inicializarChatbot() {
         if (indicator) indicator.remove();
     }
 
+    // ---------- ABRIR / CERRAR CHAT (con ARIA + foco) ----------
+
+    function abrirChat(moverFoco = true) {
+        chatContainer.classList.add('active');
+        chatContainer.setAttribute('aria-hidden', 'false');
+        chatButton.setAttribute('aria-expanded', 'true');
+        storage.setItem(STORAGE_KEY_OPEN, 'true');
+
+        if (moverFoco && userInput) {
+            userInput.focus();
+        }
+    }
+
+    function cerrarChat(devolverFoco = true) {
+        chatContainer.classList.remove('active');
+        chatContainer.setAttribute('aria-hidden', 'true');
+        chatButton.setAttribute('aria-expanded', 'false');
+        storage.setItem(STORAGE_KEY_OPEN, 'false');
+
+        if (devolverFoco) {
+            chatButton.focus();
+        }
+    }
+
     // ---------- CARGAR HISTORIAL ----------
 
     function cargarHistorial() {
-        const stored = localStorage.getItem(STORAGE_KEY_MESSAGES);
-        const isOpen = localStorage.getItem(STORAGE_KEY_OPEN);
+        const stored = storage.getItem(STORAGE_KEY_MESSAGES);
+        const isOpen = storage.getItem(STORAGE_KEY_OPEN);
 
         if (stored) {
             try {
@@ -639,7 +712,7 @@ function inicializarChatbot() {
         }
 
         if (isOpen === 'true') {
-            chatContainer.classList.add('active');
+            abrirChat(false); // lo abre pero NO cambia el foco
         }
     }
 
@@ -665,24 +738,57 @@ function inicializarChatbot() {
 
     // ---------- EVENT LISTENERS ----------
 
-    // Abrir/cerrar con la burbuja
+    // Abrir/cerrar con la burbuja (click)
     chatButton.addEventListener('click', () => {
-        const isActive = chatContainer.classList.toggle('active');
-        localStorage.setItem(STORAGE_KEY_OPEN, isActive ? 'true' : 'false');
+        const isActive = chatContainer.classList.contains('active');
+        if (isActive) {
+            cerrarChat(false);
+        } else {
+            abrirChat(true);
+        }
     });
 
-    // Cerrar con la X
+    // Abrir con teclado: Enter o Barra espaciadora en el botón flotante
+    chatButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            abrirChat(true);
+        }
+    });
+
+    // Cerrar con la X (click)
     closeBtn.addEventListener('click', () => {
-        chatContainer.classList.remove('active');
-        localStorage.setItem(STORAGE_KEY_OPEN, 'false');
+        cerrarChat(true);
     });
 
+    // Cerrar con teclado en la X
+    closeBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            cerrarChat(true);
+        }
+    });
+
+    // Cerrar con ESC desde cualquier parte del documento cuando el chat está abierto
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && chatContainer.classList.contains('active')) {
+            e.preventDefault();
+            cerrarChat(true);
+        }
+    });
+
+    // Enviar con click
     sendBtn.addEventListener('click', sendMessage);
 
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
+    // Enviar con Enter en el input
+    userInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            sendMessage();
+        }
     });
 
+    // Sugerencias rápidas
     suggestions.addEventListener('click', (e) => {
         if (e.target.classList.contains('suggestion-btn')) {
             userInput.value = e.target.getAttribute('data-text');
